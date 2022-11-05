@@ -1,6 +1,6 @@
 # Practial objectives
 
-El objetivo de esta práctica es que comprenda los conceptos principales detrás de la inferencia evolutiva basada en la comparación de secuencias genómicas mientras realiza un trabajo práctico (computacional) utilizando algunas (solo algunos ejemplos) de las herramientas computacionales más avanzadas para determinar las relaciones filogenéticas entre genomas. y las consecuencias funcionales de las mutaciones en estos genomas. Este es un conocimiento fundamental que tiene gran importancia y aplicabilidad en la investigación genética y biomédica, y en los estudios de biodiversidad.
+The objective of this practice is that you understand the main concepts behind evolutionary inference based on the comparison of genomic sequences while doing some practical (computational) work using some (just some examples) of the most advanced computational tools to determine the phylogenetic relationships among genomes and the functional consequences of mutations in these genomes. This is fundamental knowledge that has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
 
 # Data
 
