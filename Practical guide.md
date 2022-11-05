@@ -4,7 +4,7 @@ The objectives of this practical are....
 
 # Data
 
-The genome sequences for this practical have been retrieved from Gisaid database () and correspond to a subset of 4717 high-quality genomes of the BA.1
+The genome sequences for this practical have been retrieved from [GISAID](https://gisaid.org/) database and correspond to a subset of 4717 high-quality genomes of the BA.1
 variant (Omicron) sequenced between xxxxx and xxxxxx. You can find the metadata associated with these genomes in the file BA.1.metadata.
 
 # Bioinformatics software and tools
@@ -34,4 +34,6 @@ For the second part of the practical, you will need the software `hyphy` and som
 ```bash
 conda install python=3.9 python-bioext 'tn93>=1.0.7'
 ```
+In addition to this programs, you will also use the python scripts developed by ...and that you can find in the folder ....
+
 
