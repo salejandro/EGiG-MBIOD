@@ -1,3 +1,3 @@
 # Comparative-Genomics-MGG
-Comparative Genomics - Master in Genetics and Genomics
+Comparative Genomics - Master in Genetics and Genomics  
 Practicals
