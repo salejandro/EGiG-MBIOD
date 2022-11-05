@@ -1,3 +1,3 @@
-# Comparative-Genomics-MGG
-Comparative Genomics - Master in Genetics and Genomics  
-Practicals
+# Comparative Genomics course - Master in Genetics and Genomics UB
+Repository reserved for the contents of the practicals (manuals, data files and scripts)
+
