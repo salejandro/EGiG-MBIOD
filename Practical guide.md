@@ -1,4 +1,4 @@
-# Objective
+# Introduction to the practical
 
 The objective of this practice is that you understand the main concepts behind evolutionary inference based on the comparison of genomic sequences while doing some practical (computational) work using some (just some examples) of state-of-the-art computational tools to determine the phylogenetic relationships among genomes and the functional consequences of mutations in these genomes. This is fundamental knowledge that has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
 
