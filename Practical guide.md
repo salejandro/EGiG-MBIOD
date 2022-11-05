@@ -1,11 +1,11 @@
 # Practial objectives
 
-The objectives of this practical are....
+El objetivo de esta práctica es que comprenda los conceptos principales detrás de la inferencia evolutiva basada en la comparación de secuencias genómicas mientras realiza un trabajo práctico (computacional) utilizando algunas (solo algunos ejemplos) de las herramientas computacionales más avanzadas para determinar las relaciones filogenéticas entre genomas. y las consecuencias funcionales de las mutaciones en estos genomas. Este es un conocimiento fundamental que tiene gran importancia y aplicabilidad en la investigación genética y biomédica, y en los estudios de biodiversidad.
 
 # Data
 
 The genome sequences for this practical have been retrieved from [GISAID](https://gisaid.org/) database and correspond to a subset of 4717 high-quality genomes of the BA.1
-variant (Omicron) sequenced between xxxxx and xxxxxx. You can find the metadata associated with these genomes in the file BA.1.metadata.
+variant (Omicron) sequenced between xxxxx and xxxxxx. You can find the metadata associated with these genomes in the file BA.1.metadata. You can find the instructions for retrieve these sequences in the file xxxxxxx. 
 
 # Bioinformatics software and tools
 
