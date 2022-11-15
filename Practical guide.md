@@ -7,7 +7,7 @@ The objective of these sessions is to do some practical work to increase your un
 The biological models used in this practices are Sarbecoviruses, and more specifically, those closelly related with SARS-Cov2, the virus that...., and the Omicron variant BA.1 (apeared....)
 
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/sars.png" width="1000" heigh="1000">
+<img src="http://www.ub.edu/molevol/CG-MGG/sars2.png" width="1000" heigh="1000">
 </p>
 
 > **Fig. 1** Schematic diagrams of the SARS-CoV-2 virus particle (a) and genome (b). The genome encodes sixteen nonstructural proteins (nsp1–11, 12–16) and six accessory proteins. Plpro: papain like protease, 3CLPro: 3C-like proteinase, *__RdRp: RNA-dependent RNA polymerase__*, Hel:
