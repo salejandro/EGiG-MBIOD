@@ -32,9 +32,9 @@ variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You ca
 [Omicron.BA1](http://www.ub.edu/molevol/CG-MGG/omicron-BA1.fasta) (Compressed FASTA format)
 ___
 
-## Bioinformatics software and tools
+## Software and bioinformatics tools
 
-Before starting the practical, you must create and activate a new conda environment, and install all the necesary tools. To do that, open the terminal app in your computers
+Before starting the practice, you must create and activate a new conda environment, install all the necesary tools and check that everything works correctly. To do that, open the terminal app in your computers
 and type:
 
 ```bash
