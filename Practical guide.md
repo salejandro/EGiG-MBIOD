@@ -34,31 +34,56 @@ ___
 
 ## Software and bioinformatics tools
 
-Before starting the practice, you must create and activate a new conda environment, install all the necesary tools and check that everything works correctly. To do that, open the terminal app in your computers
-and type:
+Before starting the practice, you must create and activate a new conda environment, install all the necesary tools and check that everything works correctly. To do that, open the terminal app in your computers and type:
 
 ```bash
-conda create --name CGenv
+conda create --name cgenv python=3.9
 ```
-  > You can name the environment whatever you want, as long as you activate the correct environment to work on the rest of the practice
+  > Notice that you are creating an enviroment based on `Python 3.9`. this is an important requirement of some of the utilities that you will use during the practice. You can name the environment whatever you want, as long as you activate the correct environment to work on the rest of the practice
  
  To activate the environment:
  
 ```bash
-conda activate CGenv
+conda activate cgenv 
 ```
-  > The commands below install the programs in currently activated environment. Make sure that your environment is activated (the name of the environment appears at starting the command line...
+  > Make sure that your environment is activated (the name of the environment appears in brackets at starting the command line) before moving on to the next steps
 
-Now, you are ready to install the programs and utilities for the practial. For the sessions on filogenomics, you will need....
+Now, you are ready to install the programs and utilities for the practice. For the first part of the practice (sessions on filogenomics), you will need the following tools:
+
+**1. `tn93`**    
+
+Linux and Mac:
 
 ```bash
-conda install .....
+conda install -c bioconda 'tn93>=1.0.7'
 ```
-For the second part of the practical, you will need the software `hyphy` and some extra utilities, including `Python 3.9`, the module `python-bioext`, and the program `tn93` (version >=1.0.7):
+
+**2.` Bioext`**
+
+Linux:
 
 ```bash
-conda install python=3.9 python-bioext 'tn93>=1.0.7'
+conda install -c bioconda python-bioext
 ```
+
+**Mac and Windows (Linux running on wsl)**
+
+```bash
+pip install ...
+pip install ...
+pip install bioext
+```
+
+
+**3. `raxml-ng`**
+
+Linux and Mac:
+
+```bash
+conda install -c bioconda raxml-ng
+```
+
+
 In addition to this programs, you will also use the python scripts developed by ...and that you can find in the folder ....
 
 
