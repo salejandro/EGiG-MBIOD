@@ -1,11 +1,15 @@
 # Introduction to the practical
 
-The objective of this practice is that you understand the main concepts behind evolutionary inference based on the comparison of genomic sequences while doing some practical (computational) work using some (just some examples) of state-of-the-art computational tools to determine the phylogenetic relationships among genomes and the functional consequences of mutations in these genomes. This is fundamental knowledge that has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
+The objective of these sessions is to do some practical work to increase your understanding of the main concepts behind evolutionary inference based on the comparison of genomic sequences. You will work with some (just some examples) of the state-of-the-art computational tools to estimate phylogenetic relationships among genes or genomes, and to determine the functional consequences of mutations in these genomes. This fundamental knowledge has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
 
 # Data
 
-The genome sequences for this practical have been retrieved from [GISAID](https://gisaid.org/) database and correspond to a subset of 4717 high-quality genomes of the BA.1
-variant (Omicron) sequenced between xxxxx and xxxxxx. You can find the metadata associated with these genomes in the file BA.1.metadata. You can find the instructions for retrieve these sequences in the file xxxxxxx. 
+The genome sequences for this practical have been retrieved either from [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) or [GISAID](https://gisaid.org/) database and correspond to:
+
+1. The genomic sequences used for figure 1 in [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4), excluding 'Wuhan/IME-WH01/2019' (which is identical to the reference sequence 'Wuhan-Hu-1 China 2019'), and '_R. malayanus_ RmYN02 China 2019' (which is not complete)
+
+2. A subset of 4717 high-quality genomes of the BA.1
+variant (Omicron) sequenced between xxxxx and xxxxxx. You can find the metadata associated with these genomes in the file BA.1.metadata, and the instructions for retrieve these sequences in the file xxxxxxx. 
 
 # Bioinformatics software and tools
 
