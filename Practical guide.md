@@ -4,6 +4,10 @@
 
 The objective of these sessions is to do some practical work to increase your understanding of the main concepts behind evolutionary inference based on the comparison of genomic sequences. You will work with some (just some examples) of the state-of-the-art computational tools to estimate phylogenetic relationships among genes or genomes, and to determine the functional consequences of mutations in these genomes. This fundamental knowledge has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
 
+The biological models used in this practices are Sarbecoviruses, and more specifically, those closelly related with SARS-Cov2, the virus that...., and the Omicron variant BA.1 (apeared....)
+
+images
+
 ## Data
 
 The genome sequences for this practical have been retrieved either from [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) or [GISAID](https://gisaid.org/) database and correspond to:
