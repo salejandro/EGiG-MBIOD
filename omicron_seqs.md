@@ -2,7 +2,7 @@ Retrieving Omicron sequences from GISAID
 
 After login in GISAID, go to the 'Downloads' section:
 
-![Downloads](http:/www.ub.edu/molevol/CG-MGG/Downloads.png)
+![Downloads](http://www.ub.edu/molevol/CG-MGG/downloads.png)
 
 
 
