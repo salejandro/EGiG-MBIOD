@@ -10,7 +10,7 @@ The biological models used in this practices are Sarbecoviruses, and more specif
 <img src="http://www.ub.edu/molevol/CG-MGG/sars.png" width="1000" heigh="1000">
 </p>
 
-***
+---
   
 ## Data
 
