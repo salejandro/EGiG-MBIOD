@@ -6,7 +6,7 @@ The objective of these sessions is to do some practical work to increase your un
 
 The biological models used in this practices are Sarbecoviruses, and more specifically, those closelly related with SARS-Cov2, the virus that...., and the Omicron variant BA.1 (apeared....)
 
-<img src="http://www.ub.edu/molevol/CG-MGG/sars.png" width="500" heigh="500">
+<img src="http://www.ub.edu/molevol/CG-MGG/sars.png" width="700" heigh="700">
 
 ## Data
 
