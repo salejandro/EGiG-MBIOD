@@ -2,7 +2,7 @@ Retrieving Omicron sequences from GISAID
 
 After login in GISAID, go to the 'Downloads' section:
 
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+![Downloads](http:/www.ub.edu/molevol/CG-MGG/Downloads.png)
 
 
 
