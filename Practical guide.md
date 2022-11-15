@@ -1,6 +1,6 @@
 # Comparative Genomics - Master in Genetics and Genomics
 
-## Introduction to the practical
+## Introduction
 
 The objective of these sessions is to do some practical work to increase your understanding of the main concepts behind evolutionary inference based on the comparison of genomic sequences. You will work with some (just some examples) of the state-of-the-art computational tools to estimate phylogenetic relationships among genes or genomes, and to determine the functional consequences of mutations in these genomes. This fundamental knowledge has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
 
@@ -9,6 +9,8 @@ The biological models used in this practices are Sarbecoviruses, and more specif
 <p align="center">
 <img src="http://www.ub.edu/molevol/CG-MGG/sars.png" width="1000" heigh="1000">
 </p>
+
+***
   
 ## Data
 
