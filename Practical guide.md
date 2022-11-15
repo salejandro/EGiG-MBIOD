@@ -1,8 +1,10 @@
-# Introduction to the practical
+# Comparative Genomics - Master in Genetics and Genomics
+
+## Introduction to the practical
 
 The objective of these sessions is to do some practical work to increase your understanding of the main concepts behind evolutionary inference based on the comparison of genomic sequences. You will work with some (just some examples) of the state-of-the-art computational tools to estimate phylogenetic relationships among genes or genomes, and to determine the functional consequences of mutations in these genomes. This fundamental knowledge has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
 
-# Data
+## Data
 
 The genome sequences for this practical have been retrieved either from [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) or [GISAID](https://gisaid.org/) database and correspond to:
 
@@ -11,7 +13,7 @@ The genome sequences for this practical have been retrieved either from [GenBank
 2. A subset of 4717 high-quality genomes of the BA.1
 variant (Omicron) collected from 05/01/2020 to 22/06/2022. You can find the metadata associated with these genomes in the file BA.1.metadata, and the instructions for retrieve these sequences in the file [omicron_seqs.md](https://github.com/salejandro/Comparative-Genomics-MGG/blob/main/omicron_seqs.md). 
 
-# Bioinformatics software and tools
+## Bioinformatics software and tools
 
 Before starting the practical, you must create and activate a new conda environment, and install all the necesary tools. To do that, open the terminal app in your computers
 and type:
