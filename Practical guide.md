@@ -15,8 +15,6 @@ The biological models used in this practices are Sarbecoviruses, and more specif
 > **Fig. 1** Schematic diagrams of the SARS-CoV-2 virus particle (a) and genome (b). The genome encodes sixteen nonstructural proteins (nsp1–11, 12–16) and six accessory proteins. Plpro: papain like protease, 3CLPro: 3C-like proteinase, *__RdRp: RNA-dependent RNA polymerase__*, Hel:
 Helicase, *__S: spike__*. Modified from Signal Transduction and Targeted Therapy (2021)6:233.
 
-
-
 ---
   
 ## Data
@@ -26,7 +24,9 @@ The genome sequences for this practical have been retrieved either from [GenBank
 1. The genomic sequences of the sarbecoviruses used for figure 1 in [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4), excluding 'Wuhan/IME-WH01/2019' (which is identical to the reference sequence 'Wuhan-Hu-1 China 2019'), and '_R. malayanus_ RmYN02 China 2019' (which is not complete)
 
 2. A subset of 4717 high-quality genomes of the BA.1
-variant (Omicron) collected from 05/01/2020 to 22/06/2022. You can find the metadata associated with these genomes in the file BA.1.metadata, and the instructions for retrieve these sequences in the file [omicron_seqs.md](https://github.com/salejandro/Comparative-Genomics-MGG/blob/main/omicron_seqs.md). 
+variant (Omicron) collected from 05/01/2020 to 22/06/2022. You can find the metadata associated with these genomes in the file BA.1.metadata, and the instructions for retrieve these sequences in the file [omicron_seqs.md](https://github.com/salejandro/Comparative-Genomics-MGG/blob/main/omicron_seqs.md).
+
+___
 
 ## Bioinformatics software and tools
 
