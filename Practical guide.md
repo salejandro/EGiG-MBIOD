@@ -7,6 +7,8 @@ The objective of these sessions is to increase your understanding of the main co
 The biological model used in this practices are Sarbecoviruses,and more specifically, a group of viruses closelly related with SARS-Cov2 (the the type 2 coronavirus that causes severe acute respiratory syndrome) (part 1), and the BA.1 subvariant of the SARS-CoV2 omicron variant (part 2).
 
 </br>
+</br>
+</br>
 
 <p align="center">
 <img src="http://www.ub.edu/molevol/CG-MGG/sars2.png" width="1000" heigh="1000">
@@ -14,6 +16,10 @@ The biological model used in this practices are Sarbecoviruses,and more specific
 
 > **Fig. 1** Schematic diagrams of the SARS-CoV-2 virus particle (a) and genome (b). The genome encodes sixteen nonstructural proteins (nsp1–11, 12–16) and six accessory proteins. Plpro: papain like protease, 3CLPro: 3C-like proteinase, *__RdRp: RNA-dependent RNA polymerase__*, Hel:
 Helicase, *__S: spike__*. Modified from Signal Transduction and Targeted Therapy (2021)6:233.
+
+</br>
+</br>
+</br>
 
 In the fisrt part of this practice you will reconstruct the phylogenetic relationships of a group of sarbecoviruses using different parts of the genome...In the second part, you will estimate the effect on virus fitness of the minssense mutations (amino acid replacements) accuulated in the subvariant BA.1 of omicron. You will compare....
 
