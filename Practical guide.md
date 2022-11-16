@@ -32,7 +32,7 @@ The genome sequences for this practice were retrieved either from [GenBank](http
 2. A subset of 4717 high-quality genomes of the BA.1
 variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You can find the metadata associated with these genomes in the file BA.1.metadata, and the instructions for retrieve these sequences in the file [omicron_seqs.md](https://github.com/salejandro/Comparative-Genomics-MGG/blob/main/omicron_seqs.md).
 
-### Data files:
+### Data files availability:
 
 [Sarbecoviruses](http://www.ub.edu/molevol/CG-MGG/sarbecoviruses.fasta) (FASTA format)  
 [Omicron.BA1](http://www.ub.edu/molevol/CG-MGG/omicron-BA1.fasta) (Compressed FASTA format)
