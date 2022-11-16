@@ -55,7 +55,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    ```
    > Notice that you are creating an enviroment based on `Python 3.9`. This is an important requirement of some of the utilities that you will use during the practice, and one of the main raisons for which you are using conda. You can name the environment whatever you want, as long as you activate the correct environment to work on the rest of the practice
 
-***
++++
  
 2. To activate the environment:
  
