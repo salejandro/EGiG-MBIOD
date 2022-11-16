@@ -46,19 +46,21 @@ ___
 
 ## Software and bioinformatics tools
 
-1. Before starting the practice, you must (i) create and activate a new conda environment, (ii) install all the necesary tools and (iii) check that everything works correctly. To do that, open the terminal app and type:
+Before starting the practice, you must (i) create and activate a new conda environment, (ii) install all the necesary tools and (iii) check that everything works correctly.
 
-```bash
-conda create --name cgenv python=3.9
-```
-  > Notice that you are creating an enviroment based on `Python 3.9`. This is an important requirement of some of the utilities that you will use during the practice, and one of the main raisons for which you are using conda. You can name the environment whatever you want, as long as you activate the correct environment to work on the rest of the practice
+1. To create the environment, open the terminal app and type:
+
+   ```bash
+   conda create --name cgenv python=3.9
+   ```
+   > Notice that you are creating an enviroment based on `Python 3.9`. This is an important requirement of some of the utilities that you will use during the practice, and one of the main raisons for which you are using conda. You can name the environment whatever you want, as long as you activate the correct environment to work on the rest of the practice
  
- To activate the environment:
+   To activate the environment:
  
-```bash
-conda activate cgenv 
-```
-  > Make sure that your environment is activated (the name of the environment appears in brackets at starting the command line) before moving on to the next steps
+   ```bash
+   conda activate cgenv 
+   ```
+   > Make sure that your environment is activated (the name of the environment appears in brackets at starting the command line) before moving on to the next steps
 
 2. Now, you are ready to install the programs and utilities for the practice. For the first part of the practice (session on filogenomics), you must install the following tools:
 
@@ -77,7 +79,8 @@ conda activate cgenv
    ```bash
    conda install -c bioconda raxml-ng
    ```
-> You will also use some `Python` scripts that are available in the 'scripts' folder.
+
+   > You will also use some `Python` scripts that are available in the 'scripts' folder.
 
 3. For the second part of the practice (session on selective pressures), you must install the following tools:
 
