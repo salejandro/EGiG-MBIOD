@@ -137,4 +137,10 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 ---
 
-## 
+## Part 1. Phylogenetic analyses
+
+### Multiple sequence aligment
+
+### Phylogenetic tree
+
+## Part 2. Selection analysis
