@@ -4,7 +4,7 @@
 
 The objective of these sessions is to increase your understanding of the main concepts behind evolutionary inference by doing some practical worl with a representation (just a few examples) of the state-of-the-art computational tools to estimate phylogenetic relationships between genes and genomes, and to determine the functional consequences of mutations in these sequences. This fundamental knowledge has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
 
-The biological model used in this practices are Sarbecoviruses,and more specifically, a group of viruses closelly related with SARS-Cov2 (the the type 2 coronavirus that causes severe acute respiratory syndrome) (part 1), and the BA.1 subvariant of the SARS-CoV2 variant of concern (VOC) Omicron (part 2).
+The biological model used in this practices are Sarbecoviruses,and more specifically, a group of viruses closelly related with SARS-Cov2 (the the type 2 coronavirus that causes severe acute respiratory syndrome) (part 1), and the BA.1 sublineage of the SARS-CoV2 variant of concern (VOC) Omicron (part 2).
 
 </br>
 </br>
@@ -19,13 +19,13 @@ Helicase, *__S: spike__*. Modified from Signal Transduction and Targeted Therapy
 </br>
 </br>
 
-In the fisrt part of this practice you will reconstruct the phylogenetic relationships of a group of sarbecoviruses using different parts of the genome with (partially) different evolutionary histories. This analysis demonstrates that SARS-CoV2 genome is a mosaic and originated after recombination between different strains of sarbecoviruses. In the second part, you will estimate the effect on virus fitness of the minssense mutations (amino acid replacements) acculated in the subvariant BA.1 of Omicron, and compare this effect with the estimated impact for the same positions prior to the emergence of this VOC (all SARS-CoV-2 near full-length genome sequences present in GISAID on 21/11/2021 that passed some quality control checks; [Martin et al. (2022)](https://academic.oup.com/mbe/article/39/4/msac061/6553617)). This analysis in an example of how the accumulation of mutations with  individual fitness costs, but that are adaptive in combination with other mutations, could alter the function of a protein (Spike), while remained completely undetected despite unprecedented global genomic surveillance efforts.
+In the fisrt part of this practice you will reconstruct the phylogenetic relationships of a group of sarbecoviruses using different parts of the genome with (partially) different evolutionary histories. This analysis demonstrates that SARS-CoV2 genome is a mosaic and originated after recombination between different strains of sarbecoviruses. In the second part, you will estimate the effect on virus fitness of the minssense mutations (amino acid replacements) acculated in the sublineage BA.1 of Omicron, and compare this effect with the estimated impact for the same positions prior to the emergence of this VOC (all SARS-CoV-2 near full-length genome sequences present in GISAID on 21/11/2021 that passed some quality control checks; [Martin et al. (2022)](https://academic.oup.com/mbe/article/39/4/msac061/6553617)). This analysis in an example of how the accumulation of mutations with  individual fitness costs, but that are adaptive in combination with other mutations, could alter the function of a protein (Spike), while remained completely undetected despite unprecedented global genomic surveillance efforts.
 
 <p align="center">
 <img src="http://www.ub.edu/molevol/EGiG/UB-biol-150.jpg" width="1000" heigh="1000">
 </p>
 
-> **Fig. 2** Frecuency of the different SARS-CoV2 variants (colored by clade) at different time points as given in the Latest global SARS-CoV-2 analysis with GISAID data ([Nextstrain SARS-CoV-2 resources](https://nextstrain.org/ncov/gisaid/global/all-time), last accessed 16/11/2022). The subvariant BA.1 of Omicron correspond to the clade 21K.
+> **Fig. 2** Frecuency of the different SARS-CoV2 variants (colored by clade) at different time points as given in the Latest global SARS-CoV-2 analysis with GISAID data ([Nextstrain SARS-CoV-2 resources](https://nextstrain.org/ncov/gisaid/global/all-time), last accessed 16/11/2022). The sublineage BA.1 of Omicron correspond to the clade 21K.
 
 ---
   
@@ -139,8 +139,38 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 ## Part 1. Phylogenetic analyses
 
-### Multiple sequence aligment
+### Multiple sequence aligment   
+   
+   ```bash
+   mafft ....
+   ``` 
 
 ### Phylogenetic tree
 
-## Part 2. Selection analysis
+   ```bash
+   raxml-ng ....
+   ``` 
+
+## Part 2. Analysis of selection in the BA.1 sublineage
+
+In this second part of the practice, we are particularly interested in identifying Spike amino acids (codon sites) displaying evolutionary patterns that differed between Omicron sublineage BA.1 and other SARS-CoV-2 lineages circulating prior to the emergence of Omicron. These sites likely contributed to the important shifts in BA.1 Spike function that boosted rapid viral adaptation. To do that, you will first apply the codon substitution models implemented in the `hyphy` package to estimate functional constraints acting on non-synonymous sites of this gene after the mergence of Omicron, and then, you will compare your results with those shown in [Martin et al. (2022)](https://academic.oup.com/mbe/article/39/4/msac061/6553617) table 1.
+
+
+Identify all sequences that are identical up to ambiguous nucleotides using tn93-cluster (these are the unique haplotypes). tn93-cluster -f -t 0.0 S.mapped.fasta > S.clusters.0.json; python3 python/cluster-processor.py S.clusters.0.json > S.haplo.fasta
+
+Reduce the set of unique haplotypes to clusters of sequences that are all within 0.002 genetic distance of one another (tn93-cluster -f -t 0.002 S.haplo.fasta > S.clusters.1.json; python3 python/cluster-processor.py S.clusters.1.json > S.uniq.fasta)
+
+Identify and remove all sequences that are 0.0075 subs/site away from the “main” clusters (outliers/low quality sequences which result in long tree branches, or are possibly misclassified)
+
+For each remaining sequence cluster, build a majority consensus sequence using resolved nucleotides (assuming there is at least 3). Remove clusters that comprise fewer than three sequences. Add reference sequences for BA.2 and BA.3 to add in tree rooting.
+
+1. SARS-Cov2 genomes Parameters for clustering, outliner and outgroups (provide as arguments or use the values specified after the :)
+
+T="${3:-0.00075}"
+#clustering threshold
+
+T2="${4:-0.002}"
+#outliner threshold
+
+T3="${5:-3}"
+#minimum number of sequences per cluster to include in final tree
