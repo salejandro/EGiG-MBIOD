@@ -182,16 +182,40 @@ In this second part of the practice, we are particularly interested in identifyi
 
 </br>
 
-3. Because selection analyses gain no or minimal power from including identical or very similar sequences, you will filter BA.1 sequences using pairwise genetic distances. 
+3. Because selection analyses gain no or minimal power from including identical or very similar sequences, you will filter BA.1 sequences using pairwise genetic distances. To do that, you will use some `Python` scripts and the program `tn93`:
 
    - To identify and remove all identical sequences up to ambiguous nucleotides:
 
    ```bash
-   tn93-cluster scripts/exact-copies.py  ${FILE}.S.msa > ${FILE}.u.clusters.json
-   $P3 python/cluster-processor.py ${FILE}.u.clusters.json > ${FILE}.S.u.fas
+   python3.9 scripts/exact-copies.py  ${FILE}.S.msa > ${FILE}.u.clusters.json
+   python3.9 scripts/cluster-processor.py ${FILE}.u.clusters.json > ${FILE}.S.u.fas
    ```
 </br>
-All groups of sequences that were within D genetic distance (Tamura-Nei 93) of every other sequence in the group were represented by a single (randomly chosen) sequence in the group. We set D at 0.0001 for lineage-specific sequence sets, and at 0.0015 for GISAID reference (or “background”) sequence sets. We restricted the reference set of sequences to those sampled before October 15, 2020.
+
+   - To identify and remove all remaining sequences that are within t= 0.0 ([Tamura-Nei 93](https://pubmed.ncbi.nlm.nih.gov/8336541/) distance) genetic distance:
+
+   ```bash
+   tn93-cluster -t 0.0 ${FILE}.S.u.fas > ${FILE}.t0.clusters.json
+   python3.9 scripts/cluster-processor.py ${FILE}.t0.clusters.json > ${FILE}.S.all.fas
+   ```
+</br>
+
+   - To reduce the set of sequences to clusters that are all within t=0.002 distance of one another:
+
+   ```bash
+   tn93-cluster -t 0.00075 ${FILE}.S.all.fas > ${FILE}.t1.clusters.json
+   python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json > ${FILE}.S.uniq.fas
+   ```
+</br>
+
+   - To identify and remove outliers, low quality or misclassified sequences that are t=0.0075 away from the gererated clusters:
+
+   ```bash
+   tn93-cluster -t 0.0075 ${FILE}.S.uniq.fas > ${FILE}.t2.clusters.json
+   python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json ${FILE}.t2.clusters.json > ${FILE}.S.uniq-all.fas 2> ${FILE}.S.blacklist.txt
+   ```
+</br>
+
 
 
 
