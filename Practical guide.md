@@ -2,9 +2,9 @@
 
 ## Introduction
 
-The objective of these sessions is to do some practical work to increase your understanding of the main concepts behind evolutionary inference based on the comparison of genomic sequences. You will work with some (just some examples) of the state-of-the-art computational tools to estimate phylogenetic relationships among genes or genomes, and to determine the functional consequences of mutations in these genomes. This fundamental knowledge has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
+The objective of these sessions is to increase your understanding of the main concepts behind evolutionary inference by doing some practical worl with a representation (just a few examples) of the state-of-the-art computational tools to estimate phylogenetic relationships between genes and genomes, and to determine the functional consequences of mutations in these sequences. This fundamental knowledge has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
 
-The biological models used in this practices are Sarbecoviruses, and more specifically, those closelly related with SARS-Cov2, the virus that...., and the Omicron variant BA.1 (apeared....)
+The biological model used in this practices are Sarbecoviruses,and more specifically, a group of viruses closelly related with SARS-Cov2 (the the type 2 coronavirus that causes severe acute respiratory syndrome) (part 1), and the BA.1 subvariant of the SARS-CoV2 omicron variant (part 2).
 
 </br>
 
@@ -14,6 +14,10 @@ The biological models used in this practices are Sarbecoviruses, and more specif
 
 > **Fig. 1** Schematic diagrams of the SARS-CoV-2 virus particle (a) and genome (b). The genome encodes sixteen nonstructural proteins (nsp1–11, 12–16) and six accessory proteins. Plpro: papain like protease, 3CLPro: 3C-like proteinase, *__RdRp: RNA-dependent RNA polymerase__*, Hel:
 Helicase, *__S: spike__*. Modified from Signal Transduction and Targeted Therapy (2021)6:233.
+
+In the fisrt part of this practice you will reconstruct the phylogenetic relationships of a group of sarbecoviruses using different parts of the genome...In the second part, you will estimate the effect on virus fitness of the minssense mutations (amino acid replacements) accuulated in the subvariant BA.1 of omicron. You will compare....
+
+
 
 ---
   
