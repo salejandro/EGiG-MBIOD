@@ -211,26 +211,18 @@ In this second part of the practice, we are particularly interested in identifyi
    tn93-cluster -t 0.0075 ${FILE}.S.uniq.fas > ${FILE}.t2.clusters.json
    python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json ${FILE}.t2.clusters.json > ${FILE}.S.uniq-all.fas 2> ${FILE}.S.blacklist.txt
    ```
-</br>
+   
+   - Finally, to build a majority consensus for each remaining cluster and remove clusters that comprise fewer than 3 sequences:
 
+   ```bash
+   python3.9 scripts/cluster-processor-consensus.py 3 ${FILE}.S.msa ${FILE}.S.uniq-all.fas ${FILE}.t1.clusters.json ${FILE}.t0.clusters.json ${FILE}.u.clusters.json > ${FILE}.S.uniq.fas
+   ```
+   
+ </br>
 
+4. The program hyphy estimates synonymous and non-synonymous substitution rates in a maximum likelihood (ML) phylogetic framework. Hence, you need a phylogenetic tree with the relationships among the sequences retained in the previous step after comprising to unique haplotypes. You know how to do htat from the first part of the practice. 
 
-
- using tn93-cluster (these are the unique haplotypes). tn93-cluster -f -t 0.0 S.mapped.fasta > S.clusters.0.json; python3 python/cluster-processor.py S.clusters.0.json > S.haplo.fasta
-
-Reduce the set of unique haplotypes to clusters of sequences that are all within 0.002 genetic distance of one another (tn93-cluster -f -t 0.002 S.haplo.fasta > S.clusters.1.json; python3 python/cluster-processor.py S.clusters.1.json > S.uniq.fasta)
-
-Identify and remove all sequences that are 0.0075 subs/site away from the “main” clusters (outliers/low quality sequences which result in long tree branches, or are possibly misclassified)
-
-For each remaining sequence cluster, build a majority consensus sequence using resolved nucleotides (assuming there is at least 3). Remove clusters that comprise fewer than three sequences. Add reference sequences for BA.2 and BA.3 to add in tree rooting.
-
-1. SARS-Cov2 genomes Parameters for clustering, outliner and outgroups (provide as arguments or use the values specified after the :)
-
-T="${3:-0.00075}"
-#clustering threshold
-
-T2="${4:-0.002}"
-#outliner threshold
-
-T3="${5:-3}"
-#minimum number of sequences per cluster to include in final tree
+   ```bash
+   raxml-ng --redo --threads 5 --msa ${FILE}.S.uniq.fas --tree pars{5} --model GTR+G+I
+   ```
+    
