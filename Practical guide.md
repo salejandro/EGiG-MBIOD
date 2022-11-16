@@ -201,7 +201,7 @@ In this second part of the practice, we are particularly interested in identifyi
    - To reduce the set of sequences to clusters that are all within t=0.002 distance of one another:
 
    ```bash
-   tn93-cluster -t 0.00075 ${FILE}.S.all.fas > ${FILE}.t1.clusters.json
+   tn93-cluster -t 0.002 ${FILE}.S.all.fas > ${FILE}.t1.clusters.json
    python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json > ${FILE}.S.uniq.fas
    ```
 
