@@ -123,7 +123,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 </br>
    
-5. Once all the bioinformatics tools have been installed, test that they work correctly by typing the name of the program with the flag -`h`: 
+5. Once all the bioinformatics tools have been installed, test that they work correctly by typing the name of the program with the flag `-h`: 
    
    ```bash
    mafft -h
