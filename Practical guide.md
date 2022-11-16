@@ -22,7 +22,7 @@ Helicase, *__S: spike__*. Modified from Signal Transduction and Targeted Therapy
 In the fisrt part of this practice you will reconstruct the phylogenetic relationships of a group of sarbecoviruses using different parts of the genome with (partially) different evolutionary histories. This analysis demonstrates that SARS-CoV2 genome is a mosaic and originated after recombination between different strains of sarbecoviruses. In the second part, you will estimate the effect on virus fitness of the minssense mutations (amino acid replacements) acculated in the subvariant BA.1 of Omicron, and compare this effect with the estimated impact for the same positions prior to the emergence of this VOC (all SARS-CoV-2 near full-length genome sequences present in GISAID on 21/11/2021 that passed some quality control checks; [Martin et al. (2022)](https://academic.oup.com/mbe/article/39/4/msac061/6553617)). This analysis in an example of how the accumulation of mutations with  individual fitness costs, but that are adaptive in combination with other mutations, could alter the function of a protein (Spike), while remained completely undetected despite unprecedented global genomic surveillance efforts.
 
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/omicron.jpg" width="1000" heigh="1000">
+<img src="http://www.ub.edu/molevol/CG-MGG/omicron.png" width="1000" heigh="1000">
 </p>
 
 > **Fig. 2** Frecuency of the different SARS-CoV2 variants (colored by Clade) at different time points as given in the Nextstrain analysis (global all-time; last accessed 16/11/2022). The subvariant BA.1 of Omicron correspond to the Clade 21K.
