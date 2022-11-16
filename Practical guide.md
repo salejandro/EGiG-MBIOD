@@ -220,7 +220,7 @@ In this second part of the practice, we are particularly interested in identifyi
    
  </br>
 
-4. The program hyphy estimates synonymous and non-synonymous substitution rates in a maximum likelihood (ML) phylogetic framework. Hence, you need a phylogenetic tree with the relationships among the sequences retained in the previous step after comprising to unique haplotypes. You know how to do htat from the first part of the practice. 
+4. The program hyphy estimates synonymous and non-synonymous substitution rates in a maximum likelihood (ML) phylogetic framework. Hence, you need a phylogenetic tree with the relationships among the sequences retained in the previous step (after comprising to unique haplotypes). You already know how to do that from the first part of the practice: 
 
    ```bash
    raxml-ng --redo --threads 5 --msa ${FILE}.S.uniq.fas --tree pars{5} --model GTR+G+I
