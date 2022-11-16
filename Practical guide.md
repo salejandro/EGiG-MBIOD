@@ -25,7 +25,7 @@ In the fisrt part of this practice you will reconstruct the phylogenetic relatio
 <img src="http://www.ub.edu/molevol/CG-MGG/omicron.png" width="1000" heigh="1000">
 </p>
 
-> **Fig. 2** Frecuency of the different SARS-CoV2 variants (colored by Clade) at different time points as given in the Nextstrain analysis (global all-time; last accessed 16/11/2022). The subvariant BA.1 of Omicron correspond to the Clade 21K.
+> **Fig. 2** Frecuency of the different SARS-CoV2 variants (colored by clade) at different time points as given in the Nextstrain analysis (global all-time; [Nextstrain SARS-CoV-2 resources](https://nextstrain.org/ncov/gisaid/global/all-time), last accessed 16/11/2022). The subvariant BA.1 of Omicron correspond to the clade 21K.
 
 ---
   
