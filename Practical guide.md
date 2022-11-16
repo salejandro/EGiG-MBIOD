@@ -41,17 +41,17 @@ variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You ca
 ### Data files availability:
 
 [Sarbecoviruses](http://www.ub.edu/molevol/CG-MGG/sarbecoviruses.fasta) (FASTA format)  
-[Omicron.BA1](http://www.ub.edu/molevol/CG-MGG/omicron-BA1.fasta) (Compressed FASTA format)
+[Omicron BA1](http://www.ub.edu/molevol/CG-MGG/omicron-BA1.fasta) (Compressed FASTA format)
 ___
 
 ## Software and bioinformatics tools
 
-Before starting the practice, you must create and activate a new conda environment, install all the necesary tools and check that everything works correctly. To do that, open the terminal app in your computers and type:
+1. Before starting the practice, you must (i) create and activate a new conda environment, (ii) install all the necesary tools and (iii) check that everything works correctly. To do that, open the terminal app and type:
 
 ```bash
 conda create --name cgenv python=3.9
 ```
-  > Notice that you are creating an enviroment based on `Python 3.9`. this is an important requirement of some of the utilities that you will use during the practice. You can name the environment whatever you want, as long as you activate the correct environment to work on the rest of the practice
+  > Notice that you are creating an enviroment based on `Python 3.9`. This is an important requirement of some of the utilities that you will use during the practice, and one of the main raisons for which you are using conda. You can name the environment whatever you want, as long as you activate the correct environment to work on the rest of the practice
  
  To activate the environment:
  
@@ -60,41 +60,52 @@ conda activate cgenv
 ```
   > Make sure that your environment is activated (the name of the environment appears in brackets at starting the command line) before moving on to the next steps
 
-Now, you are ready to install the programs and utilities for the practice. For the first part of the practice (sessions on filogenomics), you will need the following tools:
+2. Now, you are ready to install the programs and utilities for the practice. For the first part of the practice (session on filogenomics), you must install the following tools:
 
-**1. `tn93`**    
+   **1. `mafft`**: multiple sequence alignment tool
+   
+   - Linux and Mac:
+   
+   ```bash
+   conda install -c bioconda mafft
+   ```  
+   
+   **2.`raxml-ng`**: Maximum likelihood phylogenetic tree reconstruction
+   
+   - Linux and Mac:
+   
+   ```bash
+   conda install -c bioconda raxml-ng
+   ```
+> You will also use some `Python` scripts that are available in the 'scripts' folder.
 
-Linux and Mac:
+3. For the second part of the practice (session on selective pressures), you must install the following tools:
 
-```bash
-conda install -c bioconda 'tn93>=1.0.7'
-```
+   **1. `tn93`**    
 
-**2.` Bioext`**
+   - Linux and Mac:
+   
+   ```bash
+   conda install -c bioconda 'tn93>=1.0.7'
+   ```
 
-Linux:
+   **2.` Bioext`**
 
-```bash
-conda install -c bioconda python-bioext
-```
+   - Linux:
 
-**Mac and Windows (Linux running on wsl)**
-
-```bash
-pip install ...
-pip install ...
-pip install bioext
-```
-
-
-**3. `raxml-ng`**
-
-Linux and Mac:
-
-```bash
-conda install -c bioconda raxml-ng
-```
-
+   ```bash
+   conda install -c bioconda python-bioext
+   ```
+   or
+   
+   ```bash
+   pip install Bioext
+   ```
+   - Mac:
+   
+   ```bash
+   pip install Bioext
+   ```
 
 In addition to this programs, you will also use the python scripts developed by ...and that you can find in the folder ....
 
