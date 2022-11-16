@@ -153,10 +153,37 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 ## Part 2. Analysis of selection in the BA.1 sublineage
 
-In this second part of the practice, we are particularly interested in identifying Spike amino acids (codon sites) displaying evolutionary patterns that differed between Omicron sublineage BA.1 and other SARS-CoV-2 lineages circulating prior to the emergence of Omicron. These sites likely contributed to the important shifts in BA.1 Spike function that boosted rapid viral adaptation. To do that, you will first apply the codon substitution models implemented in the `hyphy` package to estimate functional constraints acting on non-synonymous sites of this gene after the mergence of Omicron, and then, you will compare your results with those shown in [Martin et al. (2022)](https://academic.oup.com/mbe/article/39/4/msac061/6553617) table 1.
+In this second part of the practice, we are particularly interested in identifying Spike amino acids (codon sites) displaying evolutionary patterns that differed between Omicron sublineage BA.1 and other SARS-CoV-2 lineages circulating prior to the emergence of Omicron. These sites likely contributed to the important shifts in BA.1 Spike function that boosted rapid viral adaptation. To do that, you will first apply the codon substitution models implemented in the `hyphy` package to estimate functional constraints acting on non-synonymous sites of this gene after the mergence of Omicron, and then, you will compare your results with those shown in Table 1.
+
+**Table 1**. Frequencies in non-Omicron SARS-CoV-2 genomes of some Spike amino acid mutations ([Martin et al. (2022)](https://academic.oup.com/mbe/article/39/4/msac061/6553617))
+
+<p align="center">
+<img src="http://www.ub.edu/molevol/CG-MGG/table1.png" width="1000" heigh="1000">
+</p>
+
+You have first to trim down genomic sequences to the S gene neighborhood using a `Python` script:
+
+```bash
+FILE="omicron-BA1.fasta" # rename accordingly
+python3.9 scripts/filter-sites.py $FILE  20000,26000 > ${FILE}.S.raw
+```
+> You trim sequences to this wide range be sure to include the whole S-gene of all the sequences.
 
 
-Identify all sequences that are identical up to ambiguous nucleotides using tn93-cluster (these are the unique haplotypes). tn93-cluster -f -t 0.0 S.mapped.fasta > S.clusters.0.json; python3 python/cluster-processor.py S.clusters.0.json > S.haplo.fasta
+Because the selection analyses gain no or minimal power from including identical or very similar sequences, you will filter BA.1 sequences using pairwise genetic distances. 
+
+To identify and remove all identical sequences up to ambiguous nucleotides:
+
+```bash
+tn93-cluster scripts/exact-copies.py  ${FILE}.S.msa > ${FILE}.u.clusters.json
+$P3 python/cluster-processor.py ${FILE}.u.clusters.json > ${FILE}.S.u.fas
+```
+
+All groups of sequences that were within D genetic distance (Tamura-Nei 93) of every other sequence in the group were represented by a single (randomly chosen) sequence in the group. We set D at 0.0001 for lineage-specific sequence sets, and at 0.0015 for GISAID reference (or “background”) sequence sets. We restricted the reference set of sequences to those sampled before October 15, 2020.
+
+
+
+ using tn93-cluster (these are the unique haplotypes). tn93-cluster -f -t 0.0 S.mapped.fasta > S.clusters.0.json; python3 python/cluster-processor.py S.clusters.0.json > S.haplo.fasta
 
 Reduce the set of unique haplotypes to clusters of sequences that are all within 0.002 genetic distance of one another (tn93-cluster -f -t 0.002 S.haplo.fasta > S.clusters.1.json; python3 python/cluster-processor.py S.clusters.1.json > S.uniq.fasta)
 
