@@ -123,7 +123,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    
    You will also use some `Python` scripts that are available in the 'scripts' folder
    
-5. Once all the bioinformatics tools have been installed, test that they work correctly by typing the name of the program followed bt the flag -`h`: 
+5. Once all the bioinformatics tools have been installed, test that they work correctly by typing the name of the program with the flag -`h`: 
    
    ```bash
    mafft -h
@@ -133,6 +133,8 @@ Before starting the practice, you must (i) create and activate a new conda envir
    bam2msa -h
    hyphy -h
    ```
+   > If the installation has been successful, the options for each program will be listed on the screen
+
 ---
 
 ## 
