@@ -84,7 +84,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    conda install -c bioconda raxml-ng
    ```
 
-  You will also use some `Python` scripts that are available in the 'scripts' folder
+   You will also use some `Python` scripts that are available in the 'scripts' folder
 
 </br>
 
