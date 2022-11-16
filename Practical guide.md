@@ -88,7 +88,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 </br>
 
-4. For the second part of the practice (session on selective pressures), you need a progam to identify and exclude identical and very similar sequences (tn93), tools for codon-guided multiple sequence aligment (bealign and bam2msa - from the Bioext package), a the program to estimate selective constraints on amino acid positions (hyphy):
+4. Finally, for the second part of the practice (session on selective pressures), you need a progam to identify and exclude identical and very similar sequences (tn93), tools for codon-guided multiple sequence aligment (bealign and bam2msa - from the Bioext package), a the program to estimate selective constraints on amino acid positions (hyphy):
 
    **1. `tn93`**    
 
@@ -105,15 +105,12 @@ Before starting the practice, you must (i) create and activate a new conda envir
    ```bash
    conda install -c bioconda python-bioext
    ```
-   or
+   > If you encountered problems with this command in Linux, try to install this tool using pip commands (see instructions for Mac)
    
-   ```bash
-   pip install Bioext
-   ```
    - Mac:
    
    ```bash
-   pip install Bioext
+   pip install Cython pysam Bio Bioext
    ```
    
    **3.` hyphy`**
@@ -125,5 +122,17 @@ Before starting the practice, you must (i) create and activate a new conda envir
    ```
    
    You will also use some `Python` scripts that are available in the 'scripts' folder
+   
+5. Once all the bioinformatics tools have been installed, test that they work correctly by typing the name of the program followed bt the flag -`h`: 
+   
+   ```bash
+   mafft -h
+   raxml-ng -h
+   tn93-cluster -h
+   bealign -h
+   bam2msa -h
+   hyphy -h
+   ```
+---
 
-
+## 
