@@ -40,7 +40,7 @@ variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You ca
 
 ### Data files availability:
 
-[Sarbecoviruses](http://www.ub.edu/molevol/CG-MGG/sarbecoviruses.fasta) (FASTA format)  
+[Sarbecoviruses](http://www.ub.edu/molevol/CG-MGG/sarbecoviruses.fasta) (FASTA format; specifications)  
 [Omicron BA1](http://www.ub.edu/molevol/CG-MGG/omicron-BA1.fasta) (Compressed FASTA format)
 ___
 
@@ -155,7 +155,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 In this second part of the practice, we are particularly interested in identifying Spike amino acids (codon sites) displaying evolutionary patterns that differed between Omicron sublineage BA.1 and other SARS-CoV-2 lineages circulating prior to the emergence of Omicron. These sites likely contributed to the important shifts in BA.1 Spike function that boosted rapid viral adaptation. To do that, you will first apply the codon substitution models implemented in the `hyphy` package to estimate functional constraints acting on non-synonymous sites of this gene after the mergence of Omicron, and then, you will compare your results with those shown in Table 1.
 
-**Table 1**. Frequencies in non-Omicron SARS-CoV-2 genomes of some Spike amino acid mutations ([Martin et al. (2022)](https://academic.oup.com/mbe/article/39/4/msac061/6553617))
+**Table 1**. Frequencies in non-Omicron SARS-CoV-2 genomes of some Spike amino acid mutations ([Martin et al. (2022)](https://academic.oup.com/mbe/article/39/4/msac061/6553617)
 
 <p align="center">
 <img src="http://www.ub.edu/molevol/CG-MGG/table1.png" width="1000" heigh="1000">
@@ -166,8 +166,27 @@ You have first to trim down genomic sequences to the S gene neighborhood using a
 ```bash
 FILE="omicron-BA1.fasta" # rename accordingly
 python3.9 scripts/filter-sites.py $FILE  20000,26000 > ${FILE}.S.raw
+
 ```
 > You trim sequences to this wide range be sure to include the whole S-gene of all the sequences.
+
+Then, you will use `bealign` to align trimmed sarbecorirus sequences to the S-gene of the SARS-CoV2 reference (NC_XXXXXX), using a codon alignment algorithm:
+
+```bash
+bealign -r CoV2-S ${FILE}.S.raw ${FILE}.S.bam
+bam2msa ${FILE}.S.bam ${FILE}.S.msa
+```
+> The output of bealing is in BAM format (BAM specifications). The tool `bam2msa`converts the BAM file to FASTA format.
+
+
+
+
+
+
+
+
+
+
 
 
 Because the selection analyses gain no or minimal power from including identical or very similar sequences, you will filter BA.1 sequences using pairwise genetic distances. 
