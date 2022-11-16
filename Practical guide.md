@@ -161,45 +161,36 @@ In this second part of the practice, we are particularly interested in identifyi
 <img src="http://www.ub.edu/molevol/CG-MGG/table1.png" width="1000" heigh="1000">
 </p>
 
-You have first to trim down genomic sequences to the S gene neighborhood using a `Python` script:
+1. You have first to trim down genomic sequences to the S gene neighborhood using a `Python` script:
 
-```bash
-FILE="omicron-BA1.fasta" # rename accordingly
-python3.9 scripts/filter-sites.py $FILE  20000,26000 > ${FILE}.S.raw
+   ```bash
+   FILE="omicron-BA1.fasta" # rename accordingly
+   python3.9 scripts/filter-sites.py $FILE  20000,26000 > ${FILE}.S.raw
+   ```
+   
+   > You trim sequences to this wide range be sure to include the whole S-gene of all the sequences.
+   
+</br>
 
-```
-> You trim sequences to this wide range be sure to include the whole S-gene of all the sequences.
+2. Then, you will use `bealign` to align trimmed sarbecorirus sequences to the S-gene of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)), using a codon alignment algorithm:
+
+   ```bash
+   bealign -r CoV2-S ${FILE}.S.raw ${FILE}.S.bam
+   bam2msa ${FILE}.S.bam ${FILE}.S.msa
+   ```
+   > The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format.
 
 </br>
 
-Then, you will use `bealign` to align trimmed sarbecorirus sequences to the S-gene of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)), using a codon alignment algorithm:
+3. Because selection analyses gain no or minimal power from including identical or very similar sequences, you will filter BA.1 sequences using pairwise genetic distances. 
 
-```bash
-bealign -r CoV2-S ${FILE}.S.raw ${FILE}.S.bam
-bam2msa ${FILE}.S.bam ${FILE}.S.msa
-```
-> The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format.
+   - To identify and remove all identical sequences up to ambiguous nucleotides:
 
-
-
-
-
-
-
-
-
-
-
-
-Because the selection analyses gain no or minimal power from including identical or very similar sequences, you will filter BA.1 sequences using pairwise genetic distances. 
-
-To identify and remove all identical sequences up to ambiguous nucleotides:
-
-```bash
-tn93-cluster scripts/exact-copies.py  ${FILE}.S.msa > ${FILE}.u.clusters.json
-$P3 python/cluster-processor.py ${FILE}.u.clusters.json > ${FILE}.S.u.fas
-```
-
+   ```bash
+   tn93-cluster scripts/exact-copies.py  ${FILE}.S.msa > ${FILE}.u.clusters.json
+   $P3 python/cluster-processor.py ${FILE}.u.clusters.json > ${FILE}.S.u.fas
+   ```
+</br>
 All groups of sequences that were within D genetic distance (Tamura-Nei 93) of every other sequence in the group were represented by a single (randomly chosen) sequence in the group. We set D at 0.0001 for lineage-specific sequence sets, and at 0.0015 for GISAID reference (or “background”) sequence sets. We restricted the reference set of sequences to those sampled before October 15, 2020.
 
 
