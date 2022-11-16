@@ -190,7 +190,6 @@ In this second part of the practice, we are particularly interested in identifyi
    python3.9 scripts/exact-copies.py  ${FILE}.S.msa > ${FILE}.u.clusters.json
    python3.9 scripts/cluster-processor.py ${FILE}.u.clusters.json > ${FILE}.S.u.fas
    ```
-</br>
 
    - To identify and remove all remaining sequences that are within t= 0.0 ([Tamura-Nei 93](https://pubmed.ncbi.nlm.nih.gov/8336541/) distance) genetic distance:
 
@@ -198,7 +197,6 @@ In this second part of the practice, we are particularly interested in identifyi
    tn93-cluster -t 0.0 ${FILE}.S.u.fas > ${FILE}.t0.clusters.json
    python3.9 scripts/cluster-processor.py ${FILE}.t0.clusters.json > ${FILE}.S.all.fas
    ```
-</br>
 
    - To reduce the set of sequences to clusters that are all within t=0.002 distance of one another:
 
@@ -206,7 +204,6 @@ In this second part of the practice, we are particularly interested in identifyi
    tn93-cluster -t 0.00075 ${FILE}.S.all.fas > ${FILE}.t1.clusters.json
    python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json > ${FILE}.S.uniq.fas
    ```
-</br>
 
    - To identify and remove outliers, low quality or misclassified sequences that are t=0.0075 away from the gererated clusters:
 
