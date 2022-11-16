@@ -8,7 +8,6 @@ The biological model used in this practices are Sarbecoviruses,and more specific
 
 </br>
 </br>
-</br>
 
 <p align="center">
 <img src="http://www.ub.edu/molevol/CG-MGG/sars2.png" width="1000" heigh="1000">
@@ -19,11 +18,8 @@ Helicase, *__S: spike__*. Modified from Signal Transduction and Targeted Therapy
 
 </br>
 </br>
-</br>
 
 In the fisrt part of this practice you will reconstruct the phylogenetic relationships of a group of sarbecoviruses using different parts of the genome...In the second part, you will estimate the effect on virus fitness of the minssense mutations (amino acid replacements) accuulated in the subvariant BA.1 of omicron. You will compare....
-
-
 
 ---
   
