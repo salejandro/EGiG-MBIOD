@@ -66,9 +66,9 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 </br>
 
-3. Now, you are ready to install the programs and utilities for the practice. For the first part of the practice (session on filogenomics), you must install the following tools:
+3. Now, you are ready to install the programs and utilities for the practice. For the first part of the practice (session on filogenomics), you need tools for multiple sequence alignment (mafft) and maximum likelihood phylogenetic reconstruction (raxml-ng):
 
-   **1. `mafft`**: multiple sequence alignment tool
+   **1. `mafft`**
    
    - Linux and Mac:
    
@@ -76,7 +76,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    conda install -c bioconda mafft
    ```  
    
-   **2.`raxml-ng`**: Maximum likelihood phylogenetic tree reconstruction
+   **2.`raxml-ng`**
    
    - Linux and Mac:
    
@@ -84,11 +84,11 @@ Before starting the practice, you must (i) create and activate a new conda envir
    conda install -c bioconda raxml-ng
    ```
 
-   > You will also use some `Python` scripts that are available in the 'scripts' folder
+  You will also use some `Python` scripts that are available in the 'scripts' folder
 
 </br>
 
-4. For the second part of the practice (session on selective pressures), you must install the following tools:
+4. For the second part of the practice (session on selective pressures), you need a progam to identify and exclude identical and very similar sequences (tn93), tools for codon-guided multiple sequence aligment (bealign and bam2msa - from the Bioext package), a the program to estimate selective constraints on amino acid positions (hyphy):
 
    **1. `tn93`**    
 
@@ -115,7 +115,15 @@ Before starting the practice, you must (i) create and activate a new conda envir
    ```bash
    pip install Bioext
    ```
+   
+   **3.` hyphy`**
 
-In addition to this programs, you will also use the python scripts developed by ...and that you can find in the folder ....
+   - Linux and Mac:
+
+   ```bash
+   conda install -c bioconda hyphy
+   ```
+   
+   You will also use some `Python` scripts that are available in the 'scripts' folder
 
 
