@@ -40,8 +40,8 @@ variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You ca
 
 ### Data files availability:
 
-[Sarbecoviruses](http://www.ub.edu/molevol/CG-MGG/sarbecoviruses.fasta) (FASTA format; specifications)  
-[Omicron BA1](http://www.ub.edu/molevol/CG-MGG/omicron-BA1.fasta) (Compressed FASTA format)
+[Sarbecoviruses](http://www.ub.edu/molevol/CG-MGG/sarbecoviruses.fasta) ([FASTA format](https://es.wikipedia.org/wiki/Formato_FASTA))  
+[Omicron BA1](http://www.ub.edu/molevol/CG-MGG/omicron-BA1.fasta) (FASTA format)
 ___
 
 ## Software and bioinformatics tools
@@ -170,13 +170,15 @@ python3.9 scripts/filter-sites.py $FILE  20000,26000 > ${FILE}.S.raw
 ```
 > You trim sequences to this wide range be sure to include the whole S-gene of all the sequences.
 
-Then, you will use `bealign` to align trimmed sarbecorirus sequences to the S-gene of the SARS-CoV2 reference (NC_XXXXXX), using a codon alignment algorithm:
+</br>
+
+Then, you will use `bealign` to align trimmed sarbecorirus sequences to the S-gene of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)), using a codon alignment algorithm:
 
 ```bash
 bealign -r CoV2-S ${FILE}.S.raw ${FILE}.S.bam
 bam2msa ${FILE}.S.bam ${FILE}.S.msa
 ```
-> The output of bealing is in BAM format (BAM specifications). The tool `bam2msa`converts the BAM file to FASTA format.
+> The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format.
 
 
 
