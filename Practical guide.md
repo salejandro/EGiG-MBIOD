@@ -70,7 +70,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 3.  Now, you are ready to install the programs and utilities for the practice. For the first part of the practice (session on filogenomics), you need tools for multiple sequence alignment (mafft) and maximum likelihood phylogenetic reconstruction (raxml-ng):
 
-   **1. `mafft`**
+   1. **`mafft`**
    
    - Linux and Mac:
    
@@ -78,7 +78,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    conda install -c bioconda mafft
    ```  
    
-   **2.`raxml-ng`**
+   2.**`raxml-ng`**
    
    - Linux and Mac:
    
@@ -91,7 +91,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
  
 4.  Finally, for the second part of the practice (session on selective pressures), you need a progam to identify and exclude identical and very similar sequences (tn93), tools for codon-guided multiple sequence aligment (bealign and bam2msa - from the Bioext package), a the program to estimate selective constraints on amino acid positions (hyphy):
 
-   **1. `tn93`**    
+   1. **`tn93`**    
 
    - Linux and Mac:
    
@@ -99,7 +99,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    conda install -c bioconda 'tn93>=1.0.7'
    ```
 
-   **2.` Bioext`**
+   2.**` Bioext`**
 
    - Linux and Mac:
    
@@ -107,7 +107,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    pip install Cython numpy Bio Bioext
    ```
    
-   **3.` hyphy`**
+   3.**` hyphy`**
 
    - Linux and Mac:
 
