@@ -1,5 +1,7 @@
 <p align="center">
 <img src="http://www.ub.edu/molevol/CG-MGG/UB-biol-150.jpg" width="500">  
+</p>
+<p align="center">
 <img src="http://www.ub.edu/molevol/CG-MGG/master.png" width="500">
 </p>
 
