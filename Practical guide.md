@@ -78,7 +78,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    conda install -c bioconda mafft
    ```  
    
-   ii.**`raxml-ng`**
+   ii. **`raxml-ng`**
    
    - Linux and Mac:
    
@@ -99,7 +99,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    conda install -c bioconda 'tn93>=1.0.7'
    ```
 
-  iv.**` Bioext`**
+  iv. **`Bioext`**
 
    - Linux and Mac:
    
@@ -107,7 +107,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    pip install Cython numpy Bio Bioext
    ```
    
-   v.**` hyphy`**
+   v. **`hyphy`**
 
    - Linux and Mac:
 
