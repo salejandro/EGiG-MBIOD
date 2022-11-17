@@ -70,7 +70,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 3.  Now, you are ready to install the programs and utilities for the practice. For the first part of the practice (session on filogenomics), you need tools for multiple sequence alignment (mafft) and maximum likelihood phylogenetic reconstruction (raxml-ng):
 
-   1. **`mafft`**
+   i. **`mafft`**
    
    - Linux and Mac:
    
