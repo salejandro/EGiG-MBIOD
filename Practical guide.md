@@ -48,7 +48,7 @@ ___
 
 ## Software and bioinformatics tools
 
-Before starting the practice, you must (i) create and activate a new conda environment, (ii) install all the necesary tools and (iii) check that everything works correctly.
+Before starting the practice, you must (i) create and activate a new conda environment, (ii) install all the necesary tools and (iii) check that everything works correctly. The reason for installing and working in a conda environment is to perform the computer lab in a stable environment with a specific python version (3.9), which is a requirement for some of the tools that will be used in the practice, as well as to make installation of major programs easier (hyphy and raxml-ng), avoiding the complexity of software compilation on different operating systems with different configurations.
 
 1.  To create the environment, open the terminal app and type:
 
