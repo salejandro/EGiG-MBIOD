@@ -1,4 +1,5 @@
-# Comparative Genomics - Master in Genetics and Genomics
+# Master in Genetics and Genomics
+# Comparative Genomics
 
 ## Introduction
 
