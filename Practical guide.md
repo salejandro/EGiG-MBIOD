@@ -141,13 +141,15 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 ## Part 1. Phylogenetic analyses
 
-### Multiple sequence aligment   
+### Workflow  
+
+1. Multiple sequence alignment
    
    ```bash
    mafft ....
    ``` 
 
-### Phylogenetic tree
+2. Phylogenetic tree
 
    ```bash
    raxml-ng ....
