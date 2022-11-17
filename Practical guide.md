@@ -155,7 +155,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 In this second part of the practice, we are particularly interested in identifying Spike amino acids (codon sites) displaying evolutionary patterns that differed between Omicron sublineage BA.1 and other SARS-CoV-2 lineages circulating prior to the emergence of Omicron. These sites likely contributed to the important shifts in BA.1 Spike function that boosted rapid viral adaptation. To do that, you will first apply the codon substitution models implemented in the `hyphy` package to estimate functional constraints acting on non-synonymous sites of this gene after the mergence of Omicron, and then, you will compare your results with those shown in Table 1.
 
-**Table 1**. Frequencies in non-Omicron SARS-CoV-2 genomes of some Spike amino acid mutations ([Martin et al. (2022)](https://academic.oup.com/mbe/article/39/4/msac061/6553617)
+**Table 1**. Frequencies in non-Omicron SARS-CoV-2 genomes of some Spike amino acid mutations ([Martin et al. (2022)](https://academic.oup.com/mbe/article/39/4/msac061/6553617))
 
 <p align="center">
 <img src="http://www.ub.edu/molevol/CG-MGG/table1.png" width="800" heigh="800">
