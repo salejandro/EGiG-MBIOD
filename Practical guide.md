@@ -165,6 +165,8 @@ In the second part of the practice, we are particularly interested in identifyin
 
 </br>
 
+### Workflow:
+
 1. You have first to trim down genomic sequences to the S gene neighborhood using a `Python` script:
 
    ```bash
