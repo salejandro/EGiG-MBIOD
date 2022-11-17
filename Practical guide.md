@@ -1,5 +1,8 @@
-# Master in Genetics and Genomics
-# Comparative Genomics
+<p align="center">
+<img src="http://www.ub.edu/molevol/CG-MGG/ub-biol-150.png">
+</p>
+
+# Comparative Genomics - Master in Genetics and Genomics
 
 ## Introduction
 
