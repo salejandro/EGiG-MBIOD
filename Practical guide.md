@@ -35,9 +35,9 @@ In the fisrt part of this practice you will reconstruct the phylogenetic relatio
 
 The genome sequences for this practice were retrieved either from [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) or [GISAID](https://gisaid.org/) database and correspond to:
 
-1. The genomic sequences of the Sarbecoviruses used for figure 1 in [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4), excluding 'Wuhan/IME-WH01/2019' (which is identical to the reference sequence 'Wuhan-Hu-1 China 2019'), and '_R. malayanus_ RmYN02 China 2019' (which is not complete)
+1.  The genomic sequences of the Sarbecoviruses used for figure 1 in [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4), excluding 'Wuhan/IME-WH01/2019' (which is identical to the reference sequence 'Wuhan-Hu-1 China 2019'), and '_R. malayanus_ RmYN02 China 2019' (which is not complete)
 
-2. A subset of 4717 high-quality genomes of the BA.1
+2.  A subset of 4717 high-quality genomes of the BA.1
 variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You can find the metadata associated with these genomes in the file BA.1.metadata, and the instructions for retrieve these sequences in the file [omicron_seqs.md](https://github.com/salejandro/Comparative-Genomics-MGG/blob/main/omicron_seqs.md).
 
 ### Data files availability:
@@ -50,7 +50,7 @@ ___
 
 Before starting the practice, you must (i) create and activate a new conda environment, (ii) install all the necesary tools and (iii) check that everything works correctly.
 
-1. To create the environment, open the terminal app and type:
+1.  To create the environment, open the terminal app and type:
 
    ```bash
    conda create --name cgenv python=3.9
@@ -59,7 +59,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 </br>
  
-2. To activate the environment:
+2.  To activate the environment:
  
    ```bash
    conda activate cgenv 
@@ -68,7 +68,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 </br>
 
-3. Now, you are ready to install the programs and utilities for the practice. For the first part of the practice (session on filogenomics), you need tools for multiple sequence alignment (mafft) and maximum likelihood phylogenetic reconstruction (raxml-ng):
+3.  Now, you are ready to install the programs and utilities for the practice. For the first part of the practice (session on filogenomics), you need tools for multiple sequence alignment (mafft) and maximum likelihood phylogenetic reconstruction (raxml-ng):
 
    **1. `mafft`**
    
@@ -88,8 +88,8 @@ Before starting the practice, you must (i) create and activate a new conda envir
    > You will also use some `Python` scripts that are available in the 'scripts' folder
 
 </br>
-
-4. Finally, for the second part of the practice (session on selective pressures), you need a progam to identify and exclude identical and very similar sequences (tn93), tools for codon-guided multiple sequence aligment (bealign and bam2msa - from the Bioext package), a the program to estimate selective constraints on amino acid positions (hyphy):
+ 
+4.  Finally, for the second part of the practice (session on selective pressures), you need a progam to identify and exclude identical and very similar sequences (tn93), tools for codon-guided multiple sequence aligment (bealign and bam2msa - from the Bioext package), a the program to estimate selective constraints on amino acid positions (hyphy):
 
    **1. `tn93`**    
 
@@ -118,7 +118,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 </br>
    
-5. Once all the bioinformatics tools have been installed, test that they work correctly by typing the name of the program with the flag `-h`: 
+5.  Once all the bioinformatics tools have been installed, test that they work correctly by typing the name of the program with the flag `-h`: 
    
    ```bash
    mafft -h
@@ -136,13 +136,13 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 ### Workflow  
 
-1. Multiple sequence alignment
+1.  Multiple sequence alignment
    
    ```bash
    mafft ....
    ``` 
 
-2. Phylogenetic tree
+2.  Phylogenetic tree
 
    ```bash
    raxml-ng ....
@@ -162,7 +162,7 @@ In the second part of the practice, we are particularly interested in identifyin
 
 ### Workflow:
 
-1. You have first to trim down genomic sequences to the S gene neighborhood using a `Python` script:
+1.  You have first to trim down genomic sequences to the S gene neighborhood using a `Python` script:
 
    ```bash
    FILE="omicron-BA1.fasta" # rename accordingly
@@ -173,7 +173,7 @@ In the second part of the practice, we are particularly interested in identifyin
    
 </br>
 
-2. Then, you will use `bealign` to align trimmed sarbecorirus sequences to the S-gene of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)), using a codon alignment algorithm:
+2.  Then, you will use `bealign` to align trimmed sarbecorirus sequences to the S-gene of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)), using a codon alignment algorithm:
 
    ```bash
    bealign -r CoV2-S ${FILE}.S.raw ${FILE}.S.bam
@@ -183,7 +183,7 @@ In the second part of the practice, we are particularly interested in identifyin
 
 </br>
 
-3. Because selection analyses gain no or minimal power from including identical or very similar sequences, you will filter BA.1 sequences using pairwise genetic distances. To do that, you will use some `Python` scripts and the program `tn93`:
+3.  Because selection analyses gain no or minimal power from including identical or very similar sequences, you will filter BA.1 sequences using pairwise genetic distances. To do that, you will use some `Python` scripts and the program `tn93`:
 
    - To identify and remove all identical sequences up to ambiguous nucleotides:
 
@@ -221,7 +221,7 @@ In the second part of the practice, we are particularly interested in identifyin
    
  </br>
 
-4. The program hyphy estimates synonymous and non-synonymous substitution rates in a maximum likelihood (ML) phylogetic framework. Hence, you need a phylogenetic tree with the relationships among the sequences retained in the previous step (after comprising to unique haplotypes). You already know how to do that from the first part of the practice: 
+4.  The program hyphy estimates synonymous and non-synonymous substitution rates in a maximum likelihood (ML) phylogetic framework. Hence, you need a phylogenetic tree with the relationships among the sequences retained in the previous step (after comprising to unique haplotypes). You already know how to do that from the first part of the practice: 
 
    ```bash
    raxml-ng --redo --threads 5 --msa ${FILE}.S.uniq.fas --tree pars{5} --model GTR+G+I
