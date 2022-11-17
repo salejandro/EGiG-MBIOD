@@ -101,17 +101,10 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
    **2.` Bioext`**
 
-   - Linux:
-
-   ```bash
-   conda install -c bioconda python-bioext
-   ```
-   > If you encountered problems with this command in Linux, try to install this tool using pip commands (see instructions for Mac)
-   
-   - Mac:
+   - Linux and Mac:
    
    ```bash
-   pip install Cython pysam Bio Bioext
+   pip install Cython numpy Bio Bioext
    ```
    
    **3.` hyphy`**
