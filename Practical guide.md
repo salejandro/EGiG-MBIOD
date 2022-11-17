@@ -1,5 +1,5 @@
 <p align="center">
-Master in Genetics and Genomics<img src="http://www.ub.edu/molevol/CG-MGG/UB-biol-150.jpg" width="500">
+# Master in Genetics and Genomics<img src="http://www.ub.edu/molevol/CG-MGG/UB-biol-150.jpg" width="500">
 </p>
 
 # Comparative Genomics
