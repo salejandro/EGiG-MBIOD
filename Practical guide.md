@@ -1,4 +1,4 @@
-<p align="center">
+<p align="right">
 <img src="http://www.ub.edu/molevol/CG-MGG/UB-biol-150.jpg" width="700">  
 </p>
 <p align="center">
