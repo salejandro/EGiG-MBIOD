@@ -1,8 +1,8 @@
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/UB-biol-150.jpg" width="500">  
+<img src="http://www.ub.edu/molevol/CG-MGG/UB-biol-150.jpg"">  
 </p>
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/master.png" width="500">
+<img src="http://www.ub.edu/molevol/CG-MGG/master.png">
 </p>
 
 # Comparative Genomics
