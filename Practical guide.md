@@ -158,7 +158,7 @@ In this second part of the practice, we are particularly interested in identifyi
 **Table 1**. Frequencies in non-Omicron SARS-CoV-2 genomes of some Spike amino acid mutations ([Martin et al. (2022)](https://academic.oup.com/mbe/article/39/4/msac061/6553617)
 
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/table1.png" width="700" heigh="7000">
+<img src="http://www.ub.edu/molevol/CG-MGG/table1.png" width="800" heigh="800">
 </p>
 
 1. You have first to trim down genomic sequences to the S gene neighborhood using a `Python` script:
