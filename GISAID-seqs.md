@@ -4,9 +4,13 @@
 
 ![Downloads](http://www.ub.edu/molevol/CG-MGG/downloads.png)
 
+---
+
 2. Select 'Custom selection' option. 
 
 ![Downloads](http://www.ub.edu/molevol/CG-MGG/custom.png)
+
+---
 
 3. In 'Lineage', select only BA.1 sequences (first omicron variant), and restrict to 'Complete', 'High coverage', and with 'Collection date complete' records. Select all sequences and press 'Download'
 
