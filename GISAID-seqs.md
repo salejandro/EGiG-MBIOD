@@ -1,6 +1,6 @@
 # Retrieving Omicron sequences from GISAID
 
-1. After login in GISAID, go to the 'Downloads' section:
+1. After login in GISAID, go to the **Downloads** section:
 
 <p align="center">
 <img src="http://www.ub.edu/molevol/CG-MGG/downloads.png" width="800">
@@ -8,15 +8,15 @@
 
 ---
 
-2. Select 'Custom selection' option:
+2. Select **Custom selection** option:
 
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/custom.png)"  width="800">
+<img src="http://www.ub.edu/molevol/CG-MGG/custom.png"  width="800">
 </p>
 
 ---
 
-3. In 'Lineage', select only BA.1 sequences (first omicron variant), and restrict to 'Complete', 'High coverage', and with 'Collection date complete' records. Select all sequences and press 'Download':
+3. In 'Lineage', select only **BA.1** sequences (first omicron variant), and restrict to **Complete**, **High coverage**, and with **Collection date complete** records. Select all sequences and press **Download**:
 
 <p align="center">
 <img src="http://www.ub.edu/molevol/CG-MGG/selection.png"  width="800">
