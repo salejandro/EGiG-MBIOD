@@ -42,7 +42,7 @@ In the fisrt part of this practice you will reconstruct the phylogenetic relatio
 
 The genome sequences for this practice were retrieved either from [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) or [GISAID](https://gisaid.org/) database and correspond to:
 
-1.  The genomic sequences of the Sarbecoviruses used for figure 1 in [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4), excluding 'Wuhan/IME-WH01/2019' (which is identical to the reference sequence 'Wuhan-Hu-1 China 2019'), and '_R. malayanus_ RmYN02 China 2019' (which is not complete)
+1.  The genomic sequences of the Sarbecoviruses used for Figure 1 in [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4), excluding 'Wuhan/IME-WH01/2019' (which is identical to the reference sequence 'Wuhan-Hu-1 China 2019'), and '_R. malayanus_ RmYN02 China 2019' (which is not complete)
 
 2.  A subset of 4717 high-quality genomes of the BA.1
 variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You can find the metadata associated with these genomes in the file BA.1.metadata, and the instructions for retrieve these sequences in the file [omicron_seqs.md](https://github.com/salejandro/Comparative-Genomics-MGG/blob/main/omicron_seqs.md).
