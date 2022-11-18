@@ -234,3 +234,4 @@ In the second part of the practice, we are particularly interested in identifyin
    raxml-ng --redo --threads 5 --msa ${FILE}.S.uniq.fas --tree pars{5} --model GTR+G+I
    ```
     
+To visualize json reusults use [hyphy-vision tool](http://vision.hyphy.org/)
