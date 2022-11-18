@@ -30,7 +30,7 @@ In the fisrt part of this practice you will reconstruct the phylogenetic relatio
 
 </br>
 
-<p align="center">
+<p align="left">
 <img src="http://www.ub.edu/molevol/CG-MGG/omicronfreq.png" width="1000" heigh="1000">
 </p>
 
