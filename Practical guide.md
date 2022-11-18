@@ -17,7 +17,7 @@ The biological model used in this practices are Sarbecoviruses, and more specifi
 </br>
 
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/sars2.png" width="800" heigh="800">
+<img src="http://www.ub.edu/molevol/CG-MGG/sars2.png" width="900" heigh="900">
 </p>
 
 > **Fig. 1** Schematic diagrams of the SARS-CoV-2 virus particle (a) and genome (b). The genome encodes sixteen nonstructural proteins (nsp1–11, 12–16) and six accessory proteins. Plpro: papain like protease, 3CLPro: 3C-like proteinase, *__RdRp: RNA-dependent RNA polymerase__*, Hel:
