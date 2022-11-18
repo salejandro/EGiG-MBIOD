@@ -31,7 +31,7 @@ In the fisrt part of this practice you will reconstruct the phylogenetic relatio
 </br>
 
 <p align="left">
-<img src="http://www.ub.edu/molevol/CG-MGG/omicronfreq.png" width="1000" heigh="1000">
+<img src="http://www.ub.edu/molevol/CG-MGG/omicronfreq.png" width="800" heigh="800">
 </p>
 
 > **Fig. 2** Frecuency of the different SARS-CoV2 variants (colored by clade) at different time points as given in the Latest global SARS-CoV-2 analysis with GISAID data ([Nextstrain SARS-CoV-2 resources](https://nextstrain.org/ncov/gisaid/global/all-time), last accessed 16/11/2022). The sublineage BA.1 of Omicron correspond to the clade 21K.
