@@ -3,7 +3,7 @@
 1. After login in GISAID, go to the 'Downloads' section:
 
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/downloads.png">
+<img src="http://www.ub.edu/molevol/CG-MGG/downloads.png" width="900">
 </p>
 
 ---
