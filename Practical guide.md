@@ -164,6 +164,8 @@ Before starting the practice, you must (i) create and activate a new conda envir
    raxml-ng ....
    ``` 
 
+---
+
 </br>
 
 ## Part 2. Analysis of selection in the BA.1 sublineage
