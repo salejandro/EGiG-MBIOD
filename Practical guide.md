@@ -159,15 +159,27 @@ Phylogenomics aims at establishing the evolutionary relationships between organi
 <img src="http://www.ub.edu/molevol/CG-MGG/rec.png" width="900">
 </p>
 
-> **Fig. 3** Recombination events estimated in the evolutionary history of Sarbecoviruses. Modified from [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4).
+> **Fig. 3.** Recombination events estimated in the evolutionary history of Sarbecoviruses. Modified from [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4).
 
 </br>
 
-To ilustrate the different evolutionary history of some viral genome regions, you will conduct a ML phylogenetic analysis of the nucleotide sequences of two recombination fragments: the fragment including the RNA polymerase and the helicase (fragment x in Fig. 3), and the fragment that includes most of the S-gene (fragment x in Fig.3) of representative human, bat, and pangolin Sarbecoviruses. These two fragments encode proteins with very different functions, which is clearly reflected in their contrasting evolutionary rates.
+To ilustrate the different evolutionary history of some viral genome regions, you will conduct a ML phylogenetic analysis of the nucleotide sequences of two recombination fragments: the fragment that encodes, among others, the RNA-dependent RNA polymerase and the Helicase of the virus (fragment 7 in Fig. 3), and the fragment that encodes most of the S-gene (fragment 11 in Fig.3), of representative human, bat, and pangolin Sarbecoviruses. These two fragments encode proteins with very different functions, which is clearly reflected in their contrasting evolutionary rates.
 
 ### Workflow  
 
-1.  Multiple sequence alignment
+1.  You have first to trim down Sarbecoviruses genomic sequences to the recombination fragments neighborhoods using a `Python` script:
+
+   ```bash
+   # Fragment 7:
+   FILE="xxxxx.fasta" # rename accordingly
+   python3.9 scripts/filter-sites.py $FILE  12000,18000 > ${FILE}.f7.fasta
+   
+   # Fragment 11:
+   FILE="xxxxx.fasta" # rename accordingly
+   python3.9 scripts/filter-sites.py $FILE  22000,25000 > ${FILE}.f11.fasta
+   ``` 
+
+3.  Now you can build a multiple sequence alignment for each fragment:
    
    ```bash
    mafft ....
