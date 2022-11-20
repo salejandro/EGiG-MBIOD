@@ -156,7 +156,7 @@ Phylogenomics aims at establishing the evolutionary relationships between organi
 </br>
 
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/rec.png" width="900">
+<img src="http://www.ub.edu/molevol/CG-MGG/rec.png">
 </p>
 
 > **Fig. 3** HHHH
