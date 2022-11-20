@@ -64,7 +64,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    ```bash
    conda create --name cgenv python=3.9
    ```
-      > The name of the environment is your own choice, as long as you activate the correct environment to work on the rest of the practice
+       > The name of the environment is your own choice, as long as you activate the correct environment to work on the rest of the practice
 
 </br>
  
