@@ -39,8 +39,6 @@ In the fisrt part of this practice you will reconstruct the phylogenetic relatio
 
 </br>
 </br>
-
----
   
 ## Data
 
