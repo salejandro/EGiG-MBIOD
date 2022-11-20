@@ -183,16 +183,15 @@ To ilustrate the different evolutionary history of some viral genome regions, yo
    
    ```bash
    mafft ${FILE}.f7.fasta > ${FILE}.f7.msa
-   
    mafft ${FILE}.f11.fasta > ${FILE}.f11.msa
    ``` 
 
 2.  Finally, you will use `raxml-ng` to obtain ML phylogenetic trees:
 
    ```bash
-   raxml-ng ...
-   
-   raxml-ng ...
+   threads=4
+   raxml-ng --redo --threads $threads --msa ${FILE}.f7.msa --tree pars{5} --model GTR+G+I
+   raxml-ng --redo --threads $threads --msa ${FILE}.f11.msa --tree pars{5} --model GTR+G+I
    ``` 
 
 ---
@@ -277,7 +276,7 @@ In the second part of the practice, we are particularly interested in identifyin
 4.  The program hyphy estimates synonymous and non-synonymous substitution rates in a maximum likelihood (ML) phylogetic framework. Hence, you need a phylogenetic tree with the relationships among the sequences retained in the previous step (after comprising to unique haplotypes). You already know how to do that from the first part of the practice: 
 
    ```bash
-   raxml-ng --redo --threads 5 --msa ${FILE}.S.uniq.fas --tree pars{5} --model GTR+G+I
+   raxml-ng --redo --threads $theads --msa ${FILE}.S.uniq.fas --tree pars{5} --model GTR+G+I
    ```
     
 To visualize json reusults use [hyphy-vision tool](http://vision.hyphy.org/)
