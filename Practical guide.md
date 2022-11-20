@@ -171,11 +171,11 @@ To ilustrate the different evolutionary history of some viral genome regions, yo
 
    ```bash
    # Fragment 7:
-   FILE="xxxxx.fasta" # rename accordingly
+   FILE="sarbecoviruses.fasta" # rename accordingly
    python3.9 scripts/filter-sites.py $FILE  12000,18000 > ${FILE}.f7.fasta
    
    # Fragment 11:
-   FILE="xxxxx.fasta" # rename accordingly
+   FILE="sarbecoviruses.fasta" # rename accordingly
    python3.9 scripts/filter-sites.py $FILE  22000,25000 > ${FILE}.f11.fasta
    ``` 
 
