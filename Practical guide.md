@@ -7,6 +7,7 @@
 
 # Comparative Genomics
 
+</br>
 ## Introduction
 
 The objective of these sessions is to increase your understanding of the main concepts behind evolutionary inference by doing some practical worl with a representation (just a few examples) of the state-of-the-art computational tools to estimate phylogenetic relationships between genes and genomes, and to determine the functional consequences of mutations in these sequences. This fundamental knowledge has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
@@ -37,6 +38,8 @@ In the fisrt part of this practice you will reconstruct the phylogenetic relatio
 > **Fig. 2** Frecuency of the different SARS-CoV2 variants (colored by clade) at different time points as given in the Latest global SARS-CoV-2 analysis with GISAID data ([Nextstrain SARS-CoV-2 resources](https://nextstrain.org/ncov/gisaid/global/all-time); last accessed 16/11/2022). The sublineage BA.1 of Omicron correspond to the clade 21K.
 
 ---
+
+</br>
   
 ## Data
 
@@ -52,6 +55,8 @@ variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You ca
 [Sarbecoviruses](http://www.ub.edu/molevol/CG-MGG/sarbecoviruses.fasta) ([FASTA format](https://es.wikipedia.org/wiki/Formato_FASTA))  
 [Omicron BA1](http://www.ub.edu/molevol/CG-MGG/omicron-BA1.fasta) (FASTA format)
 ___
+
+</br>
 
 ## Software installation
 
