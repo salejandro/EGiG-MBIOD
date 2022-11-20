@@ -163,7 +163,7 @@ Phylogenomics aims at establishing the evolutionary relationships between organi
 
 </br>
 
-To ilustrate the different evolutionary hisory of some of these recombinant fragments, you will ...
+To ilustrate the different evolutionary history of some viral genome regions, you will conduct a ML phylogenetic analysis of the nucleotide sequences of two recombination fragments: the fragment including the RNA polymerase and the helicase (fragment x in Fig. 3), and the fragment that includes most of the S-gene (fragment x in Fig.3) of representative human, bat, and pangolin Sarbecoviruses. These two fragments encode proteins with very different functions, which is clearly reflected in their contrasting evolutionary rates.
 
 ### Workflow  
 
