@@ -165,7 +165,7 @@ Phylogenomics aims at establishing the evolutionary relationships between organi
 
 To ilustrate the different evolutionary history of some viral genome regions, you will conduct a ML phylogenetic analysis of the nucleotide sequences of two recombination fragments: the fragment that encodes, among others, the RNA-dependent RNA polymerase and the Helicase of the virus (fragment 7 in Fig. 3), and the fragment that encodes most of the S-gene (fragment 11 in Fig.3), of representative human, bat, and pangolin Sarbecoviruses. These two fragments encode proteins with very different functions, which is clearly reflected in their contrasting evolutionary rates.
 
-### Workflow  
+### Workflow:
 
 1.  You have first to trim down Sarbecoviruses genomic sequences to the recombination fragments neighborhoods using a `Python` script:
 
@@ -179,16 +179,20 @@ To ilustrate the different evolutionary history of some viral genome regions, yo
    python3.9 scripts/filter-sites.py $FILE  22000,25000 > ${FILE}.f11.fasta
    ``` 
 
-3.  Now you can build a multiple sequence alignment for each fragment:
+3.  Now you can build a multiple sequence alignment for each fragment using `mafft`:
    
    ```bash
-   mafft ....
+   mafft ${FILE}.f7.fasta > ${FILE}.f7.msa
+   
+   mafft ${FILE}.f11.fasta > ${FILE}.f11.msa
    ``` 
 
-2.  Phylogenetic tree
+2.  Finally, you will use `raxml-ng` to obtain ML phylogenetic trees:
 
    ```bash
-   raxml-ng ....
+   raxml-ng ...
+   
+   raxml-ng ...
    ``` 
 
 ---
