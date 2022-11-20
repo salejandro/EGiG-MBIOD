@@ -150,13 +150,13 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 ## Part 1. Phylogenetic analyses
 
-Phylogenomics aims at establishing the evolutionary relationships between organims using genome data. However, not all parts of a genome evolve at the same rate or completely independently since their split from a common ancestor, due to, for example, past recombination events or strong positive selection acting differentially on particular genes, which cause phylogenies to reflect different histories. Sarbecoviruses genomes, including that of SARS-CoV2, are not an exception. At least 15 recombinant fragments have been identified in the most relevant genome of this group of viruses. In fact, SARS-CoV-2 genomes show recombination events from different donor Sarbecoviruses, some of them spanning functionally important domains of Spike, which point to their putative adaptive nature.
+Phylogenomics aims at establishing the evolutionary relationships between organims using genome data. However, not all parts of a genome evolve at the same rate or completely independently since their split from a common ancestor, due to, for example, past recombination events or strong positive selection acting differentially on particular genes and lineages. These scenarios may cause phylogenies to reflect different histories across the genome. Sarbecoviruses genomes, including SARS-CoV2, are not an exception. At least 15 recombinant fragments have been identified when comparing most relevant Sarbecoviruses genomes. In fact, SARS-CoV-2 show recombination events from different donor Sarbecoviruses strains, some of them spanning functionally important domains of the protein Spike, which point to their putative adaptive nature.
 
 </br>
 </br>
 
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/rec.png">
+<img src="http://www.ub.edu/molevol/CG-MGG/rec.png" weitgh="800">
 </p>
 
 > **Fig. 3** Recombination events estimated in the evolutionary history of Sarbecoviruses. Modified from [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4).
