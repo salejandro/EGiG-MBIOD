@@ -64,7 +64,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    ```bash
    conda create --name cgenv python=3.9
    ```
-   > The name of the environment is your own choice, as long as you activate the correct environment to work on the rest of the practice
+      > The name of the environment is your own choice, as long as you activate the correct environment to work on the rest of the practice
 
 </br>
  
@@ -73,7 +73,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    ```bash
    conda activate cgenv 
    ```
-   > Make sure that your environment is activated (the name of the environment appears in brackets at starting the command line) before moving on to the next steps
+      > Make sure that your environment is activated (the name of the environment appears in brackets at starting the command line) before moving on to the next steps
 
 </br>
 
@@ -94,7 +94,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    ```bash
    conda install -c bioconda raxml-ng
    ```
-   > You will also use some `Python` scripts that are available in the 'scripts' folder
+      > You will also use some `Python` scripts that are available in the 'scripts' folder
 
 </br>
  
@@ -123,7 +123,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    ```bash
    conda install -c bioconda hyphy
    ```  
-   > You will also use some `Python` scripts that are available in the 'scripts' folder
+      > You will also use some `Python` scripts that are available in the 'scripts' folder
 
 </br>
    
@@ -137,7 +137,8 @@ Before starting the practice, you must (i) create and activate a new conda envir
    bam2msa -h
    hyphy -h
    ```
-   > If the installation has been successful, the options for each program will be listed on the screen
+   
+      > If the installation has been successful, the options for each program will be listed on the screen
 
 ---
 
@@ -179,9 +180,8 @@ In the second part of the practice, we are particularly interested in identifyin
    ```bash
    FILE="omicron-BA1.fasta" # rename accordingly
    python3.9 scripts/filter-sites.py $FILE  20000,26000 > ${FILE}.S.raw
-   ```
-   
-   > You trim sequences to this wide range be sure to include the whole S-gene of all the sequences.
+   ``` 
+      > You trim sequences to this wide range be sure to include the whole S-gene of all the sequences.
    
 </br>
 
@@ -191,7 +191,7 @@ In the second part of the practice, we are particularly interested in identifyin
    bealign -r CoV2-S ${FILE}.S.raw ${FILE}.S.bam
    bam2msa ${FILE}.S.bam ${FILE}.S.msa
    ```
-   > The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format.
+      > The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format.
 
 </br>
 
