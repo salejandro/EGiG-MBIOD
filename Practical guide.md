@@ -152,6 +152,17 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 Phylogenomics aims at establishing the evolutionary relationships between organims using genome data. However, not all parts of a genome evolve at the same rate or completely independently since their split from a common ancestor, due to, for example, past recombination events or strong positive selection acting differentially on particular genes, which cause phylogenies to reflect different histories. Sarcoviruses genomes, including that of SARS-CoV2, are not an exception. Figure X show the estimates
 
+</br>
+</br>
+
+<p align="center">
+<img src="http://www.ub.edu/molevol/CG-MGG/rec.png" width="900" heigh="900">
+</p>
+
+> **Fig. 3** HHHH
+
+</br>
+
 ### Workflow  
 
 1.  Multiple sequence alignment
