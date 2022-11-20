@@ -36,8 +36,6 @@ In the fisrt part of this practice you will reconstruct the phylogenetic relatio
 
 > **Fig. 2** Frecuency of the different SARS-CoV2 variants (colored by clade) at different time points as given in the Latest global SARS-CoV-2 analysis with GISAID data ([Nextstrain SARS-CoV-2 resources](https://nextstrain.org/ncov/gisaid/global/all-time); last accessed 16/11/2022). The sublineage BA.1 of Omicron correspond to the clade 21K.
 
-</br>
-
 ---
   
 ## Data
