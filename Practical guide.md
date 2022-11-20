@@ -146,6 +146,8 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 ---
 
+</br>
+
 ## Part 1. Phylogenetic analyses
 
 ### Workflow  
@@ -161,6 +163,8 @@ Before starting the practice, you must (i) create and activate a new conda envir
    ```bash
    raxml-ng ....
    ``` 
+
+</br>
 
 ## Part 2. Analysis of selection in the BA.1 sublineage
 
