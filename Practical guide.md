@@ -57,7 +57,7 @@ variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You ca
 [Omicron BA1](http://www.ub.edu/molevol/CG-MGG/omicron-BA1.fasta) (FASTA format)
 ___
 
-## Software and bioinformatics tools
+## Software installation
 
 Before starting the practice, you must (i) create and activate a new conda environment, (ii) install all the necesary tools and (iii) check that everything works correctly. The reason for installing and working with conda is to perform the computer lab in a stable environment with a specific `Python` version (3.9), which is a requirement for some of the tools that will be used in the practice, as well as to make installation of major programs easier (hyphy and raxml-ng), avoiding the complexity of software compilation on different operating systems with different configurations.
 
