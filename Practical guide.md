@@ -167,7 +167,7 @@ To illustrate the different evolutionary history of some viral genome regions, y
 
 ### Workflow:
 
-1.  You have first to trim down Sarbecoviruses genomic sequences to the recombination fragments neighborhoods using a `Python` script:
+1.  First, you have to trim down Sarbecoviruses genomic sequences to the recombination fragment neighborhood using a `Python` script:
 
    ```bash
    # Fragment 7:
@@ -179,7 +179,7 @@ To illustrate the different evolutionary history of some viral genome regions, y
    python3.9 scripts/filter-sites.py $FILE  22000,25000 > ${FILE}.f11.fasta
    ``` 
 
-3.  Now you can build a multiple sequence alignment for each fragment using `mafft`:
+3.  Now, you can build a multiple sequence alignment for each fragment using `mafft`:
    
    ```bash
    mafft ${FILE}.f7.fasta > ${FILE}.f7.msa
