@@ -13,7 +13,7 @@
 
 The objective of these sessions is to increase your understanding of the main concepts behind evolutionary inference by doing some practical worl with a representation (just a few examples) of the state-of-the-art computational tools to estimate phylogenetic relationships between genes and genomes, and to determine the functional consequences of mutations in these sequences. This fundamental knowledge has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
 
-The biological model used in this practices are Sarbecoviruses, and more specifically, a group of viruses closelly related with SARS-Cov2 (the the type 2 coronavirus that causes severe acute respiratory syndrome) (part 1), and the BA.1 sublineage of the SARS-CoV2 variant of concern (VOC) Omicron (part 2).
+The biological model used in this practices are Sarbecoviruses, and more specifically, a group of viruses closely related with SARS-Cov2 (the the type 2 coronavirus that causes severe acute respiratory syndrome) (part 1), and the BA.1 sublineage of the SARS-CoV2 variant of concern (VOC) Omicron (part 2).
 
 </br>
 </br>
@@ -27,7 +27,7 @@ Helicase, *__S: spike__*. Modified from Signal Transduction and Targeted Therapy
 
 </br>
 
-In the fisrt part of this practice you will reconstruct the phylogenetic relationships of a group of Sarbecoviruses using different genes. This analysis is very ilustrative of the different evolutionary rates of viral genes, as well as of the mosaic nature of the genomes of viruses such as the SARS-CoV2, which originated after recombination between different strains of Sarbecoviruses. In the second part, you will estimate the effect on virus fitness of the minssense mutations (amino acid replacements) acculated in the sublineage BA.1 of Omicron, and compare this effect with the estimated impact for the same positions prior to the emergence of this VOC (all SARS-CoV-2 near full-length genome sequences present in GISAID on 21/11/2021 that passed some quality control checks; [Martin et al. (2022)](https://academic.oup.com/mbe/article/39/4/msac061/6553617)). This analysis in an example of how the accumulation of mutations with  individual fitness costs, but that are adaptive in combination with other mutations, could alter the function of a protein (Spike), while remained completely undetected despite unprecedented global genomic surveillance efforts.
+In the first part of this practice you will reconstruct the phylogenetic relationships of a group of Sarbecoviruses using different genes. This analysis is very ilustrative of the different evolutionary rates of viral genes, as well as of the mosaic nature of the genomes of viruses such as the SARS-CoV2, which originated after recombination between different strains of Sarbecoviruses. In the second part, you will estimate the effect on virus fitness of the missense mutations (amino acid replacements) accumulated in the sublineage BA.1 of Omicron, and compare this effect with the estimated impact for the same positions prior to the emergence of this VOC (all SARS-CoV-2 near full-length genome sequences present in GISAID on 21/11/2021 that passed some quality control checks; [Martin et al. (2022)](https://academic.oup.com/mbe/article/39/4/msac061/6553617)). This analysis in an example of how the accumulation of mutations with  individual fitness costs, but that are adaptive in combination with other mutations, could alter the function of a protein (Spike), while remained completely undetected despite unprecedented global genomic surveillance efforts.
 
 </br>
 </br>
@@ -36,7 +36,7 @@ In the fisrt part of this practice you will reconstruct the phylogenetic relatio
 <img src="http://www.ub.edu/molevol/CG-MGG/omicronfreq.png" width="900" heigh="900">
 </p>
 
-> **Fig. 2** Frecuency of the different SARS-CoV2 variants (colored by clade) at different time points as given in the Latest global SARS-CoV-2 analysis with GISAID data ([Nextstrain SARS-CoV-2 resources](https://nextstrain.org/ncov/gisaid/global/all-time); last accessed 16/11/2022). The sublineage BA.1 of Omicron correspond to the clade 21K.
+> **Fig. 2** Frequency of the different SARS-CoV2 variants (colored by clade) at different time points as given in the Latest global SARS-CoV-2 analysis with GISAID data ([Nextstrain SARS-CoV-2 resources](https://nextstrain.org/ncov/gisaid/global/all-time); last accessed 16/11/2022). The sublineage BA.1 of Omicron correspond to the clade 21K.
 
 ---
 
@@ -61,7 +61,7 @@ ___
 
 ## Software installation
 
-Before starting the practice, you must (i) create and activate a new conda environment, (ii) install all the necesary tools and (iii) check that everything works correctly. The reason for installing and working with conda is to perform the computer lab in a stable environment with a specific `Python` version (3.9), which is a requirement for some of the tools that will be used in the practice, as well as to make installation of major programs easier (hyphy and raxml-ng), avoiding the complexity of software compilation on different operating systems with different configurations.
+Before starting the practice, you must (i) create and activate a new conda environment, (ii) install all the necessary tools and (iii) check that everything works correctly. The reason for installing and working with conda is to perform the computer lab in a stable environment with a specific `Python` version (3.9), which is a requirement for some of the tools that will be used in the practice, as well as to make installation of major programs easier (hyphy and raxml-ng), avoiding the complexity of software compilation on different operating systems with different configurations.
 
 1.  To create the environment, open the terminal app and type:
 
@@ -101,8 +101,8 @@ Before starting the practice, you must (i) create and activate a new conda envir
    > You will also use some `Python` scripts that are available in the 'scripts' folder
 
 </br>
- 
-4.  Finally, for the second part of the practice (session on selective pressures), you need a progam to identify and exclude identical and very similar sequences (tn93), tools for codon-guided multiple sequence aligment (bealign and bam2msa - from the Bioext package), a the program to estimate selective constraints on amino acid positions (hyphy):
+
+4.  Finally, for the second part of the practice (session on selective pressures), you need a program to identify and exclude identical and very similar sequences (tn93), tools for codon-guided multiple sequence alignment (bealign and bam2msa - from the Bioext package), a the program to estimate selective constraints on amino acid positions (hyphy):
 
    iii. **`tn93`**    
 
@@ -150,7 +150,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 ## Part 1. Phylogenetic analyses
 
-Phylogenomics aims at establishing the evolutionary relationships between organims using genome data. However, not all parts of a genome evolve at the same rate or completely independently since their split from a common ancestor, due to, for example, past recombination events or strong positive selection acting differentially on particular genes and lineages. These scenarios may cause phylogenies to reflect different histories across the genome. Sarbecoviruses genomes, including SARS-CoV2, are not an exception. At least 15 recombinant fragments have been identified when comparing most relevant Sarbecoviruses genomes. In fact, SARS-CoV-2 show recombination events from different donor Sarbecoviruses strains, some of them spanning functionally important domains of the protein Spike, which point to their putative adaptive nature.
+Phylogenomics aims at establishing the evolutionary relationships between organisms using genome data. However, not all parts of a genome evolve at the same rate or completely independently since their split from a common ancestor, due to, for example, past recombination events or strong positive selection acting deferentially on particular genes and lineages. These scenarios may cause phylogenies to reflect different histories across the genome. Sarbecoviruses genomes, including SARS-CoV2, are not an exception. At least 15 recombination fragments have been identified when comparing most relevant Sarbecoviruses genomes. In fact, SARS-CoV-2 show recombination events from different donor Sarbecoviruses strains, some of them spanning functionally important domains of the protein Spike, which point to their putative adaptive nature.
 
 </br>
 </br>
@@ -163,7 +163,7 @@ Phylogenomics aims at establishing the evolutionary relationships between organi
 
 </br>
 
-To ilustrate the different evolutionary history of some viral genome regions, you will conduct a ML phylogenetic analysis of the nucleotide sequences of two recombination fragments: the fragment that encodes, among others, the RNA-dependent RNA polymerase and the Helicase of the virus (fragment 7 in Fig. 3), and the fragment that encodes most of the S-gene (fragment 11 in Fig.3), of representative human, bat, and pangolin Sarbecoviruses. These two fragments encode proteins with very different functions, which is clearly reflected in their contrasting evolutionary rates.
+To illustrate the different evolutionary history of some viral genome regions, you will conduct a ML phylogenetic analysis of the nucleotide sequences of two recombination fragments: the fragment that encodes, among others, the RNA-dependent RNA polymerase (RdRp) and the Helicase of the virus (fragment 7 in Fig. 3), and the fragment that encodes most of the S-gene, including the Receptor Binding Domain, RBD (fragment 11 in Fig.3), of representative human, bat, and pangolin Sarbecoviruses. These two fragments encode proteins with very different functions, which is clearly reflected in their contrasting evolutionary rates.
 
 ### Workflow:
 
@@ -208,7 +208,7 @@ In the second part of the practice, we are particularly interested in identifyin
 > **Table 1**. Frequencies in non-Omicron SARS-CoV-2 genomes of some Spike amino acid mutations ([Martin et al. 2022](https://academic.oup.com/mbe/article/39/4/msac061/6553617)). Since the length of the Spike protein is highly conserved across the BA.1 sequences, the numbering of the positions in the table will match that of the alignment that your will use in this practice.
 
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/table1.png" width="800" heigh="800">
+<img src="http://www.ub.edu/molevol/CG-MGG/table1.png" width="800" height="800">
 </p>
 
 </br>
@@ -225,7 +225,7 @@ In the second part of the practice, we are particularly interested in identifyin
    
 </br>
 
-2.  Then, you will use `bealign` to align trimmed sarbecorirus sequences to the S-gene of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)), using a codon alignment algorithm:
+2.  Then, you will use `bealign` to align trimmed Sarbecovirus sequences to the S-gene of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)), using a codon alignment algorithm:
 
    ```bash
    bealign -r CoV2-S ${FILE}.S.raw ${FILE}.S.bam
@@ -279,4 +279,4 @@ In the second part of the practice, we are particularly interested in identifyin
    raxml-ng --redo --threads $theads --msa ${FILE}.S.uniq.fas --tree pars{5} --model GTR+G+I
    ```
     
-To visualize json reusults use [hyphy-vision tool](http://vision.hyphy.org/)
+To visualize json results use [hyphy-vision tool](http://vision.hyphy.org/)
