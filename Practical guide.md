@@ -53,8 +53,8 @@ variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You ca
 
 ### Data files availability:
 
-[Sarbecoviruses](http://www.ub.edu/molevol/CG-MGG/sarbecoviruses.fasta) ([FASTA format](https://es.wikipedia.org/wiki/Formato_FASTA))  
-[Omicron BA1](http://www.ub.edu/molevol/CG-MGG/omicron-BA1.fasta) (FASTA format)
+   + [Sarbecoviruses](http://www.ub.edu/molevol/CG-MGG/sarbecoviruses.fasta) ([FASTA](https://es.wikipedia.org/wiki/Formato_FASTA) format)  
+   + [Omicron BA1](http://www.ub.edu/molevol/CG-MGG/omicron-BA1.fasta) (FASTA format)
 ___
 
 </br>
