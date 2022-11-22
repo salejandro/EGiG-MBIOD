@@ -40,7 +40,7 @@ In the first part of this practice you will reconstruct the phylogenetic relatio
 
 ---
 
-</br>
+</p>
   
 ## Data
 
