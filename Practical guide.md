@@ -65,7 +65,7 @@ The [FASTA](https://es.wikipedia.org/wiki/Formato_FASTA) files with the data dec
 Notice that the file with the BA.1 genomes cannot be used directly for the analyses, we first have to unzip it:
 
 ```bash
-tar -xf data/omicron-BA1.fasta.tar.bz2  -C data | rm ata/omicron-BA1.fasta.tar.bz2
+tar -xf data/omicron-BA1.fasta.tar.bz2  -C data | rm data/omicron-BA1.fasta.tar.bz2
 ```
 > Now the file "omicron-BA1.fasta" is ready to be read.
 
