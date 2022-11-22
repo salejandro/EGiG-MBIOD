@@ -91,12 +91,12 @@ Before starting the practice, you must (i) create and activate a new conda envir
    conda install -c bioconda mafft
    ```  
    
-   ii. **`raxml-ng`**
+   ii. **`iqtree`**
    
    - Linux and Mac:
    
    ```bash
-   conda install -c bioconda raxml-ng
+   conda install -c bioconda iqtree
    ```
    > You will also use some `Python` scripts that are available in the 'scripts' folder
 
@@ -120,7 +120,15 @@ Before starting the practice, you must (i) create and activate a new conda envir
    pip install Cython numpy Bio Bioext
    ```
    
-   v. **`hyphy`**
+   v. **`raxml-ng`**
+   
+   - Linux and Mac:
+   
+   ```bash
+   conda install -c bioconda raxml-ng
+   ```   
+   
+   vi. **`hyphy`**
 
    - Linux and Mac:
 
@@ -135,6 +143,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
    
    ```bash
    mafft -h
+   iqtree -h
    raxml-ng -h
    tn93-cluster -h
    bealign -h
@@ -175,18 +184,17 @@ To illustrate the different evolutionary history of some viral genome regions, y
    python3.9 scripts/filter-sites.py $FILE  12000,18000 > ${FILE}.f7.fasta
    
    # Fragment 11:
-   FILE="sarbecoviruses.fasta" # rename accordingly
    python3.9 scripts/filter-sites.py $FILE  22000,25000 > ${FILE}.f11.fasta
    ``` 
 
-3.  Now, you can build a multiple sequence alignment for each fragment using `mafft`:
+2.  Now, you can build a multiple sequence alignment for each fragment using `mafft`:
    
    ```bash
    mafft ${FILE}.f7.fasta > ${FILE}.f7.msa
    mafft ${FILE}.f11.fasta > ${FILE}.f11.msa
    ``` 
 
-2.  Finally, you will use `raxml-ng` to obtain ML phylogenetic trees:
+3.  You will use `raxml-ng` to obtain ML phylogenetic trees based on the nucleotide sequences from these regions:
 
    ```bash
    threads=4
@@ -194,14 +202,38 @@ To illustrate the different evolutionary history of some viral genome regions, y
    raxml-ng --redo --threads $threads --msa ${FILE}.f11.msa --tree pars{5} --model GTR+G+I
    ``` 
 
-ADD FOR RBD protein tree:
+4. You will also built a tree based on a protein sequence aligment of the Receptor Binding Domain (RBD) of Spike. This poorly conserved across Sarbecoviruses region is part of the protein Spike and is the domain that binds ACE2 receptors to entry into human cells:
 
-python3.9 python/filter-sites.py ${FILE} 22000,24000 > ${FILE}.RBD.raw   
-bealign -r RBD.reference ${FILE}.RBD.raw ${FILE}.RBD.bam   
-bam2msa ${FILE}.RBD.bam ${FILE}.RBD.msa   
-transeq -sequence $FILE.RBD.msa -outseq ${FILE}.RBD.prot    
-mafft $FILE.RBD.prot > $FILE.RBD.prot.align   
-and then..the tree   
+   + To trim down Sarbecovirues sequences to the RBD neighborhood using a `Python` script:
+      
+      ```bash
+      python3.9 python/filter-sites.py ${FILE} 22000,24000 > ${FILE}.RBD.raw
+      ```
+   + to map trimmed Sarbecovirus sequences to the RBD nucleotide sequences of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)),using a codon alignment algorithm:
+   
+      ```bash
+      bealign -r RBD.reference ${FILE}.RBD.raw ${FILE}.RBD.bam   
+      bam2msa ${FILE}.RBD.bam ${FILE}.RBD.msa 
+      ```
+   > This step allows to delimit the alignment to only the coding region of RBD. The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format
+   
+   + To translate coding sequences to amino acid sequences:
+   
+      ```bash 
+      transeq -sequence $FILE.RBD.msa -outseq ${FILE}.RBD.prot    
+      ```
+   
+   + To align RBD protein sequences:
+   
+      ```bash
+      mafft $FILE.RBD.prot > $FILE.RBD.prot.align   
+      ```
+   
+   + To obtain the ML phylogenetic tree of the RBD protein region of Sarbecoviruses:
+   
+   ```bash
+   iqtree..#acabar
+   ```
 
 ---
 
@@ -230,7 +262,7 @@ In the second part of the practice, we are particularly interested in identifyin
       FILE="omicron-BA1.fasta" # rename accordingly
       python3.9 scripts/filter-sites.py $FILE  20000,26000 > ${FILE}.S.raw
       ``` 
-   > You trim sequences to this wide range be sure to include the whole S-gene of all the sequences.
+   > You trim sequences to this wide range be sure to include the whole S-gene of all the sequences
    
 </br>
 
@@ -240,7 +272,7 @@ In the second part of the practice, we are particularly interested in identifyin
       bealign -r CoV2-S ${FILE}.S.raw ${FILE}.S.bam
       bam2msa ${FILE}.S.bam ${FILE}.S.msa
       ```
-   > The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format.
+   > This step allows to delimit the alignment to only the coding region of the S gene
 
 </br>
 
