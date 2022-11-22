@@ -226,20 +226,20 @@ In the second part of the practice, we are particularly interested in identifyin
 
 1.  You have first to trim down genomic sequences to the S gene neighborhood using a `Python` script:
 
-   ```bash
-   FILE="omicron-BA1.fasta" # rename accordingly
-   python3.9 scripts/filter-sites.py $FILE  20000,26000 > ${FILE}.S.raw
-   ``` 
+      ```bash
+      FILE="omicron-BA1.fasta" # rename accordingly
+      python3.9 scripts/filter-sites.py $FILE  20000,26000 > ${FILE}.S.raw
+      ``` 
    > You trim sequences to this wide range be sure to include the whole S-gene of all the sequences.
    
 </br>
 
 2.  Then, you will use `bealign` to align trimmed Sarbecovirus sequences to the S-gene of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)), using a codon alignment algorithm:
 
-   ```bash
-   bealign -r CoV2-S ${FILE}.S.raw ${FILE}.S.bam
-   bam2msa ${FILE}.S.bam ${FILE}.S.msa
-   ```
+      ```bash
+      bealign -r CoV2-S ${FILE}.S.raw ${FILE}.S.bam
+      bam2msa ${FILE}.S.bam ${FILE}.S.msa
+      ```
    > The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format.
 
 </br>
@@ -248,46 +248,46 @@ In the second part of the practice, we are particularly interested in identifyin
 
    - To identify and remove all identical sequences up to ambiguous nucleotides:
 
-   ```bash
-   python3.9 scripts/exact-copies.py  ${FILE}.S.msa > ${FILE}.u.clusters.json
-   python3.9 scripts/cluster-processor.py ${FILE}.u.clusters.json > ${FILE}.S.u.fas
-   ```
+      ```bash
+      python3.9 scripts/exact-copies.py  ${FILE}.S.msa > ${FILE}.u.clusters.json
+      python3.9 scripts/cluster-processor.py ${FILE}.u.clusters.json > ${FILE}.S.u.fas
+      ```
 
    - To identify and remove all remaining sequences that are within t= 0.0 ([Tamura-Nei 93](https://pubmed.ncbi.nlm.nih.gov/8336541/) distance) genetic distance:
 
-   ```bash
-   tn93-cluster -t 0.0 ${FILE}.S.u.fas > ${FILE}.t0.clusters.json
-   python3.9 scripts/cluster-processor.py ${FILE}.t0.clusters.json > ${FILE}.S.all.fas
-   ```
+      ```bash
+      tn93-cluster -t 0.0 ${FILE}.S.u.fas > ${FILE}.t0.clusters.json
+      python3.9 scripts/cluster-processor.py ${FILE}.t0.clusters.json > ${FILE}.S.all.fas
+      ```
 
    - To reduce the set of sequences to clusters that are all within t=0.00075 distance of one another:
 
-   ```bash
-   tn93-cluster -t 0.00075 ${FILE}.S.all.fas > ${FILE}.t1.clusters.json
-   python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json > ${FILE}.S.uniq.fas
-   ```
+      ```bash
+      tn93-cluster -t 0.00075 ${FILE}.S.all.fas > ${FILE}.t1.clusters.json
+      python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json > ${FILE}.S.uniq.fas
+      ```
 
    - To identify and remove outliers, low quality or misclassified sequences that are t=0.002 away from the gererated clusters:
 
-   ```bash
-   tn93-cluster -t 0.002 ${FILE}.S.uniq.fas > ${FILE}.t2.clusters.json
-   python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json ${FILE}.t2.clusters.json > ${FILE}.S.uniq-all.fas 2> ${FILE}.S.blacklist.txt
-   ```
+      ```bash
+      tn93-cluster -t 0.002 ${FILE}.S.uniq.fas > ${FILE}.t2.clusters.json
+      python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json ${FILE}.t2.clusters.json > ${FILE}.S.uniq-all.fas 2> ${FILE}.S.blacklist.txt
+      ```
    
    - Finally, to build a majority consensus for each remaining cluster and remove clusters that comprise fewer than 3 sequences:
 
-   ```bash
-   python3.9 scripts/cluster-processor-consensus.py 3 ${FILE}.S.msa ${FILE}.S.uniq-all.fas ${FILE}.t1.clusters.json ${FILE}.t0.clusters.json ${FILE}.u.clusters.json > ${FILE}.S.uniq.fas
-   ```
+      ```bash
+      python3.9 scripts/cluster-processor-consensus.py 3 ${FILE}.S.msa ${FILE}.S.uniq-all.fas ${FILE}.t1.clusters.json ${FILE}.t0.clusters.json ${FILE}.u.clusters.json > ${FILE}.S.uniq.fas
+      ```
    
  </br>
 
 4.  The program hyphy estimates synonymous and non-synonymous substitution rates in a maximum likelihood (ML) phylogetic framework using different (complementary) [methods](https://www.hyphy.org/methods/selection-methods/). Hence, first of all, you need a phylogenetic tree with the relationships among the S sequences retained in the previous step (after comprising to unique haplotypes). In this case, you will use the program `raxml-ng`: 
 
-   ```bash
-   raxml-ng --redo --threads $theads --msa ${FILE}.S.uniq.fas --tree pars{5} --model GTR+G+I
-   cp ${FILE}.S.uniq.fas.raxml.bestTree ${FILE}.S.uniq.tree
-   ```
+      ```bash
+      raxml-ng --redo --threads $theads --msa ${FILE}.S.uniq.fas --tree pars{5} --model GTR+G+I
+      cp ${FILE}.S.uniq.fas.raxml.bestTree ${FILE}.S.uniq.tree
+      ```
  
  </br>
 
@@ -295,21 +295,21 @@ In the second part of the practice, we are particularly interested in identifyin
 
    + The first method is **BUSTED** (**B**ranch-Site **U**nrestricted **S**tatistical **T**est for **E**pisodic **D**iversification). By applying this method, you are asking whether the S gene has experienced **positive selection at at least one site on at least one branch** of the tree (=one BA.1 genome)
 
-   ```bash
-   hyphy busted --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.uniq.tree --branches CLADE --rates 3 --starting-points 5
-   ```
+      ```bash
+      hyphy busted --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.uniq.tree --branches CLADE --rates 3 --starting-points 5
+      ```
    
    + When applying **FEL** (**F**ixed **E**ffects **L**ikelihood) to your data, you obtain the ML estimate of non-synoymous (dN) and synonymous (dS) substitution rates in each codon site (amino acid position) for the entire Spike CDS alignment acroos the phylogeny. Therefore, you are assuming **constant selection pressures along the entire history of BA.1 sequences**:
    
-   ```bash
-   hyphy fel --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches CLADE  --ci Yes
-   ```
+      ```bash
+      hyphy fel --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches CLADE  --ci Yes
+      ```
    
    + Whith **MEME** (**M**ixed **E**ffects **M**odel of **E**volution) you will identify episodes of positive selection in the S gene affecting a **small subset of branches at individual sites**. In other words, episodic positive or diversifying selection:
    
-   ```bash
-   hyphy meme --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches CLADE
-   ```
+      ```bash
+      hyphy meme --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches CLADE
+      ```
   
    + Finally, the **BGM** (**B**ayesian **G**raphical **M**odel) method is a tool for detecting correlated amino acid substitutions in the Spike protein of Omicron BA.1. This correlation should be suggestive of **coevolutionary interactions between amino acid positions** in this protein:
      
