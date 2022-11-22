@@ -40,8 +40,6 @@ In the first part of this practice you will reconstruct the phylogenetic relatio
 
 ---
 
-
-  
 ## Data
 
 To clone and work with this repository in your computer, open the terminal app and type:
@@ -70,8 +68,6 @@ tar -xf data/omicron-BA1.fasta.tar.bz2  -C data | rm data/omicron-BA1.fasta.tar.
 > Now the file "omicron-BA1.fasta" is ready to be read.
 
 ___
-
-</br>
 
 ## Software installation
 
@@ -178,8 +174,6 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 ---
 
-</br>
-
 ## Part 1. Phylogenetic analyses
 
 Phylogenomics aims at establishing the evolutionary relationships between organisms using genome data. However, not all parts of a genome evolve at the same rate or completely independently since their split from a common ancestor, due to, for example, past recombination events or strong positive selection acting deferentially on particular genes and lineages. These scenarios may cause phylogenies to reflect different histories across the genome. Sarbecoviruses genomes, including SARS-CoV2, are not an exception. At least 15 recombination fragments have been identified when comparing most relevant Sarbecoviruses genomes. In fact, SARS-CoV-2 show recombination events from different donor Sarbecoviruses strains, some of them spanning functionally important domains of the protein Spike, which point to their putative adaptive nature.
@@ -259,8 +253,6 @@ To illustrate the different evolutionary history of some viral genome regions, y
    ```
 
 ---
-
-</br>
 
 ## Part 2. Analysis of selection in the BA.1 sublineage
 
