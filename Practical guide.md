@@ -50,6 +50,7 @@ To clone and work with this repository in your computer, open the terminal app a
 git clone https://github.com/salejandro/Comparative-Genomics-MGG.git
 cd Comparative-Genomics-MGG
 ```
+> Notice that you must stay in the Comparative-Genomics-MGG folder for the rest of the practice, as all the commands have been configured to run from that path.
 
 The genome sequences for this practice were retrieved either from [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) or [GISAID](https://gisaid.org/) databases and correspond to:
 
@@ -64,7 +65,7 @@ The [FASTA](https://es.wikipedia.org/wiki/Formato_FASTA) files with the data dec
 Notice that the file with the BA.1 genomes cannot be used directly for the analyses, we first have to unzip it:
 
 ```bash
-tar -xf data/omicron-BA1.fasta.tar.bz2  -C data
+tar -xf data/omicron-BA1.fasta.tar.bz2  -C data | rm ata/omicron-BA1.fasta.tar.bz2
 ```
 > Now the file "omicron-BA1.fasta" is ready to be read.
 
