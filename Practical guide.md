@@ -194,13 +194,14 @@ To illustrate the different evolutionary history of some viral genome regions, y
    raxml-ng --redo --threads $threads --msa ${FILE}.f11.msa --tree pars{5} --model GTR+G+I
    ``` 
 
-TO ADD!
-python3.9 python/filter-sites.py ${FILE} 22000,24000 > ${FILE}.RBD.raw
-bealign -r RBD.reference ${FILE}.RBD.raw ${FILE}.RBD.bam
-bam2msa ${FILE}.RBD.bam ${FILE}.RBD.msa
-transeq -sequence $FILE.RBD.msa -outseq ${FILE}.RBD.prot
-mafft $FILE.RBD.prot > $FILE.RBD.prot.align
-and then..the tree
+ADD FOR RBD protein tree:
+
+python3.9 python/filter-sites.py ${FILE} 22000,24000 > ${FILE}.RBD.raw   
+bealign -r RBD.reference ${FILE}.RBD.raw ${FILE}.RBD.bam   
+bam2msa ${FILE}.RBD.bam ${FILE}.RBD.msa   
+transeq -sequence $FILE.RBD.msa -outseq ${FILE}.RBD.prot    
+mafft $FILE.RBD.prot > $FILE.RBD.prot.align   
+and then..the tree   
 
 ---
 
