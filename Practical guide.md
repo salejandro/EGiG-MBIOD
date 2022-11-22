@@ -296,29 +296,25 @@ In the second part of the practice, we are particularly interested in identifyin
    + The first method is **BUSTED** (Branch-Site Unrestricted Statistical Test for Episodic Diversification). By applying this method, you are asking whether the S gene has experienced **positive selection at at least one site on at least one branch** of the tree (=one BA.1 genome)
 
    ```bash
-   $HYPHY busted --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.uniq.tree --branches CLADE --rates 3 --starting-points 5
+   hyphy busted --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.uniq.tree --branches CLADE --rates 3 --starting-points 5
    ```
    
-   + When applying **FEL** (Fixed Effects Likelihood) to your data, you obtain the ML estimate of non-synoymous (dN) and synonymous (dS) substitution rates in each codon site (amino acid position) for the entire CDS alignment acroos the phylogeny. Therefore, you are assuming **constant selection pressures along the entire history of BA.1 sequences**:
+   + When applying **FEL** (Fixed Effects Likelihood) to your data, you obtain the ML estimate of non-synoymous (dN) and synonymous (dS) substitution rates in each codon site (amino acid position) for the entire Spike CDS alignment acroos the phylogeny. Therefore, you are assuming **constant selection pressures along the entire history of BA.1 sequences**:
    
    ```bash
-   $HYPHYMPI fel --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.labeled-internal.nwk --branches CLADE  --ci Yes
+   hyphy fel --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches CLADE  --ci Yes
    ```
    
-  
-
-
-   $HYPHY bgm --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.labeled-internal.nwk --branches CLADE --min-subs 2 --steps 1000000 --samples 1000 --burn-in 100000
+   + Whith **MEME**(Mixed Effects Model of Evolution) you will identify episodes of positive selection in the S gene affecting a **small subset of branches at individual sites**. In other words, episodic positive or diversifying selection:
+   
+   ```bash
+   hyphy meme --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches CLADE
    ```
-   + The first method is BUSTED (Branch-Site Unrestricted Statistical Test for Episodic Diversification). By applying this method, you are asking whether the S gene has experienced positive selection at **at least one site on at least one branch** of the tree (=one BA.1 genome)
-echo "Running BUSTED[S]"
+  
+   + Finally, the **BGM** (Bayesian Graphical Model) method is a tool for detecting correlated amino acid substitutions in the Spike protein of Omicron BA.1. This correlation should be suggestive of **coevolutionary interactions between amino acid positions** in this protein:
+   
+   ```bash
+   hphy bgm --alignment ${FILE}.S.uniq.fas --tree ${${FILE}.S.uniq.tree --branches CLADE --min-subs 2 --steps 1000000 --samples 1000 --burn-in 100000
+   ```
 
-
-echo "Running FEL"
-
-
-echo "Running MEME"
-$HYPHYMPI meme --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.labeled-internal.nwk --branches CLADE
-```
-    
 To visualize json results use [hyphy-vision tool](http://vision.hyphy.org/)
