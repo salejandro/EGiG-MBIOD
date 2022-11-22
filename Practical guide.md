@@ -74,7 +74,7 @@ ___
 Before starting the practice, you must (i) create and activate a new conda environment, (ii) install all the necessary tools and (iii) check that everything works correctly. The reason for installing and working with conda is to perform the computer lab in a stable environment with a specific `Python` version (3.9), which is a requirement for some of the tools that will be used in the practice, as well as to make installation of major programs easier (hyphy and raxml-ng), avoiding the complexity of software compilation on different operating systems with different configurations.
 
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/iqtree-logo.svg">
+<img src="http://www.ub.edu/molevol/CG-MGG/iqtree-logo.svg" height="100">> <img src="http://www.ub.edu/molevol/CG-MGG/logo.svg" height="100">
 </p>
 
 1.  To create the environment, open the terminal app and type:
@@ -341,11 +341,6 @@ In the second part of the practice, we are particularly interested in identifyin
       ```
  
  </br>
- 
-<p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/logo.svg" height="100">
-</p>
- 
 
 5. Once you have the tree, you are ready to run a selection analysis with different methods implemented in the software hyhpy. For this practice, you will run [BUSTED](https://academic.oup.com/mbe/article-lookup/doi/10.1093/molbev/msv035), [FEL](https://academic.oup.com/mbe/article/22/5/1208/1066893), [MEME](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1002764) and [BGM](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0030231) analyses:</br>
 
