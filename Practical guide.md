@@ -293,7 +293,7 @@ In the second part of the practice, we are particularly interested in identifyin
 
 
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/logo.svg">
+<img src="http://www.ub.edu/molevol/CG-MGG/logo.svg" height="200">
 </p>
  
 
