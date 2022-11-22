@@ -282,10 +282,26 @@ In the second part of the practice, we are particularly interested in identifyin
    
  </br>
 
-4.  The program hyphy estimates synonymous and non-synonymous substitution rates in a maximum likelihood (ML) phylogetic framework. Hence, you need a phylogenetic tree with the relationships among the sequences retained in the previous step (after comprising to unique haplotypes). You already know how to do that from the first part of the practice: 
+4.  The program hyphy estimates synonymous and non-synonymous substitution rates in a maximum likelihood (ML) phylogetic framework using different (complementary) [methods](https://www.hyphy.org/methods/selection-methods/). Hence, first of all, you need a phylogenetic tree with the relationships among the S sequences retained in the previous step (after comprising to unique haplotypes). In this case, you will use the program `raxml-ng`: 
 
    ```bash
    raxml-ng --redo --threads $theads --msa ${FILE}.S.uniq.fas --tree pars{5} --model GTR+G+I
    ```
+
+5. Once you have the tree, you are ready to run a selection analysis with the different methods. For this practice, you will run [BUSTED](https://academic.oup.com/mbe/article-lookup/doi/10.1093/molbev/msv035), [FEL](https://academic.oup.com/mbe/article/22/5/1208/1066893), [MEME](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1002764) and [BGM](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0030231) analyses:
+
+```bash
+echo "Running BGM"
+$HYPHY bgm --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.labeled-internal.nwk --branches CLADE --min-subs 2 --steps 1000000 --samples 1000 --burn-in 100000
+
+echo "Running BUSTED[S]"
+$HYPHY busted  --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.labeled-internal.nwk --branches CLADE --rates 3 --starting-points 5
+
+echo "Running FEL"
+$HYPHYMPI fel --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.labeled-internal.nwk --branches CLADE  --ci Yes
+
+echo "Running MEME"
+$HYPHYMPI meme --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.labeled-internal.nwk --branches CLADE
+```
     
 To visualize json results use [hyphy-vision tool](http://vision.hyphy.org/)
