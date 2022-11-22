@@ -286,19 +286,36 @@ In the second part of the practice, we are particularly interested in identifyin
 
    ```bash
    raxml-ng --redo --threads $theads --msa ${FILE}.S.uniq.fas --tree pars{5} --model GTR+G+I
+   cp ${FILE}.S.uniq.fas.raxml.bestTree ${FILE}.S.uniq.tree
    ```
+ 
+ </br>
 
 5. Once you have the tree, you are ready to run a selection analysis with the different methods. For this practice, you will run [BUSTED](https://academic.oup.com/mbe/article-lookup/doi/10.1093/molbev/msv035), [FEL](https://academic.oup.com/mbe/article/22/5/1208/1066893), [MEME](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1002764) and [BGM](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0030231) analyses:
 
-```bash
-echo "Running BGM"
-$HYPHY bgm --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.labeled-internal.nwk --branches CLADE --min-subs 2 --steps 1000000 --samples 1000 --burn-in 100000
+   + The first method is **BUSTED** (Branch-Site Unrestricted Statistical Test for Episodic Diversification). By applying this method, you are asking whether the S gene has experienced **positive selection at at least one site on at least one branch** of the tree (=one BA.1 genome)
 
+   ```bash
+   $HYPHY busted --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.uniq.tree --branches CLADE --rates 3 --starting-points 5
+   ```
+   
+   + When applying **FEL** (Fixed Effects Likelihood) to your data, you obtain the ML estimate of non-synoymous (dN) and synonymous (dS) substitution rates in each codon site (amino acid position) for the entire CDS alignment acroos the phylogeny. Therefore, you are assuming **constant selection pressures along the entire history of BA.1 sequences**:
+   
+   ```bash
+   $HYPHYMPI fel --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.labeled-internal.nwk --branches CLADE  --ci Yes
+   ```
+   
+  
+
+
+   $HYPHY bgm --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.labeled-internal.nwk --branches CLADE --min-subs 2 --steps 1000000 --samples 1000 --burn-in 100000
+   ```
+   + The first method is BUSTED (Branch-Site Unrestricted Statistical Test for Episodic Diversification). By applying this method, you are asking whether the S gene has experienced positive selection at **at least one site on at least one branch** of the tree (=one BA.1 genome)
 echo "Running BUSTED[S]"
-$HYPHY busted  --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.labeled-internal.nwk --branches CLADE --rates 3 --starting-points 5
+
 
 echo "Running FEL"
-$HYPHYMPI fel --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.labeled-internal.nwk --branches CLADE  --ci Yes
+
 
 echo "Running MEME"
 $HYPHYMPI meme --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.labeled-internal.nwk --branches CLADE
