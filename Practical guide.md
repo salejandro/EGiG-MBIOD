@@ -291,7 +291,7 @@ In the second part of the practice, we are particularly interested in identifyin
  
  </br>
  
-<p align="right">
+<p align="center">
 <img src="http://www.ub.edu/molevol/CG-MGG/logo.svg" height="100">
 </p>
  
