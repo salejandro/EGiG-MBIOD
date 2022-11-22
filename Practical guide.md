@@ -44,6 +44,13 @@ In the first part of this practice you will reconstruct the phylogenetic relatio
   
 ## Data
 
+To clone and work with this repository in your computer, open the terminal app and type:
+
+```bash
+git clone https://github.com/salejandro/Comparative-Genomics-MGG.git
+cd Comparative-Genomics-MGG
+```
+
 The genome sequences for this practice were retrieved either from [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) or [GISAID](https://gisaid.org/) databases and correspond to:
 
 1.  The genomic sequences of the 17 Sarbecoviruses used for Figure 1 in [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4)
@@ -53,8 +60,14 @@ variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You ca
 
 ### Data files availability:
 
-   + [Sarbecoviruses](http://www.ub.edu/molevol/CG-MGG/sarbecoviruses.fasta) ([FASTA](https://es.wikipedia.org/wiki/Formato_FASTA) format)  
-   + [Omicron BA1](http://www.ub.edu/molevol/CG-MGG/omicron-BA1.fasta) (FASTA format)
+The [FASTA](https://es.wikipedia.org/wiki/Formato_FASTA) files with the data decribed above are in the folder "data" of this repository.
+Notice that the file with the BA.1 genomes cannot be used directly for the analyses, we first have to unzip it:
+
+```bash
+tar -xf data/omicron-BA1.fasta.tar.bz2  -C data
+```
+> Now the file "omicron-BA1.fasta" is ready to be read.
+
 ___
 
 </br>
