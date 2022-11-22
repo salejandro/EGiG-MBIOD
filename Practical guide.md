@@ -74,7 +74,7 @@ ___
 Before starting the practice, you must (i) create and activate a new conda environment, (ii) install all the necessary tools and (iii) check that everything works correctly. The reason for installing and working with conda is to perform the computer lab in a stable environment with a specific `Python` version (3.9), which is a requirement for some of the tools that will be used in the practice, as well as to make installation of major programs easier (hyphy and raxml-ng), avoiding the complexity of software compilation on different operating systems with different configurations.
 
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/iqtree-logo.svg width="900" heigh="900">
+<img src="http://www.ub.edu/molevol/CG-MGG/iqtree-logo.svg>
 </p>
 
 1.  To create the environment, open the terminal app and type:
