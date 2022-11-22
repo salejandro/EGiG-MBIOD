@@ -95,7 +95,7 @@ Before starting the practice, you must (i) create and activate a new conda envir
 
 </br>
 
-3.  Now, you are ready to install the programs and utilities for the practice. For the first part of the practice (session on filogenomics), you need tools for multiple sequence alignment (mafft) and maximum likelihood phylogenetic reconstruction (raxml-ng):
+3.  Now, you are ready to install the programs and utilities for the practice. For the first part of the practice (session on filogenomics), you need tools for multiple sequence alignment (mafft) and maximum likelihood phylogenetic reconstruction (iqtree):
 
    i. **`mafft`**
    
@@ -232,7 +232,7 @@ To illustrate the different evolutionary history of some viral genome regions, y
    ```bash
    python3.9 python/filter-sites.py ${FILE} 22000,24000 > ${FILE}.RBD.raw
    ```
-+ to map trimmed Sarbecovirus sequences to the RBD nucleotide sequences of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)),using a codon alignment algorithm:
++ to map trimmed Sarbecovirus sequences to the RBD nucleotide sequences of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)), using a codon alignment algorithm:
    
    ```bash
    bealign -r RBD.reference ${FILE}.RBD.raw ${FILE}.RBD.bam   
