@@ -75,9 +75,9 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
 
 **IMPORTANT NOTE**: Many of the tools that will be used in this practice **are not available to install in the Windows conda (anaconda) environment**. In general, bioinformatics programs for manipulating and analyzing genomic data are only available for Linux and Mac. If you have a Windows based PC or laptop, please install a Linux distribution on a virtual machine (for example [wsl](https://learn.microsoft.com/en-us/windows/wsl/install))
    
-   <div style="background-color:#FFDAA120">
-   > <p><i class="fas fa-key" style="font-size:20px;"></i><font size=4><span      style="color: darkred;"> **Notice that DnaSP only works in a Windows       environment. If your are Mac or Linux owners, you should install a virtual    machine (VM) to run this program**.</font></span>
-   </div>
+<div style="background-color:#FFDAA120">
+<p><i class="fas fa-key" style="font-size:20px;"></i><font size=4><span      style="color: darkred;"> **Notice that DnaSP only works in a Windows       environment. If your are Mac or Linux owners, you should install a virtual    machine (VM) to run this program**.</font></span>
+</div>
 
 
 </br>
