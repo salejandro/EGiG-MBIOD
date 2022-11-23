@@ -73,7 +73,12 @@ ___
 
 Before starting the practice, you must (i) confirm that you have conda (or anaconda) installed in your computer (you can find system requirements and regular installation instructions [here](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) (ii) create and activate a new conda environment, (iii) install all the necessary tools and (iv) check that everything works correctly. The reason for installing and working with conda is to perform the computer lab in a stable environment with a specific `Python` version (3.9), which is a requirement for some of the tools that will be used in the practice, as well as to make installation of major programs easier (iqtree, raxml-ng or hyphy), avoiding the complexity of software compilation on different operating systems with different configurations.
 
-**IMPORTANT NOTE: Many of the tools that will be used in this practice are not available to install in the Windows conda (anaconda) environment. In general, bioinformatics programs for manipulating and analyzing genomic data are only available for Linux and Mac. If you have a Windows based PC or laptop, please install a Linux distribution on a virtual machine (for example [wsl](https://learn.microsoft.com/en-us/windows/wsl/install)]
+**IMPORTANT NOTE**: Many of the tools that will be used in this practice **are not available to install in the Windows conda (anaconda) environment**. In general, bioinformatics programs for manipulating and analyzing genomic data are only available for Linux and Mac. If you have a Windows based PC or laptop, please install a Linux distribution on a virtual machine (for example [wsl](https://learn.microsoft.com/en-us/windows/wsl/install))
+   
+   <div style="background-color:#FFDAA120">
+   > <p><i class="fas fa-key" style="font-size:20px;"></i><font size=4><span      style="color: darkred;"> **Notice that DnaSP only works in a Windows       environment. If your are Mac or Linux owners, you should install a virtual    machine (VM) to run this program**.</font></span>
+   </div>
+
 
 </br>
 
