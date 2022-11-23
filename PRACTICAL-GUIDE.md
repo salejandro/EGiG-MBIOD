@@ -229,6 +229,7 @@ To illustrate the different evolutionary history of some viral genome regions, y
    iqtree -s ${FILE}.f7.msa -m GTR+I+G4+F -bb 1000
    iqtree -s ${FILE}.f11.msa -m JC+F -bb 1000
    ``` 
+   > To visualize the trees you can use the application [figtree](https://github.com/rambaut/figtree/releases)
 
 4. For comparison purposes, you will also built a tree based on a protein sequence aligment of the Receptor Binding Domain (RBD) of Spike. This poorly conserved across sarbecoviruses region is part of the protein Spike and is the domain that binds ACE2 receptors to entry into human cells:
 
