@@ -13,7 +13,7 @@
 
 The objective of these sessions is to increase your understanding of the main concepts behind evolutionary inference by doing some practical worl with a representation (just a few examples) of the state-of-the-art computational tools to estimate phylogenetic relationships between genes and genomes, and to determine the functional consequences of mutations in these sequences. This fundamental knowledge has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
 
-The biological model used in this practices are Sarbecoviruses, and more specifically, a group of viruses closely related with SARS-Cov2 (the the type 2 coronavirus that causes severe acute respiratory syndrome) (part 1), and the BA.1 sublineage of the SARS-CoV2 variant of concern (VOC) Omicron (part 2).
+The biological model used in this practices are sarbecoviruses, and more specifically, a group of viruses closely related with SARS-Cov2 (the the type 2 coronavirus that causes severe acute respiratory syndrome) (part 1), and the BA.1 sublineage of the SARS-CoV2 variant of concern (VOC) Omicron (part 2).
 
 </br>
 </br>
@@ -27,7 +27,7 @@ Helicase, *__S: spike__*. Modified from Signal Transduction and Targeted Therapy
 
 </br>
 
-In the first part of this practice you will reconstruct the phylogenetic relationships of a group of Sarbecoviruses using different genes. This analysis is very ilustrative of the different evolutionary rates of viral genes, as well as of the mosaic nature of the genomes of viruses such as the SARS-CoV2, which originated after recombination between different strains of Sarbecoviruses. In the second part, you will estimate the effect on virus fitness of the missense mutations (amino acid replacements) accumulated in the sublineage BA.1 of Omicron, and compare this effect with the estimated impact for the same positions prior to the emergence of this VOC (all SARS-CoV-2 near full-length genome sequences present in GISAID on 21/11/2021 that passed some quality control checks; [Martin et al. 2022](https://academic.oup.com/mbe/article/39/4/msac061/6553617)). This analysis in an example of how the accumulation of mutations with  individual fitness costs, but that are adaptive in combination with other mutations, could alter the function of a protein (Spike), while remained completely undetected despite unprecedented global genomic surveillance efforts.
+In the first part of this practice you will reconstruct the phylogenetic relationships of a group of sarbecoviruses using different genes. This analysis is very ilustrative of the different evolutionary rates of viral genes, as well as of the mosaic nature of the genomes of viruses such as the SARS-CoV2, which originated after recombination between different strains of sarbecoviruses. In the second part, you will estimate the effect on virus fitness of the missense mutations (amino acid replacements) accumulated in the sublineage BA.1 of Omicron, and compare this effect with the estimated impact for the same positions prior to the emergence of this VOC (all SARS-CoV-2 near full-length genome sequences present in GISAID on 21/11/2021 that passed some quality control checks; [Martin et al. 2022](https://academic.oup.com/mbe/article/39/4/msac061/6553617)). This analysis in an example of how the accumulation of mutations with  individual fitness costs, but that are adaptive in combination with other mutations, could alter the function of a protein (Spike), while remained completely undetected despite unprecedented global genomic surveillance efforts.
 
 </br>
 </br>
@@ -52,7 +52,7 @@ cd Comparative-Genomics-MGG
 
 The genome sequences for this practice were retrieved either from [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) or [GISAID](https://gisaid.org/) databases and correspond to:
 
-1.  The genomic sequences of the 17 Sarbecoviruses used for Figure 1 in [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4)
+1.  The genomic sequences of the 17 sarbecoviruses used for Figure 1 in [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4)
 
 2.  A subset of 4717 high-quality genomes of the BA.1
 variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You can find the metadata associated with these genomes in the file BA.1.metadata, and the instructions for retrieve these sequences in the file [GISAID-BA.1-sequences.md](https://github.com/salejandro/Comparative-Genomics-MGG/blob/main/omicron_seqs.md).
@@ -187,7 +187,7 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
 
 ## Part 1. Phylogenetic analyses
 
-Phylogenomics aims at establishing the evolutionary relationships between organisms using genome data. However, not all parts of a genome evolve at the same rate or completely independently since their split from a common ancestor, due to, for example, past recombination events or strong positive selection acting deferentially on particular genes and lineages. These scenarios may cause phylogenies to reflect different histories across the genome. Sarbecoviruses genomes, including SARS-CoV2, are not an exception. At least 15 recombination fragments have been identified when comparing most relevant Sarbecoviruses genomes. In fact, SARS-CoV-2 show recombination events from different donor Sarbecoviruses strains, some of them spanning functionally important domains of the protein Spike, which point to their putative adaptive nature.
+Phylogenomics aims at establishing the evolutionary relationships between organisms using genome data. However, not all parts of a genome evolve at the same rate or completely independently since their split from a common ancestor, due to, for example, past recombination events or strong positive selection acting deferentially on particular genes and lineages. These scenarios may cause phylogenies to reflect different histories across the genome. sarbecoviruses genomes, including SARS-CoV2, are not an exception. At least 15 recombination fragments have been identified when comparing most relevant sarbecoviruses genomes. In fact, SARS-CoV-2 show recombination events from different donor sarbecoviruses strains, some of them spanning functionally important domains of the protein Spike, which point to their putative adaptive nature.
 
 </br>
 </br>
@@ -196,15 +196,15 @@ Phylogenomics aims at establishing the evolutionary relationships between organi
 <img src="http://www.ub.edu/molevol/CG-MGG/rec.png" width="900">
 </p>
 
-> **Fig. 3.** Recombination events estimated in the evolutionary history of Sarbecoviruses. Modified from [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4).
+> **Fig. 3.** Recombination events estimated in the evolutionary history of sarbecoviruses. Modified from [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4).
 
 </br>
 
-To illustrate the different evolutionary history of some viral genome regions, you will conduct a ML phylogenetic analysis of the nucleotide sequences of two recombination fragments: the fragment that encodes, among others, the RNA-dependent RNA polymerase (RdRp) and the Helicase of the virus (fragment 7 in Fig. 3), and the fragment that encodes most of the S-gene, including the Receptor Binding Domain, RBD (fragment 11 in Fig.3), of representative human, bat, and pangolin Sarbecoviruses. These two fragments encode proteins with very different functions, which is clearly reflected in their contrasting evolutionary rates.
+To illustrate the different evolutionary history of some viral genome regions, you will conduct a ML phylogenetic analysis of the nucleotide sequences of two recombination fragments: the fragment that encodes, among others, the RNA-dependent RNA polymerase (RdRp) and the Helicase of the virus (fragment 7 in Fig. 3), and the fragment that encodes most of the S-gene, including the Receptor Binding Domain, RBD (fragment 11 in Fig.3), of representative human, bat, and pangolin sarbecoviruses. These two fragments encode proteins with very different functions, which is clearly reflected in their contrasting evolutionary rates.
 
 ### Workflow:
 
-1.  First, you have to trim down Sarbecoviruses genomic sequences to the recombination fragment neighborhood using a `Python` script:
+1.  First, you have to trim down sarbecoviruses genomic sequences to the recombination fragment neighborhood using a `Python` script:
 
    ```bash
    # Fragment 7:
@@ -230,7 +230,7 @@ To illustrate the different evolutionary history of some viral genome regions, y
    iqtree -s ${FILE}.f11.msa -m JC+F -bb 1000
    ``` 
 
-4. For comparison purposes, you will also built a tree based on a protein sequence aligment of the Receptor Binding Domain (RBD) of Spike. This poorly conserved across Sarbecoviruses region is part of the protein Spike and is the domain that binds ACE2 receptors to entry into human cells:
+4. For comparison purposes, you will also built a tree based on a protein sequence aligment of the Receptor Binding Domain (RBD) of Spike. This poorly conserved across sarbecoviruses region is part of the protein Spike and is the domain that binds ACE2 receptors to entry into human cells:
 
 + To trim down Sarbecovirues sequences to the RBD neighborhood using a `Python` script:
       
@@ -257,7 +257,7 @@ To illustrate the different evolutionary history of some viral genome regions, y
    mafft $FILE.RBD.prot > $FILE.RBD.prot.align   
    ```
    
-+ To obtain the ML phylogenetic tree of the RBD protein region of Sarbecoviruses:
++ To obtain the ML phylogenetic tree of the RBD protein region of sarbecoviruses:
    
    ```bash
    iqtree -s $FILE.RBD.prot.align -m -bb
