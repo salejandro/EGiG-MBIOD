@@ -73,7 +73,7 @@ ___
 
 Before starting the practice, you must (i) confirm that you have conda (or anaconda) installed in your computer (you can find system requirements and regular installation instructions [here](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) (ii) create and activate a new conda environment, (iii) install all the necessary tools and (iv) check that everything works correctly. The reason for installing and working with conda is to perform the computer lab in a stable environment with a specific `Python` version (3.9), which is a requirement for some of the tools that will be used in the practice, as well as to make installation of major programs easier (iqtree, raxml-ng or hyphy), avoiding the complexity of software compilation on different operating systems with different configurations.
 
-**IMPORTANT WARNING**: Many of the **tools that will be used in this practice are not available to install in the **Windows conda (anaconda) environment**. In general, bioinformatics programs for manipulating and analyzing genomic data are only available for Linux and Mac. If you have a Windows based PC or laptop, **please install a Linux distribution on a virtual machine** (for example [wsl](https://learn.microsoft.com/en-us/windows/wsl/install)).
+**IMPORTANT WARNING: Many of the tools that will be used in this practice are not available to install in the Windows conda (anaconda) environment. In general, bioinformatics programs for manipulating and analyzing genomic data are only available for Linux and Mac. If you have a Windows based PC or laptop, **please install a Linux distribution on a virtual machine (for example [wsl](https://learn.microsoft.com/en-us/windows/wsl/install)).
 
 
 </br>
@@ -222,15 +222,15 @@ To illustrate the different evolutionary history of some viral genome regions, y
    mafft ${FILE}.f11.fasta > ${FILE}.f11.msa
    ``` 
 
-3.  You will use `raxml-ng` to obtain ML phylogenetic trees based on the nucleotide sequences from these regions:
+3.  You will use `iqtree` to obtain ML phylogenetic trees based on the nucleotide sequences from these regions:
 
    ```bash
    threads=4
-   raxml-ng --redo --threads $threads --msa ${FILE}.f7.msa --tree pars{5} --model GTR+G+I
-   raxml-ng --redo --threads $threads --msa ${FILE}.f11.msa --tree pars{5} --model GTR+G+I
+   iqtree -s ${FILE}.f7.msa -m GTR+I+G4+F -bb 1000
+   iqtree -s ${FILE}.f11.msa -m JC+F -bb 1000
    ``` 
 
-4. You will also built a tree based on a protein sequence aligment of the Receptor Binding Domain (RBD) of Spike. This poorly conserved across Sarbecoviruses region is part of the protein Spike and is the domain that binds ACE2 receptors to entry into human cells:
+4. For comparison purposes, you will also built a tree based on a protein sequence aligment of the Receptor Binding Domain (RBD) of Spike. This poorly conserved across Sarbecoviruses region is part of the protein Spike and is the domain that binds ACE2 receptors to entry into human cells:
 
 + To trim down Sarbecovirues sequences to the RBD neighborhood using a `Python` script:
       
@@ -282,7 +282,7 @@ In the second part of the practice, we are particularly interested in identifyin
 
 ### Workflow:
 
-1.  You have first to trim down genomic sequences to the S gene neighborhood using a `Python` script:
+1.  You have first to trim down genomic sequences to the S-gene neighborhood using a `Python` script:
 
       ```bash
       FILE="omicron-BA1.fasta" # rename accordingly
@@ -298,7 +298,7 @@ In the second part of the practice, we are particularly interested in identifyin
       bealign -r CoV2-S ${FILE}.S.raw ${FILE}.S.bam
       bam2msa ${FILE}.S.bam ${FILE}.S.msa
       ```
-   > This step allows to delimit the alignment to only the coding region of the S gene
+   > This step allows to delimit the alignment to only the coding region of the S-gene
 
 </br>
 
@@ -340,7 +340,7 @@ In the second part of the practice, we are particularly interested in identifyin
    
  </br>
 
-4.  The program hyphy estimates synonymous and non-synonymous substitution rates in a maximum likelihood (ML) phylogetic framework using different (complementary) [methods](https://www.hyphy.org/methods/selection-methods/). Hence, first of all, you need a phylogenetic tree with the relationships among the S sequences retained in the previous step (after comprising to unique haplotypes). In this case, you will use the program `raxml-ng`: 
+4.  The program hyphy estimates synonymous and non-synonymous substitution rates in a maximum likelihood (ML) phylogetic framework using different (complementary) [methods](https://www.hyphy.org/methods/selection-methods/). Hence, first of all, you need a phylogenetic tree with the relationships among the Spike sequences retained in the previous step (after comprising to unique haplotypes). In this case, you will use the program `raxml-ng`: 
 
       ```bash
       raxml-ng --redo --threads $theads --msa ${FILE}.S.uniq.fas --tree pars{5} --model GTR+G+I
@@ -351,7 +351,7 @@ In the second part of the practice, we are particularly interested in identifyin
 
 5. Once you have the tree, you are ready to run a selection analysis with different methods implemented in the software hyhpy. For this practice, you will run [BUSTED](https://academic.oup.com/mbe/article-lookup/doi/10.1093/molbev/msv035), [FEL](https://academic.oup.com/mbe/article/22/5/1208/1066893), [MEME](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1002764) and [BGM](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0030231) analyses:</br>
 
-   +  The first method is **BUSTED** (**B**ranch-Site **U**nrestricted **S**tatistical **T**est for **E**pisodic **D**iversification). By applying this method, you are asking whether the S gene has experienced **positive selection at at least one site on at least one branch** of the tree (=one BA.1 genome):
+   +  The first method is **BUSTED** (**B**ranch-Site **U**nrestricted **S**tatistical **T**est for **E**pisodic **D**iversification). By applying this method, you are asking whether the S-gene has experienced **positive selection at at least one site on at least one branch** of the tree (=one BA.1 genome):
 
       ```bash
       hyphy busted --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.uniq.tree --branches CLADE --rates 3 --starting-points 5
@@ -363,7 +363,7 @@ In the second part of the practice, we are particularly interested in identifyin
       hyphy fel --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches CLADE  --ci Yes
       ```
    
-   + Whith **MEME** (**M**ixed **E**ffects **M**odel of **E**volution) you will identify episodes of positive selection in the S gene affecting a **small subset of branches at individual sites**. In other words, episodic positive or diversifying selection:
+   + Whith **MEME** (**M**ixed **E**ffects **M**odel of **E**volution) you will identify episodes of positive selection in the S-gene affecting a **small subset of branches at individual sites**. In other words, episodic positive or diversifying selection:
    
       ```bash
       hyphy meme --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches CLADE
