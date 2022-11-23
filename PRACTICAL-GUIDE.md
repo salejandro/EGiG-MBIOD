@@ -257,12 +257,12 @@ To illustrate the different evolutionary history of some viral genome regions, y
    mafft $FILE.RBD.prot > $FILE.RBD.prot.align   
    ```
    
-+ To obtain the ML phylogenetic tree of the RBD protein region of sarbecoviruses:
++ To obtain the ML phylogenetic trees of the RBD protein region of sarbecoviruses:
    
    ```bash
-   iqtree -s $FILE.RBD.prot.align -m -bb
+  iqtree -s sarbecoviruses.fasta.RBD.prot.align -st AA -m LG4M+G4 -bb 1000 
+  iqtree -s sarbecoviruses.fasta.RBD.prot.align -st AA -m TEST -bb 1000
    ```
-
 ---
 
 ## Part 2. Analysis of selection in the BA.1 sublineage
