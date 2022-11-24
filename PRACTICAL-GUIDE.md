@@ -229,7 +229,6 @@ To illustrate the different evolutionary history of some viral genome regions, y
 3.  You will use `iqtree` to obtain ML phylogenetic trees based on the nucleotide sequences from these regions:
 
       ```bash
-      threads=4
       iqtree -s ${FILE}.f7.msa -m GTR+I+G4+F -bb 1000
       iqtree -s ${FILE}.f11.msa -m JC+F -bb 1000
       ``` 
