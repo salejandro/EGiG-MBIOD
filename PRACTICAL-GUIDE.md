@@ -8,7 +8,7 @@
 # Comparative Genomics
 
 Instructors: **Marta Riutort & Alejandro Sánchez**
-<p><i class="fa fa-envelope"></i> <strong>Doubts?</strong> <a href="mriutort@ub.edu" class="email">mailto:M. Riutort</a></p><p><a href="elsanchez@ub.edu" class="email">mailto:A. Sánchez</a></p>
+<p><i class="fa fa-envelope"></i> <strong>Doubts?</strong></p><p><a href="mriutort@ub.edu" class="email">mailto:M. Riutort</a></p><p><a href="elsanchez@ub.edu" class="email">mailto:A. Sánchez</a></p>
 
 </br>
 
