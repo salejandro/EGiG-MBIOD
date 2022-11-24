@@ -208,13 +208,13 @@ To illustrate the different evolutionary history of some viral genome regions, y
 1.  First, you have to trim down sarbecoviruses genomic sequences to the recombination fragment neighborhood using a `Python` script:
 
       ```bash
-      FILE="data/sarbecoviruses.fasta" # rename accordingly
+      FILE="sarbecoviruses.fasta" # rename accordingly
       
       # Fragment 7:
-      python3.9 scripts/filter-sites.py $FILE  12000,18000 > ${FILE}.f7.fasta
+      python3.9 scripts/filter-sites.py data/$FILE  12000,18000 > ${FILE}.f7.fasta
    
       # Fragment 11:
-      python3.9 scripts/filter-sites.py $FILE  22000,25000 > ${FILE}.f11.fasta
+      python3.9 scripts/filter-sites.py data/$FILE  22000,25000 > ${FILE}.f11.fasta
       ``` 
  </br>
  
@@ -294,7 +294,7 @@ In the second part of the practice, we are particularly interested in identifyin
 
       ```bash
       FILE="omicron-BA1.fasta" # rename accordingly
-      python3.9 scripts/filter-sites.py $FILE  20000,26000 > ${FILE}.S.raw
+      python3.9 scripts/filter-sites.py data/$FILE  20000,26000 > ${FILE}.S.raw
       ``` 
    > You trim sequences to this wide range be sure to include the whole S-gene of all the sequences
    
