@@ -208,8 +208,9 @@ To illustrate the different evolutionary history of some viral genome regions, y
 1.  First, you have to trim down sarbecoviruses genomic sequences to the recombination fragment neighborhood using a `Python` script:
 
       ```bash
+      FILE="data/sarbecoviruses.fasta" # rename accordingly
+      
       # Fragment 7:
-      FILE="sarbecoviruses.fasta" # rename accordingly
       python3.9 scripts/filter-sites.py $FILE  12000,18000 > ${FILE}.f7.fasta
    
       # Fragment 11:
@@ -246,7 +247,8 @@ To illustrate the different evolutionary history of some viral genome regions, y
    + To map trimmed Sarbecovirus sequences to the RBD nucleotide sequences of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)), using a codon alignment algorithm:
    
       ```bash
-      bealign -r RBD.reference ${FILE}.RBD.raw ${FILE}.RBD.bam   
+      REF="data/RBD.reference"
+      bealign -r ${REF} ${FILE}.RBD.raw ${FILE}.RBD.bam   
       bam2msa ${FILE}.RBD.bam ${FILE}.RBD.msa 
       ```
       > This step allows to delimit the alignment to only the coding region of RBD. The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format
@@ -304,7 +306,7 @@ In the second part of the practice, we are particularly interested in identifyin
       bealign -r CoV2-S ${FILE}.S.raw ${FILE}.S.bam
       bam2msa ${FILE}.S.bam ${FILE}.S.msa
       ```
-      > This step allows to delimit the alignment to only the coding region of the S-gene
+      > This step allows to delimit the alignment to only the coding region of the S-gene (which is already available as an option for -r in `bealign`)
 
 </br>
 
