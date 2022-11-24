@@ -211,10 +211,10 @@ To illustrate the different evolutionary history of some viral genome regions, y
       FILE="data/sarbecoviruses.fasta" # rename accordingly
       
       # Fragment 7:
-      python3.9 scripts/filter-sites.py $FILE  12000,18000 > ./${FILE}.f7.fasta
+      python3.9 scripts/filter-sites.py $FILE  12000,18000 > ${FILE}.f7.fasta
    
       # Fragment 11:
-      python3.9 scripts/filter-sites.py $FILE  22000,25000 > ./${FILE}.f11.fasta
+      python3.9 scripts/filter-sites.py $FILE  22000,25000 > ${FILE}.f11.fasta
       ``` 
  </br>
  
