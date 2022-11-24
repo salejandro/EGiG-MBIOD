@@ -112,7 +112,15 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
    conda install -c bioconda mafft
    ```  
    
-   ii. **`iqtree`**
+   ii. **`Bioext`**
+
+   - Linux and Mac:
+   
+   ```bash
+   pip install Cython numpy Bio Bioext
+   ```
+   
+   iii. **`iqtree`**
    
    - Linux and Mac:
    
@@ -120,7 +128,7 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
    conda install -c bioconda iqtree
    ```
    
-   iii. **`emboss`**
+   iv. **`emboss`**
    
    - Linux and Mac:
    
@@ -134,20 +142,12 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
 
 4.  Finally, for the second part of the practice (session on selective pressures), you need a program to identify and exclude identical and very similar sequences (tn93), tools for codon-guided multiple sequence alignment (bealign and bam2msa - from the Bioext package), a the program to estimate selective constraints on amino acid positions (hyphy):
 
-   iv. **`tn93`**    
+   v. **`tn93`**    
 
    - Linux and Mac:
    
    ```bash
    conda install -c bioconda 'tn93>=1.0.7'
-   ```
-
-   v. **`Bioext`**
-
-   - Linux and Mac:
-   
-   ```bash
-   pip install Cython numpy Bio Bioext
    ```
    
    vi. **`raxml-ng`**
