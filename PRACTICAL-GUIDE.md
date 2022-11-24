@@ -8,7 +8,7 @@
 # Comparative Genomics
 
 Instructors: **Marta Riutort & Alejandro Sánchez**
-<p><i class="fa fa-envelope"></i> <strong>Doubts?</strong> <a href="mailto:alejandro.sanchez@prof.esci.upf.edu" class="email">mailto:alejandro.sanchez@prof.esci.upf.edu</a></p><a href="mailto:alejandro.sanchez@prof.esci.upf.edu" class="email">mailto:alejandro.sanchez@prof.esci.upf.edu</a></p>
+<p><i class="fa fa-envelope"></i> <strong>Doubts?</strong> <a href="mriutort(at)UB" class="email">mailto:mriutort@ub.edu</a></p><a href="elsanchez(at)UB" class="email">mailto:elsanchez@ub.edu</a></p>
 
 </br>
 
