@@ -386,7 +386,10 @@ In the second part of the practice, we are particularly interested in identifyin
 To visualize json results use [hyphy-vision tool](http://vision.hyphy.org/)
 
 ***
-[Contact M. Riutort](mailto:mriutort@ub.edu)
-[Contact A. Sánchez](mailto:elsanchez@ub.edu)
 
 <p><strong>Doubts?</strong></p>
+
+[Contact M. Riutort](mailto:mriutort@ub.edu)  
+[Contact A. Sánchez](mailto:elsanchez@ub.edu)  
+
+
