@@ -347,7 +347,8 @@ In the second part of the practice, we are particularly interested in identifyin
 4.  The program hyphy estimates synonymous and non-synonymous substitution rates in a maximum likelihood (ML) phylogetic framework using different (complementary) [methods](https://www.hyphy.org/methods/selection-methods/). Hence, first of all, you need a phylogenetic tree with the relationships among the Spike sequences retained in the previous step (after comprising to unique haplotypes). In this case, you will use the program `raxml-ng`: 
 
       ```bash
-      raxml-ng --redo --threads $theads --msa ${FILE}.S.uniq.fas --tree pars{5} --model GTR+G+I
+      threads=4
+      raxml-ng --redo --threads $threads --msa ${FILE}.S.uniq.fas --tree pars{5} --model GTR+G+I
       cp ${FILE}.S.uniq.fas.raxml.bestTree ${FILE}.S.uniq.tree
       ```
  
