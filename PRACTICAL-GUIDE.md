@@ -233,37 +233,37 @@ To illustrate the different evolutionary history of some viral genome regions, y
 
 4. For comparison purposes, you will also built a tree based on a protein sequence aligment of the Receptor Binding Domain (RBD) of Spike. This poorly conserved across sarbecoviruses region is part of the protein Spike and is the domain that binds ACE2 receptors to entry into human cells:
 
-+ To trim down Sarbecovirues sequences to the RBD neighborhood using a `Python` script:
+   + To trim down Sarbecovirues sequences to the RBD neighborhood using a `Python` script:
       
-   ```bash
-   python3.9 python/filter-sites.py ${FILE} 22000,24000 > ${FILE}.RBD.raw
-   ```
-+ to map trimmed Sarbecovirus sequences to the RBD nucleotide sequences of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)), using a codon alignment algorithm:
+      ```bash
+      python3.9 python/filter-sites.py ${FILE} 22000,24000 > ${FILE}.RBD.raw
+      ```
+   + To map trimmed Sarbecovirus sequences to the RBD nucleotide sequences of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)), using a codon alignment algorithm:
    
-   ```bash
-   bealign -r RBD.reference ${FILE}.RBD.raw ${FILE}.RBD.bam   
-   bam2msa ${FILE}.RBD.bam ${FILE}.RBD.msa 
-   ```
+      ```bash
+      bealign -r RBD.reference ${FILE}.RBD.raw ${FILE}.RBD.bam   
+      bam2msa ${FILE}.RBD.bam ${FILE}.RBD.msa 
+      ```
 > This step allows to delimit the alignment to only the coding region of RBD. The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format
    
-+ To translate coding sequences to amino acid sequences:
+   + To translate coding sequences to amino acid sequences:
+         
+      ```bash 
+      transeq -sequence $FILE.RBD.msa -outseq ${FILE}.RBD.prot    
+      ```
    
-   ```bash 
-   transeq -sequence $FILE.RBD.msa -outseq ${FILE}.RBD.prot    
-   ```
+   + To align RBD protein sequences:
    
-+ To align RBD protein sequences:
+      ```bash
+      mafft $FILE.RBD.prot > $FILE.RBD.prot.align   
+      ```
    
-   ```bash
-   mafft $FILE.RBD.prot > $FILE.RBD.prot.align   
-   ```
+   + To obtain the ML phylogenetic trees of the RBD protein region of sarbecoviruses:
    
-+ To obtain the ML phylogenetic trees of the RBD protein region of sarbecoviruses:
-   
-   ```bash
-  iqtree -s sarbecoviruses.fasta.RBD.prot.align -st AA -m LG4M+G4 -bb 1000 
-  iqtree -s sarbecoviruses.fasta.RBD.prot.align -st AA -m TEST -bb 1000
-   ```
+      ```bash
+     iqtree -s sarbecoviruses.fasta.RBD.prot.align -st AA -m LG4M+G4 -bb 1000 
+     iqtree -s sarbecoviruses.fasta.RBD.prot.align -st AA -m TEST -bb 1000
+     ```
 ---
 
 ## Part 2. Analysis of selection in the BA.1 sublineage
