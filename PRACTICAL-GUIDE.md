@@ -8,7 +8,6 @@
 # Comparative Genomics
 
 Instructors: **Marta Riutort & Alejandro Sánchez**
-<p><i class="fa fa-envelope"></i> <strong>Doubts?</strong></p><p><a href="mriutort@ub.edu" class="email">mailto:M. Riutort</a></p><p><a href="elsanchez@ub.edu" class="email">mailto:A. Sánchez</a></p>
 
 </br>
 
@@ -385,3 +384,7 @@ In the second part of the practice, we are particularly interested in identifyin
       ```
 
 To visualize json results use [hyphy-vision tool](http://vision.hyphy.org/)
+
+***
+
+<p><i class="fa fa-envelope"></i> <strong>Doubts?</strong></p><p><a href="mriutort@ub.edu" class="email">mailto:M. Riutort</a></p><p><a href="elsanchez@ub.edu" class="email">mailto:A. Sánchez</a></p>
