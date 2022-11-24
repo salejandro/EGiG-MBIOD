@@ -244,7 +244,7 @@ To illustrate the different evolutionary history of some viral genome regions, y
       bealign -r RBD.reference ${FILE}.RBD.raw ${FILE}.RBD.bam   
       bam2msa ${FILE}.RBD.bam ${FILE}.RBD.msa 
       ```
-   + > This step allows to delimit the alignment to only the coding region of RBD. The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format
+   * > This step allows to delimit the alignment to only the coding region of RBD. The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format
    
    + To translate coding sequences to amino acid sequences:
          
