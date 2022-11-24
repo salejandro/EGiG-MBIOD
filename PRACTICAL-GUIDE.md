@@ -49,6 +49,7 @@ To clone and work with this repository in your computer, open the terminal app a
 ```bash
 git clone https://github.com/salejandro/Comparative-Genomics-MGG.git
 cd Comparative-Genomics-MGG
+
 ```
 > Notice that you must stay in the Comparative-Genomics-MGG folder for the rest of the practice, as all the commands have been configured to run from that path.
 
@@ -66,6 +67,7 @@ Notice that the file with the BA.1 genomes cannot be used directly for the analy
 
 ```bash
 tar -xf data/omicron-BA1.fasta.tar.bz2  -C data
+
 ```
 > Now the file "omicron-BA1.fasta" is ready to be read.
 
@@ -90,6 +92,7 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
 
    ```bash
    conda create --name cgenv python=3.9
+   
    ```
    > The name of the environment is your own choice, as long as you activate the correct environment to work on the rest of the practice
 
@@ -99,6 +102,7 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
  
    ```bash
    conda activate cgenv 
+   
    ```
    > Make sure that your environment is activated (the name of the environment appears in brackets at starting the command line) before moving on to the next steps
 
@@ -112,6 +116,7 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
    
    ```bash
    conda install -c bioconda mafft
+   
    ```  
    
    ii. **`Bioext`**
@@ -120,6 +125,7 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
    
    ```bash
    pip install cython numpy Bio Bioext
+   
    ```
       > Depending on the version of the operating system, the `cython` module can be case-sensitive. If the above command prints an error regarding that module, try `Cython`.
    
@@ -129,6 +135,7 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
    
    ```bash
    conda install -c bioconda iqtree
+   
    ```
    
    iv. **`emboss`**
@@ -137,6 +144,7 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
    
    ```bash
    conda install -c bioconda emboss
+   
    ```
    
    > You will also use some `Python` scripts that are available in the 'scripts' folder
@@ -151,6 +159,7 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
    
    ```bash
    conda install -c bioconda 'tn93>=1.0.7'
+   
    ```
    
    vi. **`raxml-ng`**
@@ -159,6 +168,7 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
    
    ```bash
    conda install -c bioconda raxml-ng
+   
    ```   
    
    vii. **`hyphy`**
@@ -167,6 +177,7 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
 
    ```bash
    conda install -c bioconda hyphy
+   
    ```  
    > You will also use some `Python` scripts that are available in the 'scripts' folder
 
@@ -182,6 +193,7 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
    bealign -h
    bam2msa -h
    hyphy -h
+   
    ```
    
    > If the installation has been successful, the options for each program will be listed on the screen
@@ -217,6 +229,7 @@ To illustrate the different evolutionary history of some viral genome regions, y
    
       # Fragment 11:
       python3.9 scripts/filter-sites.py data/$FILE  22000,25000 > ${FILE}.f11.fasta
+      
       ``` 
  </br>
  
@@ -225,6 +238,7 @@ To illustrate the different evolutionary history of some viral genome regions, y
       ```bash
       mafft ${FILE}.f7.fasta > ${FILE}.f7.msa
       mafft ${FILE}.f11.fasta > ${FILE}.f11.msa
+      
       ``` 
  </br>
  
@@ -233,6 +247,7 @@ To illustrate the different evolutionary history of some viral genome regions, y
       ```bash
       iqtree -s ${FILE}.f7.msa -m GTR+I+G4+F -bb 1000
       iqtree -s ${FILE}.f11.msa -m JC+F -bb 1000
+      
       ``` 
       > To visualize the trees you can use the application [figtree](https://github.com/rambaut/figtree/releases)
 
@@ -244,6 +259,7 @@ To illustrate the different evolutionary history of some viral genome regions, y
       
       ```bash
       python3.9 scripts/filter-sites.py data/${FILE} 22000,24000 > ${FILE}.RBD.raw
+      
       ```
    + To map trimmed Sarbecovirus sequences to the RBD nucleotide sequences of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)), using a codon alignment algorithm:
    
@@ -251,26 +267,32 @@ To illustrate the different evolutionary history of some viral genome regions, y
       REF="data/RBD.reference"
       bealign -r ${REF} ${FILE}.RBD.raw ${FILE}.RBD.bam   
       bam2msa ${FILE}.RBD.bam ${FILE}.RBD.msa 
+      
       ```
       > This step allows to delimit the alignment to only the coding region of RBD. The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format
    
    + To translate coding sequences to amino acid sequences:
          
       ```bash 
-      transeq -sequence $FILE.RBD.msa -outseq ${FILE}.RBD.prot    
+      transeq -sequence $FILE.RBD.msa -outseq ${FILE}.RBD.prot 
+      
       ```
    
    + To align RBD protein sequences:
    
       ```bash
       mafft $FILE.RBD.prot > $FILE.RBD.prot.align   
+      
       ```
    
    + To obtain the ML phylogenetic trees of the RBD protein region of sarbecoviruses:
    
       ```bash
-     iqtree -s sarbecoviruses.fasta.RBD.prot.align -st AA -m LG4M+G4 -bb 1000 
+     # 1:
+     iqtree -s sarbecoviruses.fasta.RBD.prot.align -st AA -m LG4M+G4 -bb 1000
+     # 2:
      iqtree -s sarbecoviruses.fasta.RBD.prot.align -st AA -m TEST -bb 1000
+     
      ```
 ---
 
@@ -296,6 +318,7 @@ In the second part of the practice, we are particularly interested in identifyin
       ```bash
       FILE="omicron-BA1.fasta" # rename accordingly
       python3.9 scripts/filter-sites.py data/$FILE  20000,26000 > ${FILE}.S.raw
+      
       ``` 
    > You trim sequences to this wide range be sure to include the whole S-gene of all the sequences
    
@@ -306,6 +329,7 @@ In the second part of the practice, we are particularly interested in identifyin
       ```bash
       bealign -r CoV2-S ${FILE}.S.raw ${FILE}.S.bam
       bam2msa ${FILE}.S.bam ${FILE}.S.msa
+      
       ```
       > This step allows to delimit the alignment to only the coding region of the S-gene (which is already available as an option for -r in `bealign`)
 
@@ -317,18 +341,21 @@ In the second part of the practice, we are particularly interested in identifyin
          ```bash
          python3.9 scripts/exact-copies.py  ${FILE}.S.msa > ${FILE}.u.clusters.json
          python3.9 scripts/cluster-processor.py ${FILE}.u.clusters.json > ${FILE}.S.u.fas
+         
          ```
 
       + To identify and remove all remaining sequences that are within t= 0.0 ([Tamura-Nei 93](https://pubmed.ncbi.nlm.nih.gov/8336541/) distance) genetic distance:
          ```bash
          tn93-cluster -t 0.0 ${FILE}.S.u.fas > ${FILE}.t0.clusters.json
          python3.9 scripts/cluster-processor.py ${FILE}.t0.clusters.json > ${FILE}.S.all.fas
+         
          ```
 
       + To reduce the set of sequences to clusters that are all within t=0.00075 distance of one another:
          ```bash
          tn93-cluster -t 0.00075 ${FILE}.S.all.fas > ${FILE}.t1.clusters.json
          python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json > ${FILE}.S.uniq.fas
+         
          ```
 
       + To identify and remove outliers, low quality or misclassified sequences that are t=0.002 away from the gererated clusters:
@@ -336,11 +363,13 @@ In the second part of the practice, we are particularly interested in identifyin
          ```bash
          tn93-cluster -t 0.002 ${FILE}.S.uniq.fas > ${FILE}.t2.clusters.json
          python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json ${FILE}.t2.clusters.json > ${FILE}.S.uniq-all.fas 2> ${FILE}.S.blacklist.txt
+         
          ```
    
       + Finally, to build a majority consensus for each remaining cluster and remove clusters that comprise fewer than 3 sequences:
          ```bash
          python3.9 scripts/cluster-processor-consensus.py 3 ${FILE}.S.msa ${FILE}.S.uniq-all.fas ${FILE}.t1.clusters.json ${FILE}.t0.clusters.json ${FILE}.u.clusters.json > ${FILE}.S.uniq.fas
+         
          ```
    
  </br>
@@ -351,6 +380,7 @@ In the second part of the practice, we are particularly interested in identifyin
       threads=4
       raxml-ng --redo --threads $threads --msa ${FILE}.S.uniq.fas --tree pars{5} --model GTR+G+I
       cp ${FILE}.S.uniq.fas.raxml.bestTree ${FILE}.S.uniq.tree
+      
       ```
  
  </br>
@@ -361,6 +391,7 @@ In the second part of the practice, we are particularly interested in identifyin
 
       ```bash
       hyphy busted --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.uniq.tree --branches Internal --rates 3 --starting-points 5
+      
       ```
    
    + When applying **FEL** (**F**ixed **E**ffects **L**ikelihood) to your data, you obtain the ML estimate of non-synoymous (dN) and synonymous (dS) substitution rates in each codon site (amino acid position) for the entire Spike CDS alignment acroos the phylogeny. Therefore, you are assuming **constant selection pressures along the entire history of BA.1 sequences**:
@@ -368,12 +399,14 @@ In the second part of the practice, we are particularly interested in identifyin
       ```bash
       HYPHYMPI="mpirun -np $threads HYPHYMPI"
       $HYPHYMPI fel --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches Internal  --ci Yes
+      
       ```
    
    + Whith **MEME** (**M**ixed **E**ffects **M**odel of **E**volution) you will identify episodes of positive selection in the S-gene affecting a **small subset of branches at individual sites**. In other words, episodic positive or diversifying selection:
    
       ```bash
       $HYPHYMPI meme --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches Internal
+      
       ```
         > Notice that in the two last models (FEL and MEME) you use the MPI (Message Passing Interface) version of the program hyphy. This version allows multiprocessing (parallel programing), which is very helpful when running computational intensive models  
      
@@ -381,6 +414,7 @@ In the second part of the practice, we are particularly interested in identifyin
      
       ```bash
       hyphy bgm --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.uniq.tree --branches Internal --min-subs 2 --steps 1000000 --samples 1000 --burn-in 100000
+      
       ```
 
 To visualize json results use [hyphy-vision tool](http://vision.hyphy.org/)
