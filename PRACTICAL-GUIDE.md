@@ -294,7 +294,7 @@ To illustrate the different evolutionary history of some viral genome regions, y
      iqtree -s sarbecoviruses.fasta.RBD.prot.align -st AA -m LG4M+G4 -bb 1000
      # 2:
      cp sarbecoviruses.fasta.RBD.prot.align sarbecoviruses.fasta.RBD.prot.align_dup
-     iqtree -s ssarbecoviruses.fasta.RBD.prot.align_dup -st AA -m TEST -bb 1000
+     iqtree -s sarbecoviruses.fasta.RBD.prot.align_dup -st AA -m TEST -bb 1000
      
      ```
 ---
