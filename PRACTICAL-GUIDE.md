@@ -108,7 +108,7 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
 
 </br>
 
-3.  Now, you are ready to install the programs and utilities for the practice. For the first part of the practice (session on filogenomics), you need tools for multiple sequence alignment (mafft) and maximum likelihood phylogenetic reconstruction (iqtree):
+3.  Now, you are ready to install the programs and utilities for the practice. For the first part of the practice (session on filogenomics), you need tools for multiple sequence alignment (mafft) and maximum likelihood phylogenetic reconstruction (iqtree). On Linux, it is highly recommended to upgrade the system using the commands `sudo apt update` and `sudo apt upgrade -y`.
 
    i. **`mafft`**
    
@@ -124,10 +124,12 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
    - Linux and Mac:
    
    ```bash
-   pip install cython numpy Bio Bioext
+   pip install cython
+   pip install Bio 
+   pip install Bioext
    
    ```
-      > Depending on the version of the operating system, the `cython` module can be case-sensitive. If the above command prints an error regarding that module, try `Cython`.
+      > Depending on the version of the operating system, the `cython` module can be case-sensitive. If the above command prints an error regarding that module, try `Cython`. In some Linux distributions you might need to install `g++`, using the command `sudo apt install g++`
    
    iii. **`iqtree`**
    
@@ -158,7 +160,7 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
    - Linux and Mac:
    
    ```bash
-   conda install -c bioconda 'tn93>=1.0.7'
+   conda install -c bioconda 'tn93<=1.0.6'
    
    ```
    
