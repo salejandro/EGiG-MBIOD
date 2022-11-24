@@ -7,6 +7,8 @@
 
 # Comparative Genomics
 
+Marta Riutort & Alejandro Sánchez
+
 </br>
 
 ## Introduction
