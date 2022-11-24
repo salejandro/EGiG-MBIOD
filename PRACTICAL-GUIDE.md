@@ -244,7 +244,7 @@ To illustrate the different evolutionary history of some viral genome regions, y
       bealign -r RBD.reference ${FILE}.RBD.raw ${FILE}.RBD.bam   
       bam2msa ${FILE}.RBD.bam ${FILE}.RBD.msa 
       ```
-   * > This step allows to delimit the alignment to only the coding region of RBD. The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format
+      > This step allows to delimit the alignment to only the coding region of RBD. The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format
    
    + To translate coding sequences to amino acid sequences:
          
@@ -299,41 +299,40 @@ In the second part of the practice, we are particularly interested in identifyin
       bealign -r CoV2-S ${FILE}.S.raw ${FILE}.S.bam
       bam2msa ${FILE}.S.bam ${FILE}.S.msa
       ```
-   > This step allows to delimit the alignment to only the coding region of the S-gene
+      > This step allows to delimit the alignment to only the coding region of the S-gene
 
 </br>
 
 3.  Because selection analyses gain no or minimal power from including identical or very similar sequences, you will filter BA.1 sequences using pairwise genetic distances. To do that, you will use some `Python` scripts and the program `tn93`:
 
-   - To identify and remove all identical sequences up to ambiguous nucleotides:
-
+   + To identify and remove all identical sequences up to ambiguous nucleotides:
       ```bash
       python3.9 scripts/exact-copies.py  ${FILE}.S.msa > ${FILE}.u.clusters.json
       python3.9 scripts/cluster-processor.py ${FILE}.u.clusters.json > ${FILE}.S.u.fas
       ```
 
-   - To identify and remove all remaining sequences that are within t= 0.0 ([Tamura-Nei 93](https://pubmed.ncbi.nlm.nih.gov/8336541/) distance) genetic distance:
+   + To identify and remove all remaining sequences that are within t= 0.0 ([Tamura-Nei 93](https://pubmed.ncbi.nlm.nih.gov/8336541/) distance) genetic distance:
 
       ```bash
       tn93-cluster -t 0.0 ${FILE}.S.u.fas > ${FILE}.t0.clusters.json
       python3.9 scripts/cluster-processor.py ${FILE}.t0.clusters.json > ${FILE}.S.all.fas
       ```
 
-   - To reduce the set of sequences to clusters that are all within t=0.00075 distance of one another:
+   + To reduce the set of sequences to clusters that are all within t=0.00075 distance of one another:
 
       ```bash
       tn93-cluster -t 0.00075 ${FILE}.S.all.fas > ${FILE}.t1.clusters.json
       python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json > ${FILE}.S.uniq.fas
       ```
 
-   - To identify and remove outliers, low quality or misclassified sequences that are t=0.002 away from the gererated clusters:
+   + To identify and remove outliers, low quality or misclassified sequences that are t=0.002 away from the gererated clusters:
 
       ```bash
       tn93-cluster -t 0.002 ${FILE}.S.uniq.fas > ${FILE}.t2.clusters.json
       python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json ${FILE}.t2.clusters.json > ${FILE}.S.uniq-all.fas 2> ${FILE}.S.blacklist.txt
       ```
    
-   - Finally, to build a majority consensus for each remaining cluster and remove clusters that comprise fewer than 3 sequences:
+   + Finally, to build a majority consensus for each remaining cluster and remove clusters that comprise fewer than 3 sequences:
 
       ```bash
       python3.9 scripts/cluster-processor-consensus.py 3 ${FILE}.S.msa ${FILE}.S.uniq-all.fas ${FILE}.t1.clusters.json ${FILE}.t0.clusters.json ${FILE}.u.clusters.json > ${FILE}.S.uniq.fas
