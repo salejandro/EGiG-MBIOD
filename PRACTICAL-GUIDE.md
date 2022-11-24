@@ -129,7 +129,7 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
    pip install Bioext
    
    ```
-   > Depending on the version of the operating system, the `cython` module can be case-sensitive. If the above command prints an error regarding that module, try `Cython`. In some Linux distributions you might need to install `g++`, using the command `sudo apt install g++`
+   > Depending on the version of the operating system, the `cython` module can be case-sensitive. If the above command prints an error regarding that module, try `Cython`. In some Linux distributions you might need to install `g++`, using the command `sudo apt install g++` before installing `Bioext`
    
    iii. **`iqtree`**
    
