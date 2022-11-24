@@ -358,25 +358,25 @@ In the second part of the practice, we are particularly interested in identifyin
    +  The first method is **BUSTED** (**B**ranch-Site **U**nrestricted **S**tatistical **T**est for **E**pisodic **D**iversification). By applying this method, you are asking whether the S-gene has experienced **positive selection at at least one site on at least one branch** of the tree (=one BA.1 genome):
 
       ```bash
-      hyphy busted --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.uniq.tree --branches CLADE --rates 3 --starting-points 5
+      hyphy busted --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.uniq.tree --branches Internal --rates 3 --starting-points 5
       ```
    
    + When applying **FEL** (**F**ixed **E**ffects **L**ikelihood) to your data, you obtain the ML estimate of non-synoymous (dN) and synonymous (dS) substitution rates in each codon site (amino acid position) for the entire Spike CDS alignment acroos the phylogeny. Therefore, you are assuming **constant selection pressures along the entire history of BA.1 sequences**:
    
       ```bash
-      hyphy fel --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches CLADE  --ci Yes
+      hyphy fel --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches Internal  --ci Yes
       ```
    
    + Whith **MEME** (**M**ixed **E**ffects **M**odel of **E**volution) you will identify episodes of positive selection in the S-gene affecting a **small subset of branches at individual sites**. In other words, episodic positive or diversifying selection:
    
       ```bash
-      hyphy meme --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches CLADE
+      hyphy meme --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches Internal
       ```
   
    + Finally, the **BGM** (**B**ayesian **G**raphical **M**odel) method is a tool for detecting correlated amino acid substitutions in the Spike protein of Omicron BA.1. This correlation should be suggestive of **coevolutionary interactions between amino acid positions** in this protein:
      
       ```bash
-      hphy bgm --alignment ${FILE}.S.uniq.fas --tree ${${FILE}.S.uniq.tree --branches CLADE --min-subs 2 --steps 1000000 --samples 1000 --burn-in 100000
+      hphy bgm --alignment ${FILE}.S.uniq.fas --tree ${${FILE}.S.uniq.tree --branches Internal --min-subs 2 --steps 1000000 --samples 1000 --burn-in 100000
       ```
 
 To visualize json results use [hyphy-vision tool](http://vision.hyphy.org/)
