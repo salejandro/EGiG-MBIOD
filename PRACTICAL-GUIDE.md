@@ -389,7 +389,7 @@ To visualize json results use [hyphy-vision tool](http://vision.hyphy.org/)
 
 <p><strong>Doubts?</strong></p>
 
-[Contact M. Riutort](mailto:mriutort@ub.edu)  
-[Contact A. Sánchez](mailto:elsanchez@ub.edu)  
+Contact M. Riutort: mriutort(at)ub.edu  
+Contact A. Sánchez: elsanchez(at)ub.edu 
 
 
