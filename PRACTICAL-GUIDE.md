@@ -387,5 +387,6 @@ To visualize json results use [hyphy-vision tool](http://vision.hyphy.org/)
 
 ***
 [Contact M. Riutort](mailto:mriutort@ub.edu)
+[Contact A. Sánchez](mailto:elsanchez@ub.edu)
 
-<p><strong>Doubts?</strong></p><p><href=mailto:mriutort@ub.edu>Contact M. Riutort</a></p><p><a href="mailto:elsanchez@ub.edu" class="email">A. Sánchez</a></p>
+<p><strong>Doubts?</strong></p>
