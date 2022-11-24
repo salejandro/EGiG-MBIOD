@@ -386,6 +386,6 @@ In the second part of the practice, we are particularly interested in identifyin
 To visualize json results use [hyphy-vision tool](http://vision.hyphy.org/)
 
 ***
-<a href="mailto:user@example.com">user@example.com</a>
+[Contact M. Riutort](mailto:mriutort@ub.edu)
 
 <p><strong>Doubts?</strong></p><p><href=mailto:mriutort@ub.edu>Contact M. Riutort</a></p><p><a href="mailto:elsanchez@ub.edu" class="email">A. Sánchez</a></p>
