@@ -242,7 +242,7 @@ To illustrate the different evolutionary history of some viral genome regions, y
    + To trim down Sarbecovirues sequences to the RBD neighborhood using a `Python` script:
       
       ```bash
-      python3.9 python/filter-sites.py ${FILE} 22000,24000 > ${FILE}.RBD.raw
+      python3.9 scripts/filter-sites.py ${FILE} 22000,24000 > ${FILE}.RBD.raw
       ```
    + To map trimmed Sarbecovirus sequences to the RBD nucleotide sequences of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)), using a codon alignment algorithm:
    
