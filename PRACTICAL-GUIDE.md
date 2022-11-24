@@ -9,6 +9,10 @@
 
 Instructors: **Marta Riutort & Alejandro Sánchez**
 
+Biomedical, Evolutionary and Developmental Genetics Section
+Department of Genetics, Microbiology and Statistics
+Biodiversity Research Institute (IRBio)
+
 </br>
 
 ## Introduction
