@@ -117,8 +117,9 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
    - Linux and Mac:
    
    ```bash
-   pip install Cython numpy Bio Bioext
+   pip install cython numpy Bio Bioext
    ```
+      > Depending on the version of the operating system, the `cython` module can be case-sensitive. If the above command prints an error regarding that module, try `Cython`.
    
    iii. **`iqtree`**
    
