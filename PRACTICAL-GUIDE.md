@@ -206,30 +206,34 @@ To illustrate the different evolutionary history of some viral genome regions, y
 
 1.  First, you have to trim down sarbecoviruses genomic sequences to the recombination fragment neighborhood using a `Python` script:
 
-   ```bash
-   # Fragment 7:
-   FILE="sarbecoviruses.fasta" # rename accordingly
-   python3.9 scripts/filter-sites.py $FILE  12000,18000 > ${FILE}.f7.fasta
+      ```bash
+      # Fragment 7:
+      FILE="sarbecoviruses.fasta" # rename accordingly
+      python3.9 scripts/filter-sites.py $FILE  12000,18000 > ${FILE}.f7.fasta
    
-   # Fragment 11:
-   python3.9 scripts/filter-sites.py $FILE  22000,25000 > ${FILE}.f11.fasta
-   ``` 
-
+      # Fragment 11:
+      python3.9 scripts/filter-sites.py $FILE  22000,25000 > ${FILE}.f11.fasta
+      ``` 
+ </br>
+ 
 2.  Now, you can build a multiple sequence alignment for each fragment using `mafft`:
    
-   ```bash
-   mafft ${FILE}.f7.fasta > ${FILE}.f7.msa
-   mafft ${FILE}.f11.fasta > ${FILE}.f11.msa
-   ``` 
-
+      ```bash
+      mafft ${FILE}.f7.fasta > ${FILE}.f7.msa
+      mafft ${FILE}.f11.fasta > ${FILE}.f11.msa
+      ``` 
+ </br>
+ 
 3.  You will use `iqtree` to obtain ML phylogenetic trees based on the nucleotide sequences from these regions:
 
-   ```bash
-   threads=4
-   iqtree -s ${FILE}.f7.msa -m GTR+I+G4+F -bb 1000
-   iqtree -s ${FILE}.f11.msa -m JC+F -bb 1000
-   ``` 
-   > To visualize the trees you can use the application [figtree](https://github.com/rambaut/figtree/releases)
+      ```bash
+      threads=4
+      iqtree -s ${FILE}.f7.msa -m GTR+I+G4+F -bb 1000
+      iqtree -s ${FILE}.f11.msa -m JC+F -bb 1000
+      ``` 
+      > To visualize the trees you can use the application [figtree](https://github.com/rambaut/figtree/releases)
+
+ </br>
 
 4. For comparison purposes, you will also built a tree based on a protein sequence aligment of the Receptor Binding Domain (RBD) of Spike. This poorly conserved across sarbecoviruses region is part of the protein Spike and is the domain that binds ACE2 receptors to entry into human cells:
 
@@ -305,38 +309,35 @@ In the second part of the practice, we are particularly interested in identifyin
 
 3.  Because selection analyses gain no or minimal power from including identical or very similar sequences, you will filter BA.1 sequences using pairwise genetic distances. To do that, you will use some `Python` scripts and the program `tn93`:
 
-   + To identify and remove all identical sequences up to ambiguous nucleotides:
-      ```bash
-      python3.9 scripts/exact-copies.py  ${FILE}.S.msa > ${FILE}.u.clusters.json
-      python3.9 scripts/cluster-processor.py ${FILE}.u.clusters.json > ${FILE}.S.u.fas
-      ```
+      + To identify and remove all identical sequences up to ambiguous nucleotides:
+         ```bash
+         python3.9 scripts/exact-copies.py  ${FILE}.S.msa > ${FILE}.u.clusters.json
+         python3.9 scripts/cluster-processor.py ${FILE}.u.clusters.json > ${FILE}.S.u.fas
+         ```
 
-   + To identify and remove all remaining sequences that are within t= 0.0 ([Tamura-Nei 93](https://pubmed.ncbi.nlm.nih.gov/8336541/) distance) genetic distance:
+      + To identify and remove all remaining sequences that are within t= 0.0 ([Tamura-Nei 93](https://pubmed.ncbi.nlm.nih.gov/8336541/) distance) genetic distance:
+         ```bash
+         tn93-cluster -t 0.0 ${FILE}.S.u.fas > ${FILE}.t0.clusters.json
+         python3.9 scripts/cluster-processor.py ${FILE}.t0.clusters.json > ${FILE}.S.all.fas
+         ```
 
-      ```bash
-      tn93-cluster -t 0.0 ${FILE}.S.u.fas > ${FILE}.t0.clusters.json
-      python3.9 scripts/cluster-processor.py ${FILE}.t0.clusters.json > ${FILE}.S.all.fas
-      ```
+      + To reduce the set of sequences to clusters that are all within t=0.00075 distance of one another:
+         ```bash
+         tn93-cluster -t 0.00075 ${FILE}.S.all.fas > ${FILE}.t1.clusters.json
+         python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json > ${FILE}.S.uniq.fas
+         ```
 
-   + To reduce the set of sequences to clusters that are all within t=0.00075 distance of one another:
+      + To identify and remove outliers, low quality or misclassified sequences that are t=0.002 away from the gererated clusters:
 
-      ```bash
-      tn93-cluster -t 0.00075 ${FILE}.S.all.fas > ${FILE}.t1.clusters.json
-      python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json > ${FILE}.S.uniq.fas
-      ```
-
-   + To identify and remove outliers, low quality or misclassified sequences that are t=0.002 away from the gererated clusters:
-
-      ```bash
-      tn93-cluster -t 0.002 ${FILE}.S.uniq.fas > ${FILE}.t2.clusters.json
-      python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json ${FILE}.t2.clusters.json > ${FILE}.S.uniq-all.fas 2> ${FILE}.S.blacklist.txt
-      ```
+         ```bash
+         tn93-cluster -t 0.002 ${FILE}.S.uniq.fas > ${FILE}.t2.clusters.json
+         python3.9 scripts/cluster-processor.py ${FILE}.t1.clusters.json ${FILE}.t2.clusters.json > ${FILE}.S.uniq-all.fas 2> ${FILE}.S.blacklist.txt
+         ```
    
-   + Finally, to build a majority consensus for each remaining cluster and remove clusters that comprise fewer than 3 sequences:
-
-      ```bash
-      python3.9 scripts/cluster-processor-consensus.py 3 ${FILE}.S.msa ${FILE}.S.uniq-all.fas ${FILE}.t1.clusters.json ${FILE}.t0.clusters.json ${FILE}.u.clusters.json > ${FILE}.S.uniq.fas
-      ```
+      + Finally, to build a majority consensus for each remaining cluster and remove clusters that comprise fewer than 3 sequences:
+         ```bash
+         python3.9 scripts/cluster-processor-consensus.py 3 ${FILE}.S.msa ${FILE}.S.uniq-all.fas ${FILE}.t1.clusters.json ${FILE}.t0.clusters.json ${FILE}.u.clusters.json > ${FILE}.S.uniq.fas
+         ```
    
  </br>
 
