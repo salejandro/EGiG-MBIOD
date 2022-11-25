@@ -69,7 +69,7 @@ Notice that the file with the BA.1 genomes cannot be used directly for the analy
 tar -xf data/omicron-BA1.fasta.tar.bz2  -C data
 
 ```
-> Now the file "omicron-BA1.fasta" is ready to be read.
+> Now the file "omicron-BA1.fasta" should be in the folder "data" ready to be read. If this instruction fails, you may need to install the bzip2 program first. To do this, upgrade your system (see point 3 in the Software installation section), and then type in the app terminal `sudo apt install bzip2` 
 
 ___
 
