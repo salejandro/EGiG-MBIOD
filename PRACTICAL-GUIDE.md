@@ -42,6 +42,13 @@ In the first part of this practice you will reconstruct the phylogenetic relatio
 
 ---
 
+## Unix based OS
+
+If you are not familiarized with the terminal app in Unix based operating systems, please take a look at these introductory manuals:
+
+   + [Linux](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
+   + [Mac](https://support.apple.com/en-in/guide/terminal/welcome/mac)
+
 ## Data
 
 To clone and work with this repository in your computer, open the terminal app and type:
