@@ -412,7 +412,7 @@ In the second part of the practice, we are particularly interested in identifyin
       
       ```
    
-   + Whith **MEME** (**M**ixed **E**ffects **M**odel of **E**volution) you will identify episodes of positive selection in the S-gene affecting a **small subset of branches at individual sites**. In other words, episodic positive or diversifying selection:
+   + Whith **MEME** (**M**ixed **E**ffects **M**odel of **E**volution) you will identify episodes of **positive selection** in the S-gene affecting a **small subset of branches at individual sites**. In other words, episodic positive or diversifying selection:
    
       ```bash
       $HYPHYMPI meme --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches Internal
