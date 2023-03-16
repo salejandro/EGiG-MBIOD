@@ -1,4 +1,4 @@
-<p align="right">
+ <p align="right">
 <img src="http://www.ub.edu/molevol/CG-MGG/logo2.png">  
 </p>
 <p align="center">
@@ -7,7 +7,7 @@
 
 # Comparative Genomics
 
-Instructors: **Marta Riutort & Alejandro Sánchez**  
+Instructor: **Alejandro Sánchez**  
 
 </br>
 
@@ -49,16 +49,13 @@ If you are not familiarized with the terminal app in Unix based operating system
    + [Linux](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
    + [Mac](https://support.apple.com/en-in/guide/terminal/welcome/mac)
 
-## Data
+## Software and Data
 
-To clone and work with this repository in your computer, open the terminal app and type:
+Before starting the practice, confirm that you have installed `Docker` in your computer. (i) confirm that you have conda (or anaconda) (you can find system requirements and regular installation instructions [here](xxxxxxxxxxx). The reason for installing `Docker` and working within a container of a prebuilt image is to perform the computer lab in a stable environment with a specific `Python` version (3.9), as well as to avoid the complexity of software (iqtree, raxml-ng or hyphy) compilation on different operating systems with different configurations. 
 
-```bash
-git clone https://github.com/salejandro/Comparative-Genomics-MGG.git
-cd Comparative-Genomics-MGG
+**IMPORTANT WARNING: Many of the tools that will be used in this practice are not available for Windows operating systems, even when conda (anaconda) environment is installed. In general, bioinformatics programs for manipulating and analyzing genomic data are only available or tested for Linux and Mac. If you have a Windows based PC or laptop, **I strongy recommend to install a Linux distribution on a virtual machine (for example [wsl](https://learn.microsoft.com/en-us/windows/wsl/install)).
 
-```
-> Notice that you must stay in the Comparative-Genomics-MGG folder for the rest of the practice, as all the commands have been configured to run from that path.
+### Data files availability:
 
 The genome sequences for this practice were retrieved either from [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) or [GISAID](https://gisaid.org/) databases and correspond to:
 
@@ -67,25 +64,7 @@ The genome sequences for this practice were retrieved either from [GenBank](http
 2.  A subset of 4717 high-quality genomes of the BA.1
 variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You can find the metadata associated with these genomes in the file BA.1.metadata, and the instructions for retrieve these sequences in the file [GISAID-BA.1-sequences.md](https://github.com/salejandro/Comparative-Genomics-MGG/blob/main/omicron_seqs.md).
 
-### Data files availability:
-
-The [FASTA](https://es.wikipedia.org/wiki/Formato_FASTA) files with the data decribed above are in the folder "data" of this repository.
-Notice that the file with the BA.1 genomes cannot be used directly for the analyses, we first have to unzip it:
-
-```bash
-tar -xf data/omicron-BA1.fasta.tar.bz2  -C data
-
-```
-> Now the file "omicron-BA1.fasta" should be in the folder "data" ready to be read. If this instruction fails, you may need to install the bzip2 program first. To do this, upgrade your system (see point 3 in the Software installation section), and then type in the app terminal `sudo apt install bzip2` 
-
-___
-
-## Software installation
-
-Before starting the practice, you must (i) confirm that you have conda (or anaconda) installed in your computer (you can find system requirements and regular installation instructions [here](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) (ii) create and activate a new conda environment, (iii) install all the necessary tools and (iv) check that everything works correctly. The reason for installing and working with conda is to perform the computer lab in a stable environment with a specific `Python` version (3.9), which is a requirement for some of the tools that will be used in the practice, as well as to make installation of major programs easier (iqtree, raxml-ng or hyphy), avoiding the complexity of software compilation on different operating systems with different configurations.
-
-**IMPORTANT WARNING: Many of the tools that will be used in this practice are not available to install in the Windows conda (anaconda) environment. In general, bioinformatics programs for manipulating and analyzing genomic data are only available for Linux and Mac. If you have a Windows based PC or laptop, **please install a Linux distribution on a virtual machine (for example [wsl](https://learn.microsoft.com/en-us/windows/wsl/install)).
-
+The [FASTA](https://es.wikipedia.org/wiki/Formato_FASTA) files with the data decribed above will be in the folder "/data" of your home.
 
 </br>
 
@@ -95,117 +74,6 @@ Before starting the practice, you must (i) confirm that you have conda (or anaco
 
 </br>
 
-1.  To create the environment, open the terminal app and type:
-
-   ```bash
-   conda create --name cgenv python=3.9
-   
-   ```
-   > The name of the environment is your own choice, as long as you activate the correct environment to work on the rest of the practice
-
-</br>
- 
-2.  To activate the environment:
- 
-   ```bash
-   conda activate cgenv 
-   
-   ```
-   > Make sure that your environment is activated (the name of the environment appears in brackets at starting the command line) before moving on to the next steps
-
-</br>
-
-3.  Now, you are ready to install the programs and utilities for the practice. For the first part of the practice (session on filogenomics), you need tools for multiple sequence alignment (mafft) and maximum likelihood phylogenetic reconstruction (iqtree). On Linux, it is highly recommended to upgrade the system using the commands `sudo apt update` and `sudo apt upgrade -y`.
-
-   i. **`mafft`**
-   
-   - Linux and Mac:
-   
-   ```bash
-   conda install -c bioconda mafft
-   
-   ```  
-   
-   ii. **`Bioext`**
-
-   - Linux and Mac:
-   
-   ```bash
-   pip install cython
-   pip install Bio 
-   pip install Bioext
-   
-   ```
-   > Depending on the version of the operating system, the `cython` module can be case-sensitive. If the above command prints an error regarding that module, try `Cython`. In some Linux distributions you might need to install `g++`, using the command `sudo apt install g++` before installing `Bioext`
-   
-   iii. **`iqtree`**
-   
-   - Linux and Mac:
-   
-   ```bash
-   conda install -c bioconda iqtree
-   
-   ```
-   
-   iv. **`emboss`**
-   
-   - Linux and Mac:
-   
-   ```bash
-   conda install -c bioconda emboss
-   
-   ```
-   
-   > You will also use some `Python` scripts that are available in the 'scripts' folder
-
-</br>
-
-4.  Finally, for the second part of the practice (session on selective pressures), you need a program to identify and exclude identical and very similar sequences (tn93), tools for codon-guided multiple sequence alignment (bealign and bam2msa - from the Bioext package), a the program to estimate selective constraints on amino acid positions (hyphy):
-
-   v. **`tn93`**    
-
-   - Linux and Mac:
-   
-   ```bash
-   conda install -c bioconda 'tn93<=1.0.6'
-   
-   ```
-   
-   vi. **`raxml-ng`**
-   
-   - Linux and Mac:
-   
-   ```bash
-   conda install -c bioconda raxml-ng
-   
-   ```   
-   
-   vii. **`hyphy`**
-
-   - Linux and Mac:
-
-   ```bash
-   conda install -c bioconda hyphy
-   
-   ```  
-   > You will also use some `Python` scripts that are available in the 'scripts' folder
-
-</br>
-   
-5.  Once all the bioinformatics tools have been installed, test that they work correctly by typing the name of the program with the flag `-h`: 
-   
-   ```bash
-   mafft -h
-   iqtree -h
-   raxml-ng -h
-   tn93-cluster -h
-   bealign -h
-   bam2msa -h
-   hyphy -h
-   
-   ```
-   
-   > If the installation has been successful, the options for each program will be listed on the screen
 
 ---
 
@@ -432,5 +300,4 @@ To visualize json results use [hyphy-vision tool](http://vision.hyphy.org/)
 
 Contact M. Riutort: mriutort(at)ub.edu  
 Contact A. Sánchez: elsanchez(at)ub.edu 
-
 
