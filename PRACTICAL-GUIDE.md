@@ -7,7 +7,7 @@
 
 # Comparative Genomics
 
-Instructor: **Alejandro Sánchez**  
+Instructors: **Marta Riutort & Alejandro Sánchez**  
 
 </br>
 
