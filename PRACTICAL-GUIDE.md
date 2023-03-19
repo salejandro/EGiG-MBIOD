@@ -2,7 +2,7 @@
 <img src="http://www.ub.edu/molevol/CG-Master/logo2.png">  
 </p>
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-Master/Biodiversity.png">
+<img src="http://www.ub.edu/molevol/CG-Master/biodiversity.png">
 </p>
 
 # Comparative Genomics
