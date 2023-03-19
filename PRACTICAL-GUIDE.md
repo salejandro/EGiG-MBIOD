@@ -2,7 +2,7 @@
 <img src="http://www.ub.edu/molevol/CG-MGG/logo2.png">  
 </p>
 <p align="center">
-<img src="http://www.ub.edu/molevol/CG-MGG/master2.png](https://user-images.githubusercontent.com/20284451/226183312-0ca6a5e6-1073-4dd9-a0fb-6809e8c2e4df.png">
+<img src="Logo_master_frontpage.jpg">
 </p>
 
 # Comparative Genomics
