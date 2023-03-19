@@ -1,6 +1,5 @@
  <p align="right">
 <img src="http://www.ub.edu/molevol/CG-Master/logo2.png">  
-</p>
 <p align="left">
 <img src="http://www.ub.edu/molevol/CG-Master/biodiversity.png">
 </p>
