@@ -5,6 +5,8 @@
 <img src="Logo_master_frontpage.jpg">
 </p>
 
+![Logo_master_frontpage](https://user-images.githubusercontent.com/20284451/226183468-1da30ab7-f43a-42f3-a9e6-a5828aa19998.jpg)
+
 # Comparative Genomics
 
 Instructor: **Alejandro Sánchez**  
