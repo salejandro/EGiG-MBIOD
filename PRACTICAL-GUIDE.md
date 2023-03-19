@@ -10,7 +10,7 @@ Instructor: **Alejandro Sánchez**
 
 ## Introduction
 
-The objective of these sessions is to increase your understanding of the main concepts behind evolutionary inference by doing some practical work with a representation (just a few examples) of the state-of-the-art computational tools to estimate phylogenetic relationships between genes and genomes, and to determine the functional consequences of mutations in these sequences. This fundamental knowledge has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
+The objective of this practice is to increase your understanding of the main concepts behind evolutionary inference by doing some practical work with a representation (just a few examples) of the state-of-the-art computational tools to estimate phylogenetic relationships between genes and genomes, and to determine the functional consequences of mutations in these sequences. This fundamental knowledge has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
 
 The biological model used in this practices are sarbecoviruses, and more specifically, a group of viruses closely related with SARS-Cov2 (the the type 2 coronavirus that causes severe acute respiratory syndrome) (part 1), and the BA.1 sublineage of the SARS-CoV2 variant of concern (VOC) Omicron (part 2).
 
