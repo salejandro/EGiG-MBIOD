@@ -1,11 +1,9 @@
  <p align="right">
-<img src="http://www.ub.edu/molevol/CG-MGG/logo2.png">  
+<img src="http://www.ub.edu/molevol/CG-Master/logo2.png">  
 </p>
 <p align="center">
-<img src="Logo_master_frontpage.jpg">
+<img src="http://www.ub.edu/molevol/CG-Master/Biodiversity.png">
 </p>
-
-![Logo_master_frontpage](https://user-images.githubusercontent.com/20284451/226183468-1da30ab7-f43a-42f3-a9e6-a5828aa19998.jpg)
 
 # Comparative Genomics
 
