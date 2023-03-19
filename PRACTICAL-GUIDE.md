@@ -74,7 +74,7 @@ The [FASTA](https://es.wikipedia.org/wiki/Formato_FASTA) files with the data dec
 
 ---
 
-## Part 1. Phylogenetic analyses
+## Part 1. Phylogenetic tree
 
 Phylogenomics aims at establishing the evolutionary relationships between organisms using genome data. However, not all parts of a genome evolve at the same rate or completely independently since their split from a common ancestor, due to, for example, past recombination events or strong positive selection acting deferentially on particular genes and lineages. These scenarios may cause phylogenies to reflect different histories across the genome. Sarbecoviruses genomes, including SARS-CoV2, are not an exception. At least 15 recombination fragments have been identified when comparing most relevant sarbecoviruses. In fact, SARS-CoV-2 show recombination events from different donor sarbecoviruses strains, some of them spanning functionally important domains of the protein Spike, which point to their putative adaptive nature.
 
