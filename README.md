@@ -52,9 +52,9 @@ Before starting the practice, please confirm that you have installed `Docker` in
 
 Once `Docker` is installed and working correctly, it is time to download the image with which you will work in this practice. Open the terminal app in your computer and type:
 
-      ```bash
-      docker pull asancheg/cg-mbiod:r160323
-      ```
+   ```bash
+   docker pull asancheg/cg-mbiod:r160323
+   ```
 
 Check that the image has been downloaded correctly:
 
