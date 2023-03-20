@@ -78,18 +78,18 @@ Check that the image has been downloaded correctly:
 Now, you can run a container to do the work of this practice:
 
    ```bash
-   docker run -it --name <CONTAINER NAME> asancheg/cg-mbiod:r160323 /bin/bash
+   docker run -it --name <CONTAINER_NAME> asancheg/cg-mbiod:r160323 /bin/bash
    cd home
    ```
    
 > Some useful commands to work with containers and images:
 > `exit` to exit a container   
 > `docker stop <CONTAINER_NAME>`, to stop a container   
-> `docker ps -a,` to list containers  
+> `docker ps -a,` to list containers (to know, for example, containers names)
 > `docker rm <CONTAINER_NAME>`, to remove a container  
 > `docker start <CONTAINER_NAME>`, to start a stopped container (this command only starts the container, see the next command)  
 > `docker exec -it <CONTAINER_NAME> \/bin/bash'`, to run the started container (see command above)  
-> `docker rmi <IMAGE_ID>`, to remove images  
+> `docker rmi <IMAGE_ID>`, to remove images (use `docker images` to know the <IMAGE_ID>
 > `docker system prune -a`, to remove all images  
 
 </br>
