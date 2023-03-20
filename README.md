@@ -84,13 +84,13 @@ Now, you can run a container to do the work of this practice:
    
 > Some useful commands to work with containers and images:
 > `exit` to exit a container   
-> `docker stop <CONTAINER_NAME>` to stop a container   
-> `docker ps -a` to list containers  
-> `docker rm <CONTAINER_NAME>` to remove a container  
-> `docker start <CONTAINER_NAME>` to start a stopped container (this command only starts the container, see the next command)  
-> `docker exec -it <CONTAINER_NAME> \/bin/bash'` to run the started container (see command above)  
-> `docker rmi <IMAGE_ID>` to remove images  
-> `docker system prune -a` to remove all images  
+> `docker stop <CONTAINER_NAME>`, to stop a container   
+> `docker ps -a,` to list containers  
+> `docker rm <CONTAINER_NAME>`, to remove a container  
+> `docker start <CONTAINER_NAME>`, to start a stopped container (this command only starts the container, see the next command)  
+> `docker exec -it <CONTAINER_NAME> \/bin/bash'`, to run the started container (see command above)  
+> `docker rmi <IMAGE_ID>`, to remove images  
+> `docker system prune -a`, to remove all images  
 
 </br>
 
