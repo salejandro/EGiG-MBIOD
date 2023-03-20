@@ -52,19 +52,19 @@ Before starting the practice, please confirm that you have installed `Docker` in
 
 Once `Docker` is installed and working correctly, it is time to download the image with which you will work in this practice. Open the terminal app in your computer and type:
 
-      ```
+      ```bash
       docker pull asancheg/cg-mbiod:r160323
       ```
 
 Check that the image has been downloaded correctly:
 
-      ```
+      ```bash
       docker images
       ```
 
 Now, you can run a container to do the work of this practice:
 
-      ```
+      ```bash
       sudo docker run -it --name <CONTAINER NAME> asancheg/cg-mbiod:r160323 /bin/bash
       cd cguser
       ```
