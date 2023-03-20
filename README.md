@@ -55,6 +55,16 @@ Before starting the practice, please confirm that you have installed `Docker` in
 
 Once `Docker` is installed and working correctly, it is time to download the image with which you will work in this practice. Open the terminal app in your computer and type:
 
+First, you can create the docker group and add your user:
+   
+   ```bash
+   sudo groupadd docker
+   sudo usermod -aG docker <USER>
+   newgrp docker
+   ```
+
+Then, download the image form the Docker hub:
+
    ```bash
    docker pull asancheg/cg-mbiod:r160323v2
    ```
@@ -68,7 +78,7 @@ Check that the image has been downloaded correctly:
 Now, you can run a container to do the work of this practice:
 
    ```bash
-   sudo docker run -it --name <CONTAINER NAME> asancheg/cg-mbiod:r160323 /bin/bash
+   docker run -it --name <CONTAINER NAME> asancheg/cg-mbiod:r160323 /bin/bash
    cd home
    ```
 
