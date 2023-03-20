@@ -83,8 +83,6 @@ The [FASTA](https://es.wikipedia.org/wiki/Formato_FASTA) files with the data dec
 <img src="http://www.ub.edu/molevol/CG-MGG/conda.jpeg" height="60">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.ub.edu/molevol/CG-MGG/python.png" height="60">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.ub.edu/molevol/CG-MGG/mafft.png" height="40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.ub.edu/molevol/CG-MGG/iqtree-logo.svg" height="70">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.ub.edu/molevol/CG-MGG/raxmlng.png" height="40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.ub.edu/molevol/CG-MGG/logo.svg" height="70">
 </p>
 
-</br>
-
 ---
 
 ## Part 1. Phylogenetic tree
