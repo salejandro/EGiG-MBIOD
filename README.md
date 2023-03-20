@@ -185,7 +185,7 @@ Phylogenomics aims at establishing the evolutionary relationships between organi
       cp ${FILE}.S.uniq.fas.raxml.bestTree ${FILE}.S.uniq.tree
       
       ```
-      > Remember to update the variable threads according to your resources
+      > Remember to update the variable 'threads'  according to your resources
 
 ---
 
