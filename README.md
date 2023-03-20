@@ -23,7 +23,7 @@ The biological model used in this practices is the BA.1 sublineage of the SARS-C
 </p>
 
 > **Fig. 1** Schematic diagrams of the SARS-CoV-2 virus particle (a) and genome (b). The genome encodes sixteen nonstructural proteins (nsp1–11, 12–16) and six accessory proteins. Plpro: papain like protease, 3CLPro: 3C-like proteinase, *__RdRp: RNA-dependent RNA polymerase__*, Hel:
-Helicase, *__S: spike__*. Modified from Signal Transduction and Targeted Therapy (2021)6:233.
+Helicase, *__S: spike__*. Modified from [Zang et al. (2021)](https://www.nature.com/articles/s41392-021-00653-w).
 
 </br>
 
