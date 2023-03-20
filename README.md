@@ -227,7 +227,7 @@ Once you have the tree, you are ready to run a selection analysis with different
    + Finally, the **BGM** (**B**ayesian **G**raphical **M**odel) method is a tool for detecting correlated amino acid substitutions in the Spike protein of Omicron BA.1. This correlation should be suggestive of **coevolutionary interactions between amino acid positions** in this protein:
      
       ```bash
-      $HYPHYMPI bgm --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.uniq.tree --branches Internal --min-subs 2 --steps 1000000 --samples 1000 --burn-in 100000
+      $HYPHYMPI bgm --alignment ${FILE}.S.uniq.fas --tree ${FILE}.S.uniq.tree --branches Internal --min-subs 2 --steps 1000000 --burn-in 100000
       
       ```
 
