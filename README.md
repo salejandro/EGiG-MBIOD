@@ -58,16 +58,16 @@ Once `Docker` is installed and working correctly, it is time to download the ima
 
 Check that the image has been downloaded correctly:
 
-      ```bash
-      docker images
-      ```
+   ```bash
+   docker images
+   ```
 
 Now, you can run a container to do the work of this practice:
 
-      ```bash
-      sudo docker run -it --name <CONTAINER NAME> asancheg/cg-mbiod:r160323 /bin/bash
-      cd cguser
-      ```
+   ```bash
+   sudo docker run -it --name <CONTAINER NAME> asancheg/cg-mbiod:r160323 /bin/bash
+   cd cguser
+   ```
 
 **IMPORTANT WARNING: Many of the tools that will be used in this practice are not available for Windows operating systems, even when conda (anaconda) environment is installed. In general, bioinformatics programs for manipulating and analyzing genomic data are only available or tested for Linux and Mac. If you have a Windows based PC or laptop, **I strongy recommend to install a Linux distribution on a virtual machine (for example [wsl](https://learn.microsoft.com/en-us/windows/wsl/install)).
 
