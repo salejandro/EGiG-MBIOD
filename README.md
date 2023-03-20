@@ -78,7 +78,7 @@ Check that the image has been downloaded correctly:
 Now, you can run a container to do the work of this practice:
 
    ```bash
-   docker run -it --name <CONTAINER_NAME> asancheg/cg-mbiod:r160323 /bin/bash
+   docker run -it --name <CONTAINER_NAME> asancheg/cg-mbiod:r160323v2 /bin/bash
    cd home
    ```
    
