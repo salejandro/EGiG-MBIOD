@@ -152,7 +152,7 @@ Phylogenomics aims at establishing the evolutionary relationships between organi
    
  </br>
 
-4.  And finally, you will use the program `raxml-ng` to obtain the tree: 
+4.  And, lastly, you will use the program `raxml-ng` to obtain the tree: 
 
       ```bash
       threads=4
