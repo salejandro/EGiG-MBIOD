@@ -83,14 +83,16 @@ Now, you can run a container to do the work of this practice:
    ```
    
 > Some useful commands to work with containers and images:
-> `exit` to exit a container
-> `docker stop <CONTAINER_NAME>` to stop a container
-> `docker ps -a` to list containers
-> `docker rm <CONTAINER_NAME>` to remove a container
-> `docker start <CONTAINER_NAME>` to start a stopped container (this command only starts the container, you will need to run it again, see next command)
-> `docker exec -it <CONTAINER_NAME> \/bin/bash'` to run the started container (see command above)
-> `docker rmi <IMAGE_ID>` to remove images
-> `docker system prune -a` to remove all images
+> `exit` to exit a container   
+> `docker stop <CONTAINER_NAME>` to stop a container   
+> `docker ps -a` to list containers  
+> `docker rm <CONTAINER_NAME>` to remove a container  
+> `docker start <CONTAINER_NAME>` to start a stopped container (this command only starts the container, you will need to run it again, see next command)  
+> `docker exec -it <CONTAINER_NAME> \/bin/bash'` to run the started container (see command above)  
+> `docker rmi <IMAGE_ID>` to remove images  
+> `docker system prune -a` to remove all images  
+
+</br>
 
 **IMPORTANT WARNING: Many of the tools that will be used in this practice are not available for Windows operating systems, even when conda (anaconda) environment is installed. In general, bioinformatics programs for manipulating and analyzing genomic data are only available or tested for Linux and Mac. If you have a Windows based PC or laptop, _I strongy recommend to install a Linux distribution on a virtual machine_ (for example [wsl](https://learn.microsoft.com/en-us/windows/wsl/install)).
 
