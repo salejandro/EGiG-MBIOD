@@ -1,5 +1,5 @@
 <p align="left">
-<img src="http://www.ub.edu/molevol/CG-Master/biodiversity.png" width="300" height="50"><img align="right" src="http://www.ub.edu/molevol/CG-Master/logo2.png" width="400" height="50">  
+<img src="http://www.ub.edu/molevol/CG-Master/biodiversity.png" width="300" height="50"><img align="right" src="http://www.ub.edu/molevol/CG-Master/logo2.png" width="400" height="100">  
 </p>
 
 # Comparative Genomics
