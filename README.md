@@ -211,7 +211,7 @@ Once you have the tree, you are ready to run a selection analysis with different
    + When applying **FEL** (**F**ixed **E**ffects **L**ikelihood) to your data, you obtain the ML estimate of non-synoymous (dN) and synonymous (dS) substitution rates in each codon site (amino acid position) for the entire Spike CDS alignment acroos the phylogeny. Therefore, you are assuming **constant selection pressures along the entire history of BA.1 sequences**:
    
       ```bash
-      HYPHYMPI="mpirun -np $threads HYPHYMPI"
+      HYPHYMPI="mpirun --allow-run-as-root -np $threads HYPHYMPI"
       $HYPHYMPI fel --alignment ${FILE}.S.uniq.fas  --tree ${FILE}.S.uniq.tree --branches Internal  --ci Yes
       
       ```
