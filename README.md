@@ -3,6 +3,7 @@
 </p>
 
 # Comparative Genomics
+## Computer lab 3: Selection analyses in Omicron BA.1 lineage
 
 Instructor: **Alejandro Sánchez**  
 
