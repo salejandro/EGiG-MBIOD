@@ -66,7 +66,7 @@ Now, you can run a container to do the work of this practice:
 
    ```bash
    sudo docker run -it --name <CONTAINER NAME> asancheg/cg-mbiod:r160323 /bin/bash
-   cd cguser
+   cd home
    ```
 
 **IMPORTANT WARNING: Many of the tools that will be used in this practice are not available for Windows operating systems, even when conda (anaconda) environment is installed. In general, bioinformatics programs for manipulating and analyzing genomic data are only available or tested for Linux and Mac. If you have a Windows based PC or laptop, _I strongy recommend to install a Linux distribution on a virtual machine_ (for example [wsl](https://learn.microsoft.com/en-us/windows/wsl/install)).
@@ -75,7 +75,7 @@ Now, you can run a container to do the work of this practice:
 
 The genome sequences for this practice were retrieved either from [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) or [GISAID](https://gisaid.org/) databases and correspond to a subset of 4717 high-quality genomes of the BA.1 variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You can find the metadata associated with these genomes in the file BA.1.metadata, and the instructions for retrieve these sequences in the file [GISAID-BA.1-sequences.md](https://github.com/salejandro/Comparative-Genomics-MBIOD/blob/main/omicron_seqs.md).
 
-The [FASTA](https://es.wikipedia.org/wiki/Formato_FASTA) files with the data decribed above will be in the folder "/data" of your home (cguser).
+The [FASTA](https://es.wikipedia.org/wiki/Formato_FASTA) files with the data decribed above will be in the folder "/data" of your home (/home).
 
 </br>
 
