@@ -26,7 +26,7 @@ Helicase, *__S: spike__*. Modified from Signal Transduction and Targeted Therapy
 
 </br>
 
-In the first part of this practice you will reconstruct the phylogenetic relationships of the surveyed sequences. Due to the mosaic nature of the genomes of viruses such as the SARS-CoV2, which originated after recombination between different strains of sarbecoviruses, it is highly recomendable to use the local tree of the region studied rather than all the genomes to built the phylogenetic tree for the selection analyses [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4). Here, you will reconstruct the gene tree of the S-gene with most informative sequences. In the second part, you will estimate the effect on virus fitness of the missense mutations (amino acid replacements) accumulated in the sublineage BA.1 of Omicron, and compare this effect with the estimated impact for the same positions prior to the emergence of this VOC (all SARS-CoV-2 near full-length genome sequences present in GISAID on 21/11/2021 that passed some quality control checks; [Martin et al. 2022](https://academic.oup.com/mbe/article/39/4/msac061/6553617)). This analysis in an example of how the accumulation of mutations with individual fitness costs but adaptive in combination with other mutations, could alter the function of a protein (Spike), while remained completely undetected despite unprecedented global genomic surveillance efforts.
+In the first part of this practice you will reconstruct the phylogenetic relationships of the surveyed sequences. Due to the mosaic nature of the genomes of viruses such as the SARS-CoV2, which originated after recombination between different strains of Sarbecoviruses, it is highly recomendable to use the local tree of the region studied rather than all the genomes to built the phylogenetic tree for the selection analyses ([Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4)). Here, you will reconstruct the gene tree of the S-gene with most informative sequences. In the second part, you will estimate the effect on virus fitness of the missense mutations (amino acid replacements) accumulated in the sublineage BA.1 of Omicron, and compare this effect with the estimated impact for the same positions prior to the emergence of this VOC (all SARS-CoV-2 near full-length genome sequences present in GISAID on 21/11/2021 that passed some quality control checks; [Martin et al. 2022](https://academic.oup.com/mbe/article/39/4/msac061/6553617)). This analysis in an example of how the accumulation of mutations with individual fitness costs but adaptive in combination with other mutations, could alter the function of a protein (Spike), while remained completely undetected despite unprecedented global genomic surveillance efforts.
 
 </br>
 </br>
@@ -50,13 +50,32 @@ If you are not familiarized with the terminal app in Unix based operating system
 
 Before starting the practice, please confirm that you have installed `Docker` in your computer (you can find system requirements and regular installation instructions [here](https://docs.docker.com/engine/install/ubuntu/). The reason for installing `Docker` and working within a container of a prebuilt image based on a conda environment is to perform the computer lab in a stable environment with a specific `Python` version (3.9), as well as to avoid the complexity of software (iqtree, raxml-ng or hyphy) compilation on different operating systems with different configurations.
 
+Once `Docker` is installed and working correctly, it is time to download the image with which you will work in this practice. Open the terminal app in your computer and type:
+
+      ```
+      docker pull asancheg/cg-mbiod:r160323
+      ```
+
+Check that the image has been downloaded correctly:
+
+      ```
+      docker images
+      ```
+
+Now, you can run a container to do the work of this practice:
+
+      ```
+      sudo docker run -it --name <CONTAINER NAME> asancheg/cg-mbiod:r160323 /bin/bash
+      cd cguser
+      ```
+
 **IMPORTANT WARNING: Many of the tools that will be used in this practice are not available for Windows operating systems, even when conda (anaconda) environment is installed. In general, bioinformatics programs for manipulating and analyzing genomic data are only available or tested for Linux and Mac. If you have a Windows based PC or laptop, **I strongy recommend to install a Linux distribution on a virtual machine (for example [wsl](https://learn.microsoft.com/en-us/windows/wsl/install)).
 
 ### Data files availability:
 
-The genome sequences for this practice were retrieved either from [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) or [GISAID](https://gisaid.org/) databases and correspond to a subset of 4717 high-quality genomes of the BA.1 variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You can find the metadata associated with these genomes in the file BA.1.metadata, and the instructions for retrieve these sequences in the file [GISAID-BA.1-sequences.md](https://github.com/salejandro/Comparative-Genomics-MGG/blob/main/omicron_seqs.md).
+The genome sequences for this practice were retrieved either from [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) or [GISAID](https://gisaid.org/) databases and correspond to a subset of 4717 high-quality genomes of the BA.1 variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You can find the metadata associated with these genomes in the file BA.1.metadata, and the instructions for retrieve these sequences in the file [GISAID-BA.1-sequences.md](https://github.com/salejandro/Comparative-Genomics-MBIOD/blob/main/omicron_seqs.md).
 
-The [FASTA](https://es.wikipedia.org/wiki/Formato_FASTA) files with the data decribed above will be in the folder "/data" of your home.
+The [FASTA](https://es.wikipedia.org/wiki/Formato_FASTA) files with the data decribed above will be in the folder "/data" of your home (cguser).
 
 </br>
 
