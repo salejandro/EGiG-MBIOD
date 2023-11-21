@@ -6,15 +6,15 @@
 
 ## Computer lab 
 
-Instructor: ** Alejandro Sánchez**  
+Instructor: **Alejandro Sánchez**  
 
 </br>
 
 ## Introduction
 
-The objective of these sessions is to increase your understanding of the main concepts behind evolutionary inference by doing some practical work with a small representation (just a few examples) of the state-of-the-art computational tools to estimate phylogenetic relationships between genes or genomes, and to infer the functional consequences of mutations in these sequences. This fundamental knowledge has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
+The objective of these sessions is to increase your understanding of the main concepts behind evolutionary inference by doing some practical work with a small representation (just a few examples) of the state-of-the-art computational tools to infer the functional consequences of mutations in these sequences. This fundamental knowledge has great importance and applicability in genetic and biomedical research, and in biodiversity studies.
 
-The biological model used in this practices are **sarbecoviruses**, and more specifically, a group of viruses closely related with SARS-Cov2 (the the type 2 coronavirus that causes severe acute respiratory syndrome) (part 1), and the BA.1 sublineage of the SARS-CoV2 variant of concern (VOC) named as (the original) **Omicron** (part 2).
+The biological model used in this practices are **sarbecoviruses**, and more specifically, the BA.1 sublineage of the SARS-CoV2 variant of concern (VOC) named as (the original) **Omicron**.
 
 </br>
 </br>
@@ -28,9 +28,7 @@ Helicase, *__S: spike__*. Modified from [Zang et al. (2021)](https://www.nature.
 
 </br>
 
-In the first part of this practice, you will reconstruct the phylogenetic relationships of a group of sarbecoviruses using different markers (i.e. different virus genes). This analysis is very illustrative of the different evolutionary rates of viral genes, as well as of the mosaic nature of the genomes of viruses such as the SARS-CoV2, which originated after recombination between different strains of sarbecoviruses. 
-
-In the second part, you will first infer the effect on virus fitness of the missense mutations (amino acid replacements) accumulated in the sublineage BA.1 of Omicro. Then, you will compare this effect with the impact of missense mutations in the same positions but prior to the emergence of this variant (i.e., all SARS-CoV-2 near full-length genome sequences of all previous variants, which were present in GISAID on 21/11/2021 and that passed some quality control checks; [Martin et al. 2022](https://academic.oup.com/mbe/article/39/4/msac061/6553617)). This analysis in an example of how the accumulation of mutations with individual fitness costs (deleterious effects) but adaptive when appear in combination with other neutral or deleterious mutations, could alter the function of a protein (Spike) while remained completely undetected despite the unprecedented global genomic surveillance efforts..
+In this lab, you will first infer the effect on virus fitness of the missense mutations (amino acid replacements) accumulated in the sublineage BA.1 of Omicro. Then, you will compare this effect with the impact of missense mutations in the same positions but prior to the emergence of this variant (i.e., all SARS-CoV-2 near full-length genome sequences of all previous variants, which were present in GISAID on 21/11/2021 and that passed some quality control checks; [Martin et al. 2022](https://academic.oup.com/mbe/article/39/4/msac061/6553617)). This analysis in an example of how the accumulation of mutations with individual fitness costs (deleterious effects) but adaptive when appear in combination with other neutral or deleterious mutations, could alter the function of a protein (Spike) while remained completely undetected despite the unprecedented global genomic surveillance efforts..
 
 </br>
 </br>
@@ -53,12 +51,7 @@ ___
 
 ## Data
 
-The genome sequences for this practice were retrieved either from [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) or [GISAID](https://gisaid.org/) databases and correspond to:
-
-1.  The genomic sequences of the 17 sarbecoviruses used for Figure 1 in [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4)
-
-2.  A subset of 4717 high-quality genomes of the BA.1
-variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You can find the metadata associated with these genomes in the file BA.1.metadata, and the instructions for retrieve these sequences in the file [GISAID-BA.1-sequences.md](https://github.com/salejandro/Comparative-Genomics-MGG/blob/main/omicron_seqs.md).
+The genome sequences for this practice were retrieved either from [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) or [GISAID](https://gisaid.org/) databases and correspond to a subset of 4717 high-quality genomes of the BA.1 variant (Omicron) collected world wide between 05/01/2020 and 22/06/2022. You can find the metadata associated with these genomes in the file BA.1.metadata, and the instructions for retrieve these sequences in the file [GISAID-BA.1-sequences.md](https://github.com/salejandro/Comparative-Genomics-MGG/blob/main/omicron_seqs.md).
 
 ### Data files availability:
 
@@ -72,7 +65,7 @@ Before starting the exercise, **you must confirm that you have _Docker Engine_ i
 
 > Do not forget to enable the WSL 2 feature on Windows-based laptops.
 
-You will be working with a pre-built _docker_ image that contains all the software and tools you need to complete the exercises. The reason for using _docker_ is to work in a homogeneous and stable computing environment with a specific `Python` version (3.9), which is a requirement for some of the tools you will use in the exercises, and to avoid the complex (and often problematic) compilation and installation of main programs (iqtree, raxml-ng or hyphy) on different operating systems with different configurations.
+You will be working with a pre-built _docker_ image that contains all the software and tools you need to complete the exercises. The reason for using _docker_ is to work in a homogeneous and stable computing environment with a specific `Python` version (3.9), which is a requirement for some of the tools you will use in the exercises, and to avoid the complex (and often problematic) compilation and installation of main programs (raxml-ng or hyphy) on different operating systems with different configurations.
 
 > **IMPORTANT WARNING: In general, bioinformatics programs for manipulating and analysing genomic data are only available for Linux (and to a lesser extent for MacOS). It is strongly recommended to switch to a Unix-based operating system to work with omics data**.
 
@@ -111,108 +104,10 @@ Now, you can run a new container to do the work of this practice (substitute <CO
 <img src="http://www.ub.edu/molevol/CG-Master/docker.png" height="80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.ub.edu/molevol/CG-Master/python.png" height="60">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.ub.edu/molevol/CG-Master/mafft.png" height="40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.ub.edu/molevol/CG-Master/iqtree-logo.svg" height="70">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.ub.edu/molevol/CG-Master/raxmlng.png" height="40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.ub.edu/molevol/CG-Master/logo.svg" height="70">
 </p>
 
----
 
-## Part 1. Phylogenetic analyses
+## Analysis of selection in the BA.1 sublineage
 
-Phylogenomics aims at establishing the evolutionary relationships between organisms using genome data. However, not all parts of a genome evolve at the same rate or completely independently since their split from a common ancestor, due to, for example, past recombination events or strong positive selection acting deferentially on particular genes and lineages. These scenarios may cause phylogenies to reflect different histories across the genome. Sarbecoviruses genomes, including SARS-CoV2, are not an exception. At least 15 recombination fragments have been identified when comparing most relevant sarbecoviruses. In fact, SARS-CoV-2 show recombination events from different donor sarbecoviruses strains, some of them spanning functionally important domains of the protein Spike, which point to their putative adaptive nature.
-
-</br>
-</br>
-
-<p align="left">
-<img src="http://www.ub.edu/molevol/CG-Master/rec.png" width="900">
-</p>
-
-> **Fig. 3.** Recombination events estimated in the evolutionary history of sarbecoviruses. Modified from [Temmam et al. (2022)](https://www.nature.com/articles/s41586-022-04532-4).
-
-</br>
-
-To illustrate the different evolutionary history of some viral genome regions, you will conduct a ML phylogenetic analysis of the nucleotide sequences of two recombination fragments: the fragment that encodes, among others, the RNA-dependent RNA polymerase (RdRp) and the Helicase of the virus (fragment 7 in Fig. 3), and the fragment that encodes most of the S-gene, including the Receptor Binding Domain, RBD (fragment 11 in Fig.3), of representative human, bat, and pangolin sarbecoviruses. These two fragments encode proteins with very different functions, which is clearly reflected in their contrasting evolutionary rates.
-
-### Workflow:
-
-1.  First, you have to trim down sarbecoviruses genomic sequences to the recombination fragment neighborhood using a `Python` script:
-
-      ```bash
-      FILE="sarbecoviruses.fasta" # rename accordingly
-      
-      # Fragment 7:
-      python3.9 scripts/filter-sites.py data/$FILE  12000,18000 > ${FILE}.f7.fasta
-   
-      # Fragment 11:
-      python3.9 scripts/filter-sites.py data/$FILE  22000,25000 > ${FILE}.f11.fasta
-      
-      ``` 
- </br>
- 
-2.  Now, you can build a multiple sequence alignment for each fragment using `mafft`:
-   
-      ```bash
-      mafft ${FILE}.f7.fasta > ${FILE}.f7.msa
-      mafft ${FILE}.f11.fasta > ${FILE}.f11.msa
-      
-      ``` 
- </br>
- 
-3.  You will use `iqtree` to obtain ML phylogenetic trees based on the nucleotide sequences from these regions:
-
-      ```bash
-      iqtree -s ${FILE}.f7.msa -m GTR+I+G4+F -bb 1000
-      iqtree -s ${FILE}.f11.msa -m JC+F -bb 1000
-      
-      ``` 
-      > To visualize the trees you can use the application [figtree](https://github.com/rambaut/figtree/releases). If you are running Ubuntu in the Windows Subsystem for Linux (WSL), download and execute `figtree` in your Windows system. You can find the tree files generated by the above commands in the Ubuntu folder. To find the Ubuntu folder, type `\\wsl$` in the navigation bar of your File Explorer (the Ubuntu system must be running!).
-
- </br>
-
-4. For comparison purposes, you will also built a tree based on a protein sequence aligment of the Receptor Binding Domain (RBD) of Spike. This poorly conserved across sarbecoviruses region is part of the protein Spike and is the domain that binds ACE2 receptors to entry into human cells:
-
-   + To trim down Sarbecovirues sequences to the RBD neighborhood using a `Python` script:
-      
-      ```bash
-      python3.9 scripts/filter-sites.py data/${FILE} 22000,24000 > ${FILE}.RBD.raw
-      
-      ```
-   + To map trimmed Sarbecovirus sequences to the RBD nucleotide sequences of the SARS-CoV2 reference ([NC_045512](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)), using a codon alignment algorithm:
-   
-      ```bash
-      REF="data/RBD.reference"
-      bealign -r ${REF} ${FILE}.RBD.raw ${FILE}.RBD.bam   
-      bam2msa ${FILE}.RBD.bam ${FILE}.RBD.msa 
-      
-      ```
-      > This step allows to delimit the alignment to only the coding region of RBD. The output of bealing is in [BAM format](https://samtools.github.io/hts-specs/SAMv1.pdf). The tool `bam2msa`converts the BAM file to FASTA format
-   
-   + To translate coding sequences to amino acid sequences:
-         
-      ```bash 
-      transeq -sequence $FILE.RBD.msa -outseq ${FILE}.RBD.prot 
-      
-      ```
-   
-   + To align RBD protein sequences:
-   
-      ```bash
-      mafft $FILE.RBD.prot > $FILE.RBD.prot.align   
-      
-      ```
-   
-   + To obtain the ML phylogenetic trees of the RBD protein region of sarbecoviruses:
-   
-      ```bash
-     # 1:
-     iqtree -s sarbecoviruses.fasta.RBD.prot.align -st AA -m LG4M+G4 -bb 1000
-     # 2:
-     cp sarbecoviruses.fasta.RBD.prot.align sarbecoviruses.fasta.RBD.prot.align_dup
-     iqtree -s sarbecoviruses.fasta.RBD.prot.align_dup -st AA -m TEST -bb 1000
-     
-     ```
----
-
-## Part 2. Analysis of selection in the BA.1 sublineage
-
-In the second part of the practice, we are particularly interested in identifying Spike amino acids (codon sites) displaying evolutionary patterns that differed between Omicron sublineage BA.1 and other SARS-CoV-2 lineages that circulated prior to the emergence of Omicron. The rationale of this analysis is to investigate how could so many amino acid changes that adaptively alter the function of Spike accumulate at these sites, without being detected despite unprecedented global genomic surveillance efforts. You will first apply the codon substitution models implemented in the `hyphy` package to estimate functional constraints acting on non-synonymous sites of this gene after the emergence of Omicron, and then, you will compare your results with those from same analyses on non-Omicron genomes (Table 1).
+Here, we are particularly interested in identifying Spike amino acids (codon sites) displaying evolutionary patterns that differed between Omicron sublineage BA.1 and other SARS-CoV-2 lineages that circulated prior to the emergence of Omicron. The rationale of this analysis is to investigate how could so many amino acid changes that adaptively alter the function of Spike accumulate at these sites, without being detected despite unprecedented global genomic surveillance efforts. You will first apply the codon substitution models implemented in the `hyphy` package to estimate functional constraints acting on non-synonymous sites of this gene after the emergence of Omicron, and then, you will compare your results with those from same analyses on non-Omicron genomes (Table 1).
 
 
 ##### **Table 1**. Frequencies in non-Omicron SARS-CoV-2 genomes of some Spike amino acid mutations ([Martin et al. 2022](https://academic.oup.com/mbe/article/39/4/msac061/6553617)). Since the length of the Spike protein is highly conserved across the BA.1 sequences, the numbering of the positions in the table will match that of the alignment that your will use in this practice
@@ -346,8 +241,6 @@ To visualize json results use [hyphy-vision tool](http://vision.hyphy.org/)
 <p><strong>Doubts?</strong></p>
 
 Contact:    
-
-M.Riutort: mriutort(at)ub.edu    
 
 A. Sánchez: elsanchez(at)ub.edu 
 
