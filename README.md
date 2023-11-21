@@ -1,8 +1,5 @@
 <p align="right">
-<img src="http://www.ub.edu/molevol/CG-Master/UB-bio-color.png" width="300" height="130">  
-</p>
-<p align="left">
-<img src="http://www.ub.edu/molevol/CG-Master/biodiversity.png">
+<img src="http://www.ub.edu/molevol/CG-Master/UB-bio-color.png" width="300" height="130"><p align="left"><img src="http://www.ub.edu/molevol/CG-Master/biodiversity.png">
 </p>
 
 
